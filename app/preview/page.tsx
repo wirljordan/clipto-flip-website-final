@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useSearchParams } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { loadStripe } from '@stripe/stripe-js'
 import {
   Elements,
@@ -14,7 +14,7 @@ import {
 } from '@stripe/react-stripe-js'
 import PaymentForm from '@/components/payment-form'
 
-const stripePromise = loadStripe('pk_test_51KPZPXFtbhkTH7daH2owRf9blOTs9UFcNM8qX7bRYG9p1tpUvnuxz8xuYsvjAjb8jplUgr5j9vvsVZIT8ExeB4tf00uSfXkStM')
+const stripePromise = loadStripe('process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_live_51KPZPXFtbhkTH7daRZ8yhuYxOI2vKGCqbtZd7HEjNZwokaBer22K9J2NaIUx8k4GdPT3gFmrnJXsTp0U2XcICCXY00LVfTQcTD'')
 
 function PreviewPageContent() {
   const searchParams = useSearchParams()
@@ -367,7 +367,7 @@ function PreviewPageContent() {
 export default function PreviewPage() {
   return (
     <Elements stripe={stripePromise}>
-      <PreviewPageContent />
+      <Suspense fallback={<div className="min-h-screen bg-yellow-400 flex items-center justify-center" style={{ backgroundColor: "#FECB23" }}><div className="text-2xl font-black text-black">Loading...</div></div>}><PreviewPageContent /></Suspense>
     </Elements>
   )
 } 
