@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server'
-import Stripe from 'stripe'
+import { NextRequest, NextResponse } from "next/server"
+import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_51KPZPXFtbhkTH7dao9RXwcj2WBl6sYcAZuceC2CliDzRvjLPwqfNJNP38bEnSTwSDbSRvy5ug7JRVRQRY0Y7QQgH00nivtX7Ij', {
-  apiVersion: '2025-06-30.basil',
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2025-06-30.basil",
 })
 
 export async function POST(request: NextRequest) {
@@ -11,13 +11,13 @@ export async function POST(request: NextRequest) {
 
     // Calculate total amount based on shipping option
     let totalAmount = amount // Base price $29.99
-    if (shippingOption === 'express') {
+    if (shippingOption === "express") {
       totalAmount += 1500 // Add $15.00 for express shipping (in cents)
     }
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: totalAmount,
-      currency: 'usd',
+      currency: "usd",
       automatic_payment_methods: {
         enabled: true,
       },
@@ -30,10 +30,10 @@ export async function POST(request: NextRequest) {
       clientSecret: paymentIntent.client_secret,
     })
   } catch (error) {
-    console.error('Error creating payment intent:', error)
+    console.error("Error creating payment intent:", error)
     return NextResponse.json(
-      { error: 'Failed to create payment intent' },
+      { error: "Failed to create payment intent" },
       { status: 500 }
     )
   }
-} 
+}
