@@ -53,11 +53,11 @@ export default function HomePage() {
               src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-8.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOC5tcDQiLCJpYXQiOjE3NTMyMjMxNjQsImV4cCI6MjA2ODU4MzE2NH0.UH7gC31IlLAVfRAbPA-bfp5N5K1vTGKwiQFlxbXxZ2g"
               width={500}
               height={400}
-              className="object-contain rounded-2xl border-4 border-black shadow-lg"
-              controls
+              className="object-contain"
               autoPlay
               loop
               muted
+              playsInline
             >
               Your browser does not support the video tag.
             </video>
