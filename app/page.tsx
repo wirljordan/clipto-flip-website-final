@@ -49,13 +49,18 @@ export default function HomePage() {
         <main className="flex flex-col items-center justify-center px-8 py-16 space-y-12">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center">
-            <Image
-              src="/flipbook.gif"
-              alt="Flipbook Animation"
+            <video
+              src="/flipbookhero.mp4"
               width={500}
               height={400}
-              className="object-contain"
-            />
+              className="object-contain rounded-2xl border-4 border-black shadow-lg"
+              controls
+              autoPlay
+              loop
+              muted
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           {/* Main Heading */}
