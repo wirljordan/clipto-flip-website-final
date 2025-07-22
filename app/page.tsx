@@ -54,6 +54,7 @@ export default function HomePage() {
               width={500}
               height={400}
               className="object-contain"
+              style={{ backgroundColor: 'transparent' }}
               autoPlay
               loop
               muted
