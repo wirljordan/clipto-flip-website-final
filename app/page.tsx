@@ -54,7 +54,11 @@ export default function HomePage() {
               width={500}
               height={400}
               className="object-contain"
-              style={{ backgroundColor: 'transparent' }}
+              style={{ 
+                backgroundColor: 'transparent',
+                background: 'transparent',
+                mixBlendMode: 'multiply'
+              }}
               autoPlay
               loop
               muted
