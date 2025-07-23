@@ -36,7 +36,7 @@ function ThankYouContent() {
             <Link href="/" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               HOME
             </Link>
-            <Link href="#" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
+            <Link href="/about" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               ABOUT
             </Link>
             <Link href="/contact" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
