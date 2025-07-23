@@ -20,6 +20,17 @@ function PreviewPageContent() {
   const [selectedColor, setSelectedColor] = useState("white")
   const [shippingOption, setShippingOption] = useState("standard")
   const [paymentError, setPaymentError] = useState("")
+  const [customerInfo, setCustomerInfo] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    country: ''
+  })
 
   const basePrice = 29.99
   const totalAmount = shippingOption === "express" ? basePrice + 15 : basePrice
@@ -192,21 +203,29 @@ function PreviewPageContent() {
                   <input 
                     type="text" 
                     placeholder="First Name" 
+                    value={customerInfo.firstName}
+                    onChange={(e) => setCustomerInfo({...customerInfo, firstName: e.target.value})}
                     className="p-3 border-2 border-black rounded-lg font-bold"
                   />
                   <input 
                     type="text" 
                     placeholder="Last Name" 
+                    value={customerInfo.lastName}
+                    onChange={(e) => setCustomerInfo({...customerInfo, lastName: e.target.value})}
                     className="p-3 border-2 border-black rounded-lg font-bold"
                   />
                   <input 
                     type="email" 
                     placeholder="Email" 
+                    value={customerInfo.email}
+                    onChange={(e) => setCustomerInfo({...customerInfo, email: e.target.value})}
                     className="p-3 border-2 border-black rounded-lg font-bold"
                   />
                   <input 
                     type="tel" 
                     placeholder="Phone" 
+                    value={customerInfo.phone}
+                    onChange={(e) => setCustomerInfo({...customerInfo, phone: e.target.value})}
                     className="p-3 border-2 border-black rounded-lg font-bold"
                   />
                 </div>
@@ -217,17 +236,23 @@ function PreviewPageContent() {
                   <input 
                     type="text" 
                     placeholder="Street Address" 
+                    value={customerInfo.streetAddress}
+                    onChange={(e) => setCustomerInfo({...customerInfo, streetAddress: e.target.value})}
                     className="w-full p-3 border-2 border-black rounded-lg font-bold"
                   />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input 
                       type="text" 
                       placeholder="City" 
+                      value={customerInfo.city}
+                      onChange={(e) => setCustomerInfo({...customerInfo, city: e.target.value})}
                       className="p-3 border-2 border-black rounded-lg font-bold"
                     />
                     <input 
                       type="text" 
                       placeholder="State/Province" 
+                      value={customerInfo.state}
+                      onChange={(e) => setCustomerInfo({...customerInfo, state: e.target.value})}
                       className="p-3 border-2 border-black rounded-lg font-bold"
                     />
                   </div>
@@ -235,9 +260,13 @@ function PreviewPageContent() {
                     <input 
                       type="text" 
                       placeholder="ZIP/Postal Code" 
+                      value={customerInfo.zipCode}
+                      onChange={(e) => setCustomerInfo({...customerInfo, zipCode: e.target.value})}
                       className="p-3 border-2 border-black rounded-lg font-bold"
                     />
                     <select 
+                      value={customerInfo.country}
+                      onChange={(e) => setCustomerInfo({...customerInfo, country: e.target.value})}
                       className="p-3 border-2 border-black rounded-lg font-bold bg-white"
                     >
                       <option value="">Select Country</option>
@@ -317,6 +346,9 @@ function PreviewPageContent() {
                 <PaymentForm
                   amount={totalAmount}
                   shippingOption={shippingOption}
+                  selectedColor={selectedColor}
+                  videoUrl={videoUrl || ''}
+                  customerInfo={customerInfo}
                   onSuccess={() => {}}
                   onError={handlePaymentError}
                 />

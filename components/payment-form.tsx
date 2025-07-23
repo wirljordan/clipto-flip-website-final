@@ -5,9 +5,24 @@ import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 
+interface CustomerInfo {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  streetAddress: string
+  city: string
+  state: string
+  zipCode: string
+  country: string
+}
+
 interface PaymentFormProps {
   amount: number
   shippingOption: string
+  selectedColor: string
+  videoUrl: string
+  customerInfo: CustomerInfo
   onSuccess: () => void
   onError: (error: string) => void
 }
@@ -28,7 +43,15 @@ const cardElementOptions = {
   hidePostalCode: true,
 }
 
-export default function PaymentForm({ amount, shippingOption, onSuccess, onError }: PaymentFormProps) {
+export default function PaymentForm({ 
+  amount, 
+  shippingOption, 
+  selectedColor, 
+  videoUrl, 
+  customerInfo, 
+  onSuccess, 
+  onError 
+}: PaymentFormProps) {
   const stripe = useStripe()
   const elements = useElements()
   const router = useRouter()
@@ -76,6 +99,36 @@ export default function PaymentForm({ amount, shippingOption, onSuccess, onError
       } else {
         // Generate a random order ID
         const orderId = 'CLIPTO-' + Math.random().toString(36).substr(2, 9).toUpperCase()
+        
+        // Save order data to Supabase
+        try {
+          const saveResponse = await fetch('/api/save-order', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              orderId,
+              customerInfo,
+              videoUrl,
+              selectedColor,
+              shippingOption,
+              totalAmount: amount,
+              paymentStatus: 'completed'
+            }),
+          })
+
+          const saveResult = await saveResponse.json()
+          
+          if (!saveResult.success) {
+            console.error('Failed to save order data:', saveResult.error)
+            // Continue anyway since payment was successful
+          }
+        } catch (saveError) {
+          console.error('Error saving order data:', saveError)
+          // Continue anyway since payment was successful
+        }
+
         // Redirect to thank you page
         router.push(`/thank-you?orderId=${orderId}`)
       }
