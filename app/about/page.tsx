@@ -41,21 +41,18 @@ export default function AboutPage() {
           </nav>
         </header>
 
-        {/* About Hero Image */}
-        <div className="flex justify-center mb-8">
+        {/* About Hero Section: Side by side on desktop, stacked on mobile */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8 px-4 md:px-0">
           <Image
             src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTMzMDM3MjgsImV4cCI6MjA2ODY2MzcyOH0.MF50jjqw-yVZDakliyz5ipOfb6CE2xyiwsb0CQjXCIo"
             alt="Happy customer holding a flipbook"
-            width={400}
-            height={300}
-            className="rounded-3xl shadow-xl object-cover"
+            width={260}
+            height={200}
+            className="rounded-3xl shadow-xl object-cover w-64 h-auto"
             priority
           />
-        </div>
-
-        {/* About Us Section */}
-        <section className="flex flex-col items-center justify-center px-8 py-16 space-y-8 bg-yellow-400 border-t-8 border-black" style={{ backgroundColor: "#FECB23" }}>
-          <div className="max-w-3xl w-full text-center">
+          <div className="flex-1 max-w-2xl text-center md:text-left">
+            {/* About Us Section (moved here for side-by-side) */}
             <h2 className="text-4xl md:text-5xl font-black text-black mb-6">About Us</h2>
             <p className="text-xl font-bold text-black mb-4">
               At ClipToFlip, we take your short videos and turn them into flippin’ awesome flipbooks — the kind you can hold, flip, and relive frame by frame.
@@ -72,7 +69,7 @@ export default function AboutPage() {
             <p className="text-xl font-bold text-black mt-8 mb-2">Crafted with care. Delivered with joy.</p>
             <p className="text-lg text-gray-700">Let’s make something worth flipping.</p>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   )
