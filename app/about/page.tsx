@@ -41,8 +41,20 @@ export default function AboutPage() {
           </nav>
         </header>
 
+        {/* About Hero Image */}
+        <div className="flex justify-center mb-8">
+          <Image
+            src="/about.png"
+            alt="Happy customer holding a flipbook"
+            width={400}
+            height={300}
+            className="rounded-3xl shadow-xl object-cover"
+            priority
+          />
+        </div>
+
         {/* About Us Section */}
-        <section className="flex flex-col items-center justify-center px-8 py-16 space-y-8 bg-white border-t-8 border-black">
+        <section className="flex flex-col items-center justify-center px-8 py-16 space-y-8 bg-yellow-400 border-t-8 border-black" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-3xl w-full text-center">
             <h2 className="text-4xl md:text-5xl font-black text-black mb-6">About Us</h2>
             <p className="text-xl font-bold text-black mb-4">
