@@ -44,7 +44,7 @@ export default function AboutPage() {
         {/* About Hero Image */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/about.png"
+            src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTMzMDM3MjgsImV4cCI6MjA2ODY2MzcyOH0.MF50jjqw-yVZDakliyz5ipOfb6CE2xyiwsb0CQjXCIo"
             alt="Happy customer holding a flipbook"
             width={400}
             height={300}
