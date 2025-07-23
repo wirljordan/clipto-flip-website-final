@@ -97,8 +97,8 @@ export default function PaymentForm({
       if (paymentError) {
         onError(paymentError.message || 'Payment failed')
       } else {
-        // Generate a random order ID
-        const orderId = 'CLIPTO-' + Math.random().toString(36).substr(2, 9).toUpperCase()
+        // Generate a random order ID with just numbers
+        const orderId = Math.floor(Math.random() * 1000000000).toString().padStart(9, '0')
         
         // Save order data to Supabase
         try {
@@ -130,7 +130,7 @@ export default function PaymentForm({
         }
 
         // Redirect to thank you page
-        router.push(`/thank-you?orderId=${orderId}`)
+        router.push(`/thank-you?orderId=${orderId}&totalAmount=${amount}`)
       }
     } catch (error) {
       onError('Payment failed. Please try again.')

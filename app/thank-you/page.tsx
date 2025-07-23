@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 function ThankYouContent() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get("orderId")
+  const totalAmount = searchParams.get("totalAmount")
 
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
@@ -62,6 +63,11 @@ function ThankYouContent() {
                 <p className="text-lg font-bold text-black">
                   Order ID: <span className="text-blue-600">{orderId}</span>
                 </p>
+                {totalAmount && (
+                  <p className="text-lg font-bold text-black mt-2">
+                    Total Amount: <span className="text-green-600">${totalAmount} USD</span>
+                  </p>
+                )}
                 <p className="text-sm text-gray-600 mt-2">
                   Please save this order ID for your records.
                 </p>
