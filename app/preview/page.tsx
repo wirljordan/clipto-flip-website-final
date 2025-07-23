@@ -44,6 +44,23 @@ function PreviewPageContent() {
     mixpanel.track('Preview Page Visit');
   }, []);
 
+  // Auto-detect country from IP
+  useEffect(() => {
+    if (!customerInfo.country) {
+      fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.country_code) {
+            setCustomerInfo(info => ({
+              ...info,
+              country: data.country_code
+            }));
+          }
+        })
+        .catch(() => {});
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
       <div className="min-h-screen border-8 border-black m-4 rounded-3xl overflow-hidden">
@@ -64,7 +81,7 @@ function PreviewPageContent() {
             <Link href="/" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               HOME
             </Link>
-            <Link href="#" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
+            <Link href="/about" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               ABOUT
             </Link>
             <Link href="/contact" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
