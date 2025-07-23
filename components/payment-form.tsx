@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+import mixpanel from '@/lib/mixpanel';
 
 interface CustomerInfo {
   firstName: string
@@ -128,7 +129,8 @@ export default function PaymentForm({
           console.error('Error saving order data:', saveError)
           // Continue anyway since payment was successful
         }
-
+        // Track completed order in Mixpanel
+        mixpanel.track('Order Completed', { orderId, amount });
         // Redirect to thank you page
         router.push(`/thank-you?orderId=${orderId}&totalAmount=${amount}`)
       }

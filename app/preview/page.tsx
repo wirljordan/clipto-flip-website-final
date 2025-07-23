@@ -13,6 +13,7 @@ import {
 } from "@stripe/react-stripe-js"
 import PaymentForm from "@/components/payment-form"
 import stripePromise from "@/components/stripe-provider"
+import mixpanel from '@/lib/mixpanel';
 
 function PreviewPageContent() {
   const searchParams = useSearchParams()
@@ -38,6 +39,10 @@ function PreviewPageContent() {
   const handlePaymentError = (error: string) => {
     setPaymentError(error)
   }
+
+  useEffect(() => {
+    mixpanel.track('Preview Page Visit');
+  }, []);
 
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>

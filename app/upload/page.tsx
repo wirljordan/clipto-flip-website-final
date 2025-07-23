@@ -3,14 +3,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import mixpanel from '@/lib/mixpanel';
 
 export default function UploadPage() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
   const [error, setError] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    mixpanel.track('Upload Page Visit');
+  }, []);
 
   const validateVideo = (file: File): { isValid: boolean; error?: string } => {
     // Check file size (100MB = 100 * 1024 * 1024 bytes)

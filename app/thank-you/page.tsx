@@ -115,9 +115,10 @@ function ThankYouContent() {
             </Link>
             <Link href="/upload">
               <Button
-                className="bg-black hover:bg-gray-800 text-white font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                className="bg-orange-400 hover:bg-orange-500 text-black font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                style={{ backgroundColor: "#FF6B6B" }}
               >
-                CREATE ANOTHER
+                🎁 Create Your Flipbook
               </Button>
             </Link>
           </div>
