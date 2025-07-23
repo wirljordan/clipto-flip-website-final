@@ -41,7 +41,7 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           ...formData,
-          to: 'wirl.jordan@gmail.com'
+          to: 'cliptoflip.jordan@gmail.com'
         }),
       })
 
@@ -215,7 +215,7 @@ export default function ContactPage() {
                     <span className="text-2xl">📧</span>
                     <div>
                       <span className="font-bold">Email:</span>
-                      <p className="text-gray-600">wirl.jordan@gmail.com</p>
+                      <p className="text-gray-600">cliptoflip.jordan@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
