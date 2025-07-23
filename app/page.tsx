@@ -91,27 +91,6 @@ export default function HomePage() {
             </Button>
           </Link>
         </main>
-
-        {/* About Us Section */}
-        <section className="flex flex-col items-center justify-center px-8 py-16 space-y-8 bg-white border-t-8 border-black">
-          <div className="max-w-3xl w-full text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-black mb-6">About Us</h2>
-            <p className="text-xl font-bold text-black mb-4">
-              At ClipToFlip, we take your short videos and turn them into flippin’ awesome flipbooks — the kind you can hold, flip, and relive frame by frame.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Whether it’s a goofy dance, a pet doing something ridiculous, or a tiny slice of a wedding day — we make those seconds last forever.
-            </p>
-            <h3 className="text-2xl font-black text-black mt-8 mb-2">Why We Exist</h3>
-            <ul className="text-lg text-gray-700 list-disc list-inside mb-4">
-              <li>To turn digital moments into physical keepsakes.</li>
-              <li>Some memories deserve more than just pixels.</li>
-              <li>The best gifts aren’t things — they’re moments.</li>
-            </ul>
-            <p className="text-xl font-bold text-black mt-8 mb-2">Crafted with care. Delivered with joy.</p>
-            <p className="text-lg text-gray-700">Let’s make something worth flipping.</p>
-          </div>
-        </section>
       </div>
     </div>
   )
