@@ -166,7 +166,7 @@ function PreviewPageContent() {
                 <h3 className="text-2xl font-black text-black mb-4">Pricing</h3>
                 <div className="flex justify-between items-center">
                   <span className="text-xl font-bold">Flipbook Creation</span>
-                  <span className="text-2xl font-black">${price.toFixed(2)}</span>
+                  <span className="text-2xl font-black">{currency === 'eur' ? '€' : '$'}{price.toFixed(2)} {currency.toUpperCase()}</span>
                 </div>
               </div>
               <div className="bg-white rounded-2xl border-4 border-black p-6">
@@ -403,7 +403,7 @@ function PreviewPageContent() {
                 )}
                 <div className="flex justify-between items-center mb-6 p-4 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-black">Total:</span>
-                  <span className="text-3xl font-black">${totalAmount.toFixed(2)}</span>
+                  <span className="text-3xl font-black">{currency === 'eur' ? '€' : '$'}{totalAmount.toFixed(2)} {currency.toUpperCase()}</span>
                 </div>
                 <PaymentForm
                   amount={totalAmount}
