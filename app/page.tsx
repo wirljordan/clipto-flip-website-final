@@ -75,10 +75,11 @@ export default function HomePage() {
               into a flipbook
             </h1>
 
-            <p className="text-xl md:text-2xl font-bold text-black max-w-3xl mx-auto leading-relaxed">
-              Upload your video and we'll convert it into a high-quality flipbook for you to enjoy. Relive your favorite
-              moments in a fun, unique way!
+            <h2 className="text-3xl md:text-4xl font-black text-black mb-2">Your favorite video, now a gift they’ll never forget</h2>
+            <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed mb-2">
+              We turn your clips into custom flipbooks — perfect for birthdays, weddings, or just because.
             </p>
+            <p className="italic text-lg md:text-xl text-black max-w-2xl mx-auto mb-2">Made to flip. Made to last.</p>
           </div>
 
           {/* CTA Button */}
@@ -87,7 +88,7 @@ export default function HomePage() {
               className="bg-orange-400 hover:bg-orange-500 text-black font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
               style={{ backgroundColor: "#FF6B6B" }}
             >
-              GET STARTED
+              ✨ Make One Now ✨
             </Button>
           </Link>
         </main>
