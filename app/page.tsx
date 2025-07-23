@@ -8,15 +8,15 @@ export default function HomePage() {
       {/* Main container with thick black border */}
       <div className="min-h-screen border-8 border-black m-4 rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
         {/* Header */}
-        <header className="flex items-center justify-between p-6 border-b-8 border-black" style={{ backgroundColor: "#FECB23" }}>
+        <header className="flex items-center justify-between p-3 border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center" style={{ backgroundColor: "#FECB23" }}>
               <Image
                 src="/logo.png"
                 alt="CLIPTO FLIP Logo"
-                width={120}
-                height={80}
+                width={90}
+                height={60}
                 className="object-contain"
                 style={{ mixBlendMode: "darken" }}
               />
