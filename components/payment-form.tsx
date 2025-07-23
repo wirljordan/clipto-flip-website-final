@@ -20,6 +20,7 @@ interface CustomerInfo {
 
 interface PaymentFormProps {
   amount: number
+  currency: string
   shippingOption: string
   selectedColor: string
   videoUrl: string
@@ -46,6 +47,7 @@ const cardElementOptions = {
 
 export default function PaymentForm({ 
   amount, 
+  currency,
   shippingOption, 
   selectedColor, 
   videoUrl, 
@@ -76,6 +78,7 @@ export default function PaymentForm({
         },
         body: JSON.stringify({
           amount: amount * 100, // Convert to cents
+          currency,
           shippingOption,
         }),
       })

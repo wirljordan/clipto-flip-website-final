@@ -32,9 +32,16 @@ function PreviewPageContent() {
     zipCode: '',
     country: ''
   })
+  const [currency, setCurrency] = useState('usd');
+  const [price, setPrice] = useState(29.99);
+
+  // List of EU country codes
+  const EU_COUNTRIES = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'
+  ];
 
   const basePrice = 29.99
-  const totalAmount = shippingOption === "express" ? basePrice + 15 : basePrice
+  const totalAmount = shippingOption === "express" ? price + 15 : price;
 
   const handlePaymentError = (error: string) => {
     setPaymentError(error)
@@ -44,7 +51,7 @@ function PreviewPageContent() {
     mixpanel.track('Preview Page Visit');
   }, []);
 
-  // Auto-detect country from IP
+  // Auto-detect country from IP and set currency/price
   useEffect(() => {
     if (!customerInfo.country) {
       fetch('https://ipapi.co/json/')
@@ -55,11 +62,44 @@ function PreviewPageContent() {
               ...info,
               country: data.country_code
             }));
+            // Set currency and price
+            if (data.country_code === 'US') {
+              setCurrency('usd');
+              setPrice(29.99);
+            } else if (data.country_code === 'CA') {
+              setCurrency('cad');
+              setPrice(39.99);
+            } else if (EU_COUNTRIES.includes(data.country_code)) {
+              setCurrency('eur');
+              setPrice(34.99);
+            } else {
+              setCurrency('usd');
+              setPrice(29.99);
+            }
           }
         })
         .catch(() => {});
     }
   }, []);
+
+  // If user manually changes country, update currency/price
+  useEffect(() => {
+    if (customerInfo.country) {
+      if (customerInfo.country === 'US') {
+        setCurrency('usd');
+        setPrice(29.99);
+      } else if (customerInfo.country === 'CA') {
+        setCurrency('cad');
+        setPrice(39.99);
+      } else if (EU_COUNTRIES.includes(customerInfo.country)) {
+        setCurrency('eur');
+        setPrice(34.99);
+      } else {
+        setCurrency('usd');
+        setPrice(29.99);
+      }
+    }
+  }, [customerInfo.country]);
 
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
@@ -126,7 +166,7 @@ function PreviewPageContent() {
                 <h3 className="text-2xl font-black text-black mb-4">Pricing</h3>
                 <div className="flex justify-between items-center">
                   <span className="text-xl font-bold">Flipbook Creation</span>
-                  <span className="text-2xl font-black">$29.99</span>
+                  <span className="text-2xl font-black">${price.toFixed(2)}</span>
                 </div>
               </div>
               <div className="bg-white rounded-2xl border-4 border-black p-6">
@@ -367,6 +407,7 @@ function PreviewPageContent() {
                 </div>
                 <PaymentForm
                   amount={totalAmount}
+                  currency={currency}
                   shippingOption={shippingOption}
                   selectedColor={selectedColor}
                   videoUrl={videoUrl || ''}

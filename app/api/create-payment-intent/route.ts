@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(request: NextRequest) {
   try {
-    const { amount, shippingOption } = await request.json()
+    const { amount, currency, shippingOption } = await request.json()
 
     // Calculate total amount based on shipping option
     let totalAmount = amount // Base price $29.99
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: totalAmount,
-      currency: "usd",
+      currency: currency || "usd",
       automatic_payment_methods: {
         enabled: true,
       },
