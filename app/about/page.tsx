@@ -42,32 +42,32 @@ export default function AboutPage() {
         </header>
 
         {/* About Hero Section: Side by side on desktop, stacked on mobile */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8 px-4 md:px-0">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8 px-4 md:px-8 pt-8 md:pt-12">
           <Image
             src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTMzMDM3MjgsImV4cCI6MjA2ODY2MzcyOH0.MF50jjqw-yVZDakliyz5ipOfb6CE2xyiwsb0CQjXCIo"
             alt="Happy customer holding a flipbook"
             width={260}
             height={200}
-            className="rounded-3xl shadow-xl object-cover w-64 h-auto"
+            className="rounded-3xl shadow-xl object-cover w-64 md:w-72 h-auto"
             priority
           />
-          <div className="flex-1 max-w-2xl text-center md:text-left">
+          <div className="flex-1 max-w-2xl text-center md:text-left px-4 md:px-0">
             {/* About Us Section (moved here for side-by-side) */}
-            <h2 className="text-4xl md:text-5xl font-black text-black mb-6">About Us</h2>
-            <p className="text-xl font-bold text-black mb-4">
-              At ClipToFlip, we take your short videos and turn them into flippin’ awesome flipbooks — the kind you can hold, flip, and relive frame by frame.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6">About Us</h2>
+            <p className="text-lg md:text-xl font-bold text-black mb-3 md:mb-4">
+              At ClipToFlip, we take your short videos and turn them into flippin' awesome flipbooks — the kind you can hold, flip, and relive frame by frame.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Whether it’s a goofy dance, a pet doing something ridiculous, or a tiny slice of a wedding day — we make those seconds last forever.
+            <p className="text-base md:text-lg text-gray-700 mb-3 md:mb-4">
+              Whether it's a goofy dance, a pet doing something ridiculous, or a tiny slice of a wedding day — we make those seconds last forever.
             </p>
-            <h3 className="text-2xl font-black text-black mt-8 mb-2">Why We Exist</h3>
-            <ul className="text-lg text-gray-700 list-disc list-inside mb-4">
+            <h3 className="text-xl md:text-2xl font-black text-black mt-6 md:mt-8 mb-2 md:mb-3">Why We Exist</h3>
+            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside mb-3 md:mb-4 space-y-1">
               <li>To turn digital moments into physical keepsakes.</li>
               <li>Some memories deserve more than just pixels.</li>
-              <li>The best gifts aren’t things — they’re moments.</li>
+              <li>The best gifts aren't things — they're moments.</li>
             </ul>
-            <p className="text-xl font-bold text-black mt-8 mb-2">Crafted with care. Delivered with joy.</p>
-            <p className="text-lg text-gray-700">Let’s make something worth flipping.</p>
+            <p className="text-lg md:text-xl font-bold text-black mt-6 md:mt-8 mb-2">Crafted with care. Delivered with joy.</p>
+            <p className="text-base md:text-lg text-gray-700">Let's make something worth flipping.</p>
           </div>
         </div>
       </div>
