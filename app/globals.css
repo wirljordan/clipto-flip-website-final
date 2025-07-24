@@ -21,6 +21,46 @@ video::-webkit-media-controls-panel {
   background-color: #FECB23 !important;
 }
 
+/* Additional video background fixes */
+video::-webkit-media-controls-start-playback-button {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-play-button {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-timeline {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-current-time-display {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-time-remaining-display {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-mute-button {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-volume-slider {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  background-color: #FECB23 !important;
+}
+
+/* Force video element to inherit background */
+.video-container video {
+  background-color: #FECB23 !important;
+  background: #FECB23 !important;
+  background-image: none !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

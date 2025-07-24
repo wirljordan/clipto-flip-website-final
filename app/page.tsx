@@ -58,7 +58,7 @@ export default function HomePage() {
         {/* Main Content */}
         <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-8 md:py-16 space-y-6 md:space-y-0 md:space-x-12">
           {/* Flipbook Illustration */}
-          <div className="flex items-center justify-center md:flex-1" style={{ backgroundColor: "#FECB23" }}>
+          <div className="flex items-center justify-center md:flex-1 video-container" style={{ backgroundColor: "#FECB23" }}>
             <video
               src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-9.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOS5tcDQiLCJpYXQiOjE3NTMyMjUwMDYsImV4cCI6MjA2ODU4NTAwNn0.lnunTceuXcFT7MO2IUFd_9qVIK8HC2JjY7o3oWOAsiI"
               width={300}
