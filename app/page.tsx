@@ -63,12 +63,7 @@ export default function HomePage() {
               src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-9.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOS5tcDQiLCJpYXQiOjE3NTMyMjUwMDYsImV4cCI6MjA2ODU4NTAwNn0.lnunTceuXcFT7MO2IUFd_9qVIK8HC2JjY7o3oWOAsiI"
               width={300}
               height={240}
-              className="md:w-[400px] md:h-[320px] object-contain"
-              style={{
-                backgroundColor: '#FECB23',
-                background: '#FECB23',
-                backgroundImage: 'none'
-              }}
+              className="md:w-[400px] md:h-[320px] object-contain bg-yellow-400"
               autoPlay
               loop
               muted
