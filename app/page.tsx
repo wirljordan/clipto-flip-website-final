@@ -56,7 +56,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-6 md:py-8 space-y-6 md:space-y-0 md:space-x-12 h-full">
+        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-4 md:py-6 space-y-6 md:space-y-0 md:space-x-12 flex-1">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container" style={{ backgroundColor: "#FECB23" }}>
             <video
@@ -64,6 +64,11 @@ export default function HomePage() {
               width={300}
               height={240}
               className="md:w-[400px] md:h-[320px] object-contain"
+              style={{
+                backgroundColor: '#FECB23',
+                background: '#FECB23',
+                backgroundImage: 'none'
+              }}
               autoPlay
               loop
               muted
