@@ -64,10 +64,6 @@ export default function HomePage() {
               width={300}
               height={240}
               className="md:w-[400px] md:h-[320px] object-contain"
-              style={{ 
-                backgroundColor: '#FECB23',
-                background: '#FECB23'
-              }}
               autoPlay
               loop
               muted

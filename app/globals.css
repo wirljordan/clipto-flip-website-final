@@ -7,6 +7,20 @@ body {
   background-color: #FECB23 !important;
 }
 
+/* Video background fix for mobile */
+video {
+  background-color: #FECB23 !important;
+  background: #FECB23 !important;
+}
+
+video::-webkit-media-controls {
+  background-color: #FECB23 !important;
+}
+
+video::-webkit-media-controls-panel {
+  background-color: #FECB23 !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
