@@ -109,11 +109,11 @@ export default function HomePage() {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Step 1: Upload Your Video */}
+              {/* Step 1: Upload Your Clip */}
               <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl mb-4">📤</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Upload Your Video</h3>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Upload Your Clip</h3>
                   <p className="text-base md:text-lg text-gray-700">
                     Select a video file from your device. Supported formats: MP4, AVI, MOV, and more. Horizontal videos work best.
                   </p>
@@ -131,22 +131,22 @@ export default function HomePage() {
                 </div>
               </div>
               
-              {/* Step 3: Preview Your Frames */}
+              {/* Step 3: See It in Action */}
               <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl mb-4">👁️</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Preview Your Frames</h3>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">See It in Action</h3>
                   <p className="text-base md:text-lg text-gray-700">
                     See the exact frames that will be printed in your flipbook. Watch them cycle through to preview your final product.
                   </p>
                 </div>
               </div>
               
-              {/* Step 4: Order Your Flipbook */}
+              {/* Step 4: Make It Real */}
               <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl mb-4">📋</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Order Your Flipbook</h3>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Make It Real</h3>
                   <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Love your flipbook? Order a high-quality printed version to keep or gift to someone special.
                   </p>
