@@ -100,6 +100,73 @@ export default function HomePage() {
              </div>
            </div>
          </main>
+        
+        {/* How It Works Section */}
+        <section className="px-4 md:px-8 py-8 md:py-12" style={{ backgroundColor: "#FECB23" }}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+              Create Your Flipbook
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Step 1: Upload Your Video */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl mb-4">📤</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Upload Your Video</h3>
+                  <p className="text-base md:text-lg text-gray-700">
+                    Select a video file from your device. Supported formats: MP4, AVI, MOV, and more. Horizontal videos work best.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 2: Customize Your Flipbook */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl mb-4">🎨</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Customize Your Flipbook</h3>
+                  <p className="text-base md:text-lg text-gray-700">
+                    Choose a premium cover color to match your style and add a nice touch.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 3: Preview Your Frames */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl mb-4">👁️</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Preview Your Frames</h3>
+                  <p className="text-base md:text-lg text-gray-700">
+                    See the exact frames that will be printed in your flipbook. Watch them cycle through to preview your final product.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 4: Order Your Flipbook */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl mb-4">📋</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Order Your Flipbook</h3>
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
+                    Love your flipbook? Order a high-quality printed version to keep or gift to someone special.
+                  </p>
+                  <div className="space-y-2 md:space-y-3">
+                    <Button
+                      className="w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    >
+                      <span className="line-through text-sm md:text-base">$40</span> $25 - Create Your Flipbook
+                    </Button>
+                    <div className="flex items-center justify-center space-x-2 text-sm md:text-base text-gray-600">
+                      <span>🌍</span>
+                      <span>Free shipping worldwide</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
          
         {/* Mobile Footer Navigation */}
         <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
