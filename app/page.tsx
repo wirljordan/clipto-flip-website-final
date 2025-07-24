@@ -103,8 +103,23 @@ export default function HomePage() {
                  </Button>
                </Link>
              </div>
-          </div>
-        </main>
+           </div>
+         </main>
+         
+        {/* Mobile Footer Navigation */}
+        <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
+          <nav className="flex justify-center items-center space-x-6">
+            <Link href="/" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
+              HOME
+            </Link>
+            <Link href="/about" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
+              ABOUT
+            </Link>
+            <Link href="/contact" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
+              CONTACT
+            </Link>
+          </nav>
+        </footer>
       </div>
     </div>
   )
