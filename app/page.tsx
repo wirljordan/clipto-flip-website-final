@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
       {/* Main container with thick black border */}
-      <div className="min-h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
+      <div className="h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
         {/* Header */}
         <header className="flex items-center justify-between p-2 md:p-3 border-b-2 md:border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
           {/* Logo */}
@@ -56,7 +56,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-8 md:py-16 space-y-6 md:space-y-0 md:space-x-12">
+        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-6 md:py-8 space-y-6 md:space-y-0 md:space-x-12 h-full">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container" style={{ backgroundColor: "#FECB23" }}>
             <video
