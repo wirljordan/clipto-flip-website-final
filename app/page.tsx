@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
       {/* Main container with thick black border */}
-      <div className="h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
+      <div className="min-h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
         {/* Header */}
         <header className="flex items-center justify-between p-2 md:p-3 border-b-2 md:border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
           {/* Logo */}
