@@ -112,75 +112,75 @@ video {
     justify-content: center;
   }
 
-  /* Enhanced mobile spacing - REDUCED to 2px for extreme compactness */
+  /* Enhanced mobile spacing - REDUCED to match reference images */
   .mobile-spacing {
-    padding: 0.125rem;
-    margin: 0.125rem 0;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
   }
 
   .mobile-section-spacing {
-    padding: 0.125rem 0.125rem;
-    margin: 0.125rem 0;
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem 0;
   }
 
   .mobile-card-spacing {
-    padding: 0.125rem;
-    margin: 0.125rem 0;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
   }
 
   .mobile-button-spacing {
-    margin: 0.125rem 0;
-    padding: 0.125rem 0;
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
   }
 
   .mobile-text-spacing {
-    margin: 0.125rem 0;
-    line-height: 1.3;
+    margin: 0.25rem 0;
+    line-height: 1.4;
   }
 
   .mobile-grid-spacing {
-    gap: 0.125rem;
-    margin: 0.125rem 0;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
   }
 
-  /* Improved mobile container spacing - REDUCED to 2px */
+  /* Improved mobile container spacing - REDUCED */
   .mobile-container {
-    padding: 0.125rem;
+    padding: 0.25rem;
     margin: 0.125rem;
   }
 
-  /* Better mobile header spacing - REDUCED to 2px */
+  /* Better mobile header spacing - REDUCED */
   .mobile-header {
-    padding: 0.125rem;
-    margin-bottom: 0.125rem;
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* Enhanced mobile content spacing - REDUCED to 2px */
+  /* Enhanced mobile content spacing - REDUCED */
   .mobile-content {
-    padding: 0.125rem 0.125rem;
-    margin: 0.125rem 0;
+    padding: 0.5rem 0.25rem;
+    margin: 0.25rem 0;
   }
 
-  /* Mobile form spacing - REDUCED to 2px */
+  /* Mobile form spacing - REDUCED */
   .mobile-form-spacing {
-    gap: 0.125rem;
-    padding: 0.125rem 0;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
   }
 
   .mobile-input-spacing {
-    margin-bottom: 0.125rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* Mobile video spacing - REDUCED to 2px */
+  /* Mobile video spacing - REDUCED */
   .mobile-video-spacing {
-    margin: 0.125rem 0;
-    padding: 0.125rem 0;
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
   }
 
-  /* Mobile navigation spacing - REDUCED to 2px */
+  /* Mobile navigation spacing - REDUCED */
   .mobile-nav-spacing {
-    padding: 0.125rem;
-    gap: 0.125rem;
+    padding: 0.25rem;
+    gap: 0.25rem;
   }
 }
 
@@ -232,50 +232,50 @@ html, body {
     gap: 0.5rem;
   }
 
-  /* Enhanced mobile spacing utilities - REDUCED to 2px for extreme compactness */
+  /* Enhanced mobile spacing utilities - REDUCED to match reference images */
   .mobile-space-y-2 {
     margin-top: 0.125rem;
     margin-bottom: 0.125rem;
   }
 
   .mobile-space-y-4 {
-    margin-top: 0.125rem;
-    margin-bottom: 0.125rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 
   .mobile-space-y-6 {
-    margin-top: 0.125rem;
-    margin-bottom: 0.125rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .mobile-space-y-8 {
-    margin-top: 0.125rem;
-    margin-bottom: 0.125rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .mobile-px-4 {
-    padding-left: 0.125rem;
-    padding-right: 0.125rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .mobile-px-6 {
-    padding-left: 0.125rem;
-    padding-right: 0.125rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .mobile-py-4 {
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .mobile-py-6 {
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .mobile-py-8 {
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
