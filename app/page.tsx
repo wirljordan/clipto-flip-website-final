@@ -199,8 +199,7 @@ export default function HomePage() {
               <div className="relative flex flex-col md:flex-row mt-0 md:-mt-16">
                 <div className="flex-1 flex items-center justify-center md:pr-8 md:translate-y-10 order-2 md:order-1">
                   <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full">
-                    <div className="flex items-center mb-2 text-2xl">💍</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Favours worth flipping over</h3>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">💍 Favours worth flipping over</h3>
                     <p className="text-base md:text-lg text-gray-700">The playlist fades. The flipbook stays.</p>
                   </div>
                 </div>
@@ -216,6 +215,17 @@ export default function HomePage() {
                   />
                 </div>
               </div>
+            </div>
+            {/* Add button below the memory section */}
+            <div className="flex justify-center mt-12">
+              <Link href="/upload">
+                <Button
+                  className="bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  Save Your Memories
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
