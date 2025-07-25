@@ -162,9 +162,9 @@ export default function HomePage() {
         </section>
          
         {/* Flipbook Stories Section */}
-        <section className="px-4 md:px-8 py-6 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-6 md:py-8 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-6 mobile-space-y-6">
               A gift that brings memories back to life
             </h2>
             <div className="relative w-full">
@@ -210,7 +210,7 @@ export default function HomePage() {
               </div>
             </div>
             {/* Add button below the memory section */}
-            <div className="flex justify-center mt-8 md:mt-12 mobile-button-spacing">
+            <div className="flex justify-center mt-8 md:mt-8 mobile-button-spacing">
               <Link href="/upload">
                 <Button
                   className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
@@ -224,10 +224,10 @@ export default function HomePage() {
         </section>
         
         {/* Flipbook Details Section */}
-        <section className="px-4 md:px-8 py-6 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-6 md:py-8 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             {/* Title above the white box */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-6 mobile-space-y-6">
               Flipbook Details
             </h2>
             
@@ -291,9 +291,9 @@ export default function HomePage() {
         </section>
         
         {/* Customer Testimonials Section */}
-        <section className="px-4 md:px-8 py-6 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-6 md:py-8 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-6 mobile-space-y-6">
               What Our Customers Say
             </h2>
             
