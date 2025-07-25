@@ -316,7 +316,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Ilona</span>
+                  <span className="font-bold text-black">Ilona M.</span>
                 </div>
               </div>
               
@@ -332,7 +332,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Kass</span>
+                  <span className="font-bold text-black">Kass R.</span>
                 </div>
               </div>
               
@@ -348,7 +348,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Carly</span>
+                  <span className="font-bold text-black">Carly T.</span>
                 </div>
               </div>
               
@@ -364,7 +364,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Jenna Abbasi</span>
+                  <span className="font-bold text-black">Jenna A.</span>
                 </div>
               </div>
               
@@ -380,7 +380,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Samantha Callander</span>
+                  <span className="font-bold text-black">Samantha C.</span>
                 </div>
               </div>
               
@@ -392,11 +392,11 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "I'm genuinely so impressed with how my video was transformed into a flipbook! It's such a unique and creative way to preserve memories whether it's a special moment, a dance clip, or just something fun. The quality is amazing, the motion flows beautifully, and it's honestly the perfect little keepsake or gift. Highly recommend!"
+                  "I ordered one for my boyfriend with a video from our trip to Italy. When he flipped through it, he smiled the entire time. It's such a special, one-of-a-kind gift."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <span className="font-bold text-black">Instagram User</span>
+                  <span className="font-bold text-black">Sarah L.</span>
                 </div>
               </div>
             </div>
