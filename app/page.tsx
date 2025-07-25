@@ -295,6 +295,113 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        
+        {/* Customer Testimonials Section */}
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+              What Our Customers Say
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {/* Review 1 - Ilona */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "Honestly, I'm obsessed with how these turned out. I made a flipbook from our family photoshoot and it's just... so sweet. The quality's amazing and it makes me smile every time I flip through it. Such a fun way to keep those memories alive. Love it!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Ilona</span>
+                </div>
+              </div>
+              
+              {/* Review 2 - Kass */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "It was the perfect way to capture some incredible moments with our son during his first year! Seeing our precious memories immortalised forever was so touching and truly unique."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Kass</span>
+                </div>
+              </div>
+              
+              {/* Review 3 - Carly */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "I turned one of my favourite videos into a flip book, and I couldn't be happier with how it turned out! It's such a fun and unique way to relive special memories. The quality is great, and it feels so special to have a little moment frozen in time that I can flip through whenever I want. A lovely keepsake I'll treasure forever!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Carly</span>
+                </div>
+              </div>
+              
+              {/* Review 4 - Jenna Abbasi */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "The flipbooks was such an easy process, the turned out so cute! This is the perfect addition to my childrens memory boxes and the perfect gift to loved ones! Such an easy process with guaranteed wholesome results! The team is lovely, helpful and provides great advice on any help you need in the process of creating!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Jenna Abbasi</span>
+                </div>
+              </div>
+              
+              {/* Review 5 - Samantha Callander */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "Absolutely beautiful and something I will be purchasing again and again. Truly is a special keepsake and captures your favourite memories forever."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Samantha Callander</span>
+                </div>
+              </div>
+              
+              {/* Review 6 - Social Media Review */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-xl md:text-2xl">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-gray-700 mb-4 italic">
+                  "I'm genuinely so impressed with how my video was transformed into a flipbook! It's such a unique and creative way to preserve memories whether it's a special moment, a dance clip, or just something fun. The quality is amazing, the motion flows beautifully, and it's honestly the perfect little keepsake or gift. Highly recommend!"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <span className="font-bold text-black">Instagram User</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
          
         {/* Mobile Footer Navigation */}
         <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
