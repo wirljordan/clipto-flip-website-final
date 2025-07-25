@@ -312,7 +312,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "Honestly, I'm obsessed with how these turned out. I made a flipbook from our family photoshoot and it's just... so sweet. The quality's amazing and it makes me smile every time I flip through it. Such a fun way to keep those memories alive. Love it!"
+                  "Honestly, I'm obsessed with how these turned out! I made a flipbook from our family photoshoot and it's just so sweet. The quality's amazing and it makes me smile every time I flip through it. Such a fun way to keep those memories alive."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
@@ -328,7 +328,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "It was the perfect way to capture some incredible moments with our son during his first year! Seeing our precious memories immortalised forever was so touching and truly unique."
+                  "It was the perfect way to capture some incredible moments with our son during his first year! Seeing our precious memories immortalised forever was so touching and truly unique. The quality is amazing and it's become our favorite keepsake."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
@@ -344,7 +344,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "I turned one of my favourite videos into a flip book, and I couldn't be happier with how it turned out! It's such a fun and unique way to relive special memories. The quality is great, and it feels so special to have a little moment frozen in time that I can flip through whenever I want. A lovely keepsake I'll treasure forever!"
+                  "I turned one of my favourite videos into a flip book, and I couldn't be happier with how it turned out! It's such a fun and unique way to relive special memories. The quality is great, and it feels so special to have a little moment frozen in time that I can flip through whenever I want."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
@@ -360,7 +360,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "The flipbooks was such an easy process, the turned out so cute! This is the perfect addition to my childrens memory boxes and the perfect gift to loved ones! Such an easy process with guaranteed wholesome results! The team is lovely, helpful and provides great advice on any help you need in the process of creating!"
+                  "The flipbooks was such an easy process, they turned out so cute! This is the perfect addition to my childrens memory boxes and the perfect gift to loved ones. The team is lovely, helpful and provides great advice on any help you need in the process of creating!"
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
@@ -376,7 +376,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "Absolutely beautiful and something I will be purchasing again and again. Truly is a special keepsake and captures your favourite memories forever."
+                  "Absolutely beautiful and something I will be purchasing again and again. Truly is a special keepsake and captures your favourite memories forever. The quality is outstanding and it's become my go-to gift for special occasions."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
@@ -392,7 +392,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-base md:text-lg text-gray-700 mb-4 italic">
-                  "I ordered one for my boyfriend with a video from our trip to Italy. When he flipped through it, he smiled the entire time. It's such a special, one-of-a-kind gift."
+                  "I ordered one for my boyfriend with a video from our trip to Italy. When he flipped through it, he smiled the entire time. It's such a special, one-of-a-kind gift that perfectly captures our amazing memories together."
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
