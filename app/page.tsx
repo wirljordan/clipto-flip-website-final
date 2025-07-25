@@ -150,14 +150,7 @@ export default function HomePage() {
                   <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Love your flipbook? Order a high-quality printed version to keep or gift to someone special.
                   </p>
-                  <div className="space-y-2 md:space-y-3">
-                    <Button
-                      className="w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                      style={{ backgroundColor: "#FF6B6B" }}
-                    >
-                      <span className="line-through text-sm md:text-base">$40</span> $25 - Create Your Flipbook
-                    </Button>
-                  </div>
+                  {/* Button removed as requested */}
                 </div>
               </div>
             </div>
