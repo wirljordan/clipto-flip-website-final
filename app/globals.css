@@ -4,12 +4,11 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FECB23 !important;
 }
 
 /* Simple video background fix */
 video {
-  background-color: #FECB23 !important;
+  background-color: transparent;
 }
 
 @layer utilities {
