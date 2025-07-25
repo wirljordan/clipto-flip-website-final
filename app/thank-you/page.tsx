@@ -1,12 +1,13 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
+import { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
 
-export default function ThankYouPage() {
+function ThankYouContent() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get("orderId")
   const totalAmount = searchParams.get("totalAmount")
@@ -166,5 +167,17 @@ export default function ThankYouPage() {
         </main>
       </div>
     </div>
+  )
+}
+
+export default function ThankYouPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-yellow-400 flex items-center justify-center" style={{ backgroundColor: "#FECB23" }}>
+        <div className="text-2xl font-black text-black">Loading...</div>
+      </div>
+    }>
+      <ThankYouContent />
+    </Suspense>
   )
 } 
