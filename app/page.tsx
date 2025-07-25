@@ -172,7 +172,7 @@ export default function HomePage() {
         <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-10 md:mb-14">
-              A memory they can hold onto
+              A gift that brings memories back to life
             </h2>
             <div className="relative w-full">
               {/* Top row: image left, text right (centered) */}
