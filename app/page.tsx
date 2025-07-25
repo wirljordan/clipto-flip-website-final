@@ -115,29 +115,29 @@ export default function HomePage() {
                   <div className="text-4xl md:text-5xl mb-4">📤</div>
                   <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Upload Your Clip</h3>
                   <p className="text-base md:text-lg text-gray-700">
-                    Select a video file from your device. Supported formats: MP4, AVI, MOV, and more. Horizontal videos work best.
+                    Select a video file from your device. Horizontal videos work best.
                   </p>
                 </div>
               </div>
               
-              {/* Step 2: Customize Your Flipbook */}
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl mb-4">🎨</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Customize Your Flipbook</h3>
-                  <p className="text-base md:text-lg text-gray-700">
-                    Choose a premium cover color to match your style and add a nice touch.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Step 3: See It in Action */}
+              {/* Step 2: See It in Action */}
               <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl mb-4">👁️</div>
                   <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">See It in Action</h3>
                   <p className="text-base md:text-lg text-gray-700">
-                    See the exact frames that will be printed in your flipbook. Watch them cycle through to preview your final product.
+                    See the exact frames that will be printed in your flipbook.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 3: Customize Your Flipbook */}
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl mb-4">🎨</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Customize Your Flipbook</h3>
+                  <p className="text-base md:text-lg text-gray-700">
+                    Choose a premium cover colour to give it that perfect finishing touch.
                   </p>
                 </div>
               </div>
@@ -157,10 +157,6 @@ export default function HomePage() {
                     >
                       <span className="line-through text-sm md:text-base">$40</span> $25 - Create Your Flipbook
                     </Button>
-                    <div className="flex items-center justify-center space-x-2 text-sm md:text-base text-gray-600">
-                      <span>🌍</span>
-                      <span>Free shipping worldwide</span>
-                    </div>
                   </div>
                 </div>
               </div>
