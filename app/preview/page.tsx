@@ -1,14 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
 import PaymentForm from "@/components/payment-form"
+import { Elements } from "@stripe/react-stripe-js"
+import stripePromise from "@/components/stripe-provider"
 
-export default function PreviewPage() {
+function PreviewPageContent() {
   const [videoData, setVideoData] = useState<string>("")
   const [videoFileName, setVideoFileName] = useState<string>("")
   const [selectedColor, setSelectedColor] = useState("#FF6B6B")
@@ -375,5 +377,19 @@ export default function PreviewPage() {
         </main>
       </div>
     </div>
+  )
+}
+
+export default function PreviewPage() {
+  return (
+    <Elements stripe={stripePromise}>
+      <Suspense fallback={
+        <div className="min-h-screen bg-yellow-400 flex items-center justify-center" style={{ backgroundColor: "#FECB23" }}>
+          <div className="text-2xl font-black text-black">Loading...</div>
+        </div>
+      }>
+        <PreviewPageContent />
+      </Suspense>
+    </Elements>
   )
 }
