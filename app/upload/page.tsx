@@ -1,68 +1,24 @@
 "use client"
 
+import { useState, useRef } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useRef, useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
-import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
-import mixpanel from '@/lib/mixpanel';
+import { MobileNav } from "@/components/mobile-nav"
 
 export default function UploadPage() {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [isDragOver, setIsDragOver] = useState(false)
+  const [error, setError] = useState<string>("")
   const fileInputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
-  const [error, setError] = useState<string>("")
-  const [isLoading, setIsLoading] = useState(false)
-  const [isDragOver, setIsDragOver] = useState(false)
 
-  useEffect(() => {
-    mixpanel.track('Upload Page Visit');
-  }, []);
-
-  const validateVideo = (file: File): { isValid: boolean; error?: string } => {
-    // Check file size (100MB = 100 * 1024 * 1024 bytes)
-    const maxSize = 100 * 1024 * 1024
-    if (file.size > maxSize) {
-      return { isValid: false, error: "File size must be smaller than 100MB" }
-    }
-
-    // Check file type
-    if (!file.type.startsWith('video/')) {
-      return { isValid: false, error: "Please select a valid video file" }
-    }
-
-    return { isValid: true }
-  }
-
-  const handleFileSelect = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
-    if (!file) return
-
-    setError("")
-    setIsLoading(true)
-
-    // Validate the file
-    const validation = validateVideo(file)
-    if (!validation.isValid) {
-      setError(validation.error || "Invalid file")
-      setIsLoading(false)
-      return
+    if (file) {
+      validateAndSetFile(file)
     }
-
-    try {
-      // Create a URL for the video preview
-      const videoUrl = URL.createObjectURL(file)
-      
-      // Navigate to preview page with video URL
-      router.push(`/preview?video=${encodeURIComponent(videoUrl)}`)
-    } catch (err) {
-      setError("Failed to process video. Please try again.")
-      setIsLoading(false)
-    }
-  }
-
-  const handleSelectVideo = () => {
-    fileInputRef.current?.click()
   }
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -79,15 +35,47 @@ export default function UploadPage() {
     e.preventDefault()
     setIsDragOver(false)
     
-    const files = e.dataTransfer.files
-    if (files.length > 0) {
-      const file = files[0]
-      // Create a synthetic event for file input
-      const syntheticEvent = {
-        target: { files: [file] }
-      } as unknown as React.ChangeEvent<HTMLInputElement>
-      handleFileSelect(syntheticEvent)
+    const file = e.dataTransfer.files?.[0]
+    if (file) {
+      validateAndSetFile(file)
     }
+  }
+
+  const validateAndSetFile = (file: File) => {
+    setError("")
+    
+    // Check file type
+    if (!file.type.startsWith('video/')) {
+      setError("Please select a valid video file.")
+      return
+    }
+    
+    // Check file size (50MB limit)
+    const maxSize = 50 * 1024 * 1024 // 50MB in bytes
+    if (file.size > maxSize) {
+      setError("File size must be less than 50MB.")
+      return
+    }
+    
+    setSelectedFile(file)
+  }
+
+  const handleSubmit = () => {
+    if (selectedFile) {
+      // Store the file in sessionStorage for the preview page
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const videoData = e.target?.result as string
+        sessionStorage.setItem('uploadedVideo', videoData)
+        sessionStorage.setItem('videoFileName', selectedFile.name)
+        router.push('/preview')
+      }
+      reader.readAsDataURL(selectedFile)
+    }
+  }
+
+  const handleBrowseClick = () => {
+    fileInputRef.current?.click()
   }
 
   return (
@@ -121,93 +109,108 @@ export default function UploadPage() {
             <Link href="/contact" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               CONTACT
             </Link>
+            <Link href="/upload">
+              <Button
+                className="bg-orange-400 hover:bg-orange-500 text-black font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                style={{ backgroundColor: "#FF6B6B" }}
+              >
+                🎁 Create Your Flipbook
+              </Button>
+            </Link>
           </nav>
-
+          
           {/* Mobile Navigation */}
           <MobileNav />
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-8 md:py-16 space-y-8 md:space-y-12 pb-20 md:pb-0">
-          {/* Upload Card */}
-          <div className="mobile-card bg-gray-100 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-2xl w-full">
-            {/* Upload Area */}
-            <div className="text-center space-y-6 md:space-y-8">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight">
-                Select your video
+        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-8 md:py-12 flex-1">
+          <div className="max-w-2xl w-full">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-12">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-4">
+                Upload Your Video
               </h1>
-              
-              {/* Drag & Drop Area */}
-              <div 
-                className={`border-4 border-dashed rounded-2xl p-6 md:p-12 bg-white transition-all duration-200 ${
-                  isDragOver 
-                    ? 'border-orange-400 bg-orange-50 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
-                    : 'border-gray-400'
+              <p className="text-lg md:text-xl text-black">
+                Select a video file to create your custom flipbook
+              </p>
+            </div>
+
+            {/* Upload Area */}
+            <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-8">
+              <div
+                className={`border-4 border-dashed border-black rounded-2xl p-8 md:p-12 text-center transition-all ${
+                  isDragOver ? 'bg-yellow-100 border-yellow-500' : 'bg-gray-50'
                 }`}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
               >
-                <div className="text-center space-y-4 md:space-y-6">
-                  <div className="text-6xl md:text-8xl mb-4">📹</div>
-                  <p className="text-lg md:text-xl font-bold text-gray-600 mb-4 md:mb-6">
-                    {isDragOver ? 'Drop your video here!' : 'Drag & drop your video here or click to browse'}
-                  </p>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="video/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                  />
-                  <Button
-                    onClick={handleSelectVideo}
-                    disabled={isLoading}
-                    className="mobile-button bg-black hover:bg-gray-800 text-white font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-4 border-black transition-all disabled:opacity-50"
-                  >
-                    {isLoading ? "Processing..." : "Select your video"}
-                  </Button>
-                </div>
+                <div className="text-6xl md:text-8xl mb-4">📹</div>
+                <h3 className="text-xl md:text-2xl font-black text-black mb-4">
+                  {selectedFile ? "Video Selected!" : "Drop your video here"}
+                </h3>
+                <p className="text-base md:text-lg text-gray-700 mb-6">
+                  {selectedFile 
+                    ? `Selected: ${selectedFile.name}`
+                    : "or click to browse files"
+                  }
+                </p>
                 
-                {/* Error Message */}
-                {error && (
-                  <div className="mt-4 md:mt-6 p-4 bg-red-100 border-2 border-red-500 rounded-xl">
-                    <p className="text-red-700 font-bold text-base md:text-lg">{error}</p>
-                    <p className="text-red-600 mt-2 text-sm md:text-base">Please try a different video file.</p>
-                  </div>
+                {!selectedFile && (
+                  <Button
+                    onClick={handleBrowseClick}
+                    className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                    style={{ backgroundColor: "#FF6B6B" }}
+                  >
+                    Browse Files
+                  </Button>
                 )}
+                
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="video/*"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
               </div>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="mobile-card bg-red-100 border-4 border-red-500 rounded-2xl p-4 md:p-6 mb-6">
+                <p className="text-red-700 font-bold text-center">{error}</p>
+              </div>
+            )}
 
             {/* Requirements */}
-            <div className="mt-8 md:mt-12 space-y-4">
-              <h2 className="text-xl md:text-2xl font-black text-black text-center mb-4 md:mb-6">Requirements</h2>
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-center space-x-3 md:space-x-4 p-3 bg-white rounded-xl border-2 border-black">
-                  <div className="w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded border-2 border-black flex items-center justify-center flex-shrink-0">
-                    <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-sm"></div>
-                  </div>
-                  <span className="text-base md:text-lg font-bold text-black">Smaller than 100MB</span>
-                </div>
-                <div className="flex items-center space-x-3 md:space-x-4 p-3 bg-white rounded-xl border-2 border-black">
-                  <div className="w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded border-2 border-black flex items-center justify-center flex-shrink-0">
-                    <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-sm"></div>
-                  </div>
-                  <span className="text-base md:text-lg font-bold text-black">Shorter than 30 seconds</span>
-                </div>
-                <div className="flex items-center space-x-3 md:space-x-4 p-3 bg-white rounded-xl border-2 border-black">
-                  <div className="w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded border-2 border-black flex items-center justify-center flex-shrink-0">
-                    <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-sm"></div>
-                  </div>
-                  <span className="text-base md:text-lg font-bold text-black">At least 720p HD video</span>
-                </div>
-              </div>
+            <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-8">
+              <h3 className="text-xl md:text-2xl font-black text-black mb-4 text-center">
+                📋 Requirements
+              </h3>
+              <ul className="space-y-2 text-base md:text-lg text-gray-700">
+                <li>• Video file (MP4, MOV, AVI, etc.)</li>
+                <li>• Maximum file size: 50MB</li>
+                <li>• Horizontal videos work best</li>
+                <li>• Clear, well-lit footage recommended</li>
+              </ul>
             </div>
+
+            {/* Submit Button */}
+            {selectedFile && (
+              <div className="text-center">
+                <Button
+                  onClick={handleSubmit}
+                  className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-xl md:text-2xl px-8 md:px-12 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  ✨ Continue to Preview ✨
+                </Button>
+              </div>
+            )}
           </div>
         </main>
-
-        {/* Mobile Bottom Navigation */}
-        <MobileBottomNav />
       </div>
     </div>
   )

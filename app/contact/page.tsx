@@ -4,35 +4,20 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
+import { MobileNav } from "@/components/mobile-nav"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    message: ""
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-    setErrorMessage('')
+    setError("")
 
     try {
       const response = await fetch('/api/contact', {
@@ -40,32 +25,31 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          to: 'cliptoflip.jordan@gmail.com'
-        }),
+        body: JSON.stringify(formData),
       })
 
       if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        setIsSubmitted(true)
+        setFormData({ name: "", email: "", message: "" })
       } else {
-        const error = await response.text()
-        setSubmitStatus('error')
-        setErrorMessage(error || 'Failed to send message. Please try again.')
+        setError("Failed to send message. Please try again.")
       }
-    } catch (error) {
-      setSubmitStatus('error')
-      setErrorMessage('Network error. Please check your connection and try again.')
-    } finally {
-      setIsSubmitting(false)
+    } catch (err) {
+      setError("Failed to send message. Please try again.")
     }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
       {/* Main container with thick black border */}
-      <div className="min-h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden">
+      <div className="min-h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
         {/* Header */}
         <header className="flex items-center justify-between p-2 md:p-3 border-b-2 md:border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
           {/* Logo */}
@@ -93,168 +77,181 @@ export default function ContactPage() {
             <Link href="/contact" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               CONTACT
             </Link>
+            <Link href="/upload">
+              <Button
+                className="bg-orange-400 hover:bg-orange-500 text-black font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                style={{ backgroundColor: "#FF6B6B" }}
+              >
+                🎁 Create Your Flipbook
+              </Button>
+            </Link>
           </nav>
-
+          
           {/* Mobile Navigation */}
           <MobileNav />
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-6 md:py-16 pb-20 md:pb-16">
-          <div className="max-w-2xl w-full space-y-4 md:space-y-0">
-            {/* Contact Header */}
-            <div className="text-center mb-6 md:mb-12">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight mb-2 md:mb-4">
-                Contact Support
+        <main className="px-4 md:px-8 py-8 md:py-12 flex-1">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6">
+                Contact Us
               </h1>
-              <p className="text-base md:text-xl font-bold text-gray-700">
-                Need help with your order? We're here to help!
+              <p className="text-xl md:text-2xl text-black">
+                Have questions? We'd love to hear from you!
               </p>
             </div>
 
-            {/* Contact Form */}
-            <div className="mobile-card bg-gray-100 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-4 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              {/* Success Message */}
-              {submitStatus === 'success' && (
-                <div className="mb-4 md:mb-6 p-3 md:p-4 bg-green-100 border-2 md:border-4 border-green-500 rounded-lg md:rounded-xl">
-                  <p className="text-green-700 font-bold text-base md:text-lg text-center">
-                    ✅ Message sent successfully! We'll get back to you soon.
-                  </p>
-                </div>
-              )}
-
-              {/* Error Message */}
-              {submitStatus === 'error' && (
-                <div className="mb-4 md:mb-6 p-3 md:p-4 bg-red-100 border-2 md:border-4 border-red-500 rounded-lg md:rounded-xl">
-                  <p className="text-red-700 font-bold text-base md:text-lg text-center">
-                    ❌ {errorMessage}
-                  </p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                {/* Name Field */}
-                <div>
-                  <Label htmlFor="name" className="text-base md:text-lg font-bold text-black">
-                    Your Name *
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="mt-2 text-base md:text-lg p-3 md:p-4 border-2 md:border-4 border-black rounded-lg md:rounded-xl focus:ring-2 md:focus:ring-4 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                {/* Email Field */}
-                <div>
-                  <Label htmlFor="email" className="text-base md:text-lg font-bold text-black">
-                    Your Email *
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="mt-2 text-base md:text-lg p-3 md:p-4 border-2 md:border-4 border-black rounded-lg md:rounded-xl focus:ring-2 md:focus:ring-4 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                {/* Subject Field */}
-                <div>
-                  <Label htmlFor="subject" className="text-base md:text-lg font-bold text-black">
-                    Subject *
-                  </Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="mt-2 text-base md:text-lg p-3 md:p-4 border-2 md:border-4 border-black rounded-lg md:rounded-xl focus:ring-2 md:focus:ring-4 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="What's this about?"
-                  />
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <Label htmlFor="message" className="text-base md:text-lg font-bold text-black">
-                    Message *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="mt-2 text-base md:text-lg p-3 md:p-4 border-2 md:border-4 border-black rounded-lg md:rounded-xl focus:ring-2 md:focus:ring-4 focus:ring-blue-500 focus:border-blue-500 min-h-[120px] md:min-h-[150px] resize-none"
-                    placeholder="Tell us how we can help you..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="mobile-button w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ backgroundColor: "#FF6B6B" }}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
-              </form>
-
-              {/* Contact Info */}
-              <div className="mt-6 md:mt-8 p-4 md:p-6 bg-white rounded-xl md:rounded-2xl border-2 md:border-4 border-black">
-                <h3 className="text-lg md:text-xl font-black text-black mb-3 md:mb-4">Other Ways to Reach Us</h3>
-                <div className="space-y-2 md:space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-xl md:text-2xl">📧</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+              {/* Contact Form */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Send us a Message
+                </h2>
+                
+                {isSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="text-4xl mb-4">✅</div>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Message Sent!</h3>
+                    <p className="text-base md:text-lg text-gray-700">
+                      Thank you for reaching out. We'll get back to you soon!
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                      <div className="p-4 bg-red-100 border-4 border-red-500 rounded-xl">
+                        <p className="text-red-700 font-bold text-center">{error}</p>
+                      </div>
+                    )}
+                    
                     <div>
-                      <span className="font-bold text-sm md:text-base">Email:</span>
-                      <p className="text-gray-600 text-sm md:text-base">cliptoflip.jordan@gmail.com</p>
+                      <label htmlFor="name" className="block text-sm md:text-base font-black text-black mb-2">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                        style={{ fontSize: '16px' }}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm md:text-base font-black text-black mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                        style={{ fontSize: '16px' }}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm md:text-base font-black text-black mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg resize-none"
+                        style={{ fontSize: '16px' }}
+                      />
+                    </div>
+                    
+                    <Button
+                      type="submit"
+                      className="mobile-button w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    >
+                      Send Message
+                    </Button>
+                  </form>
+                )}
+              </div>
+
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Other Ways to Reach Us
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl md:text-4xl">📧</div>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-black text-black">Email</h3>
+                        <p className="text-base md:text-lg text-gray-700">hello@cliptoflip.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl md:text-4xl">⏰</div>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-black text-black">Response Time</h3>
+                        <p className="text-base md:text-lg text-gray-700">Within 24 hours</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl md:text-4xl">🌍</div>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-black text-black">Location</h3>
+                        <p className="text-base md:text-lg text-gray-700">Serving customers worldwide</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-xl md:text-2xl">⏰</span>
+                </div>
+
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Frequently Asked Questions
+                  </h2>
+                  
+                  <div className="space-y-4">
                     <div>
-                      <span className="font-bold text-sm md:text-base">Response Time:</span>
-                      <p className="text-gray-600 text-sm md:text-base">Within 24 hours</p>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">How long does shipping take?</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        Standard shipping takes 5-7 business days. Express shipping is available for faster delivery.
+                      </p>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-xl md:text-2xl">🔄</span>
+                    
                     <div>
-                      <span className="font-bold text-sm md:text-base">Business Hours:</span>
-                      <p className="text-gray-600 text-sm md:text-base">Monday - Friday, 9 AM - 6 PM EST</p>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">What video formats do you support?</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        We support most common video formats including MP4, MOV, AVI, and more.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">Can I customize the cover color?</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        Yes! You can choose from a variety of cover colors during the ordering process.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Back to Home */}
-            <div className="text-center mt-6 md:mt-8">
-              <Link href="/">
-                <Button
-                  className="mobile-button bg-gray-600 hover:bg-gray-700 text-white font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black transition-all"
-                >
-                  Back to Home
-                </Button>
-              </Link>
-            </div>
           </div>
         </main>
-        
-        {/* Mobile Bottom Navigation */}
-        <MobileBottomNav />
       </div>
     </div>
   )

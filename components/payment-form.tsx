@@ -6,12 +6,15 @@ import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import mixpanel from '@/lib/mixpanel';
 
-interface CustomerInfo {
+interface PersonalDetails {
   firstName: string
   lastName: string
   email: string
   phone: string
-  streetAddress: string
+}
+
+interface ShippingDetails {
+  address: string
   city: string
   state: string
   zipCode: string
@@ -20,13 +23,11 @@ interface CustomerInfo {
 
 interface PaymentFormProps {
   amount: number
-  currency: string
-  shippingOption: string
+  personalDetails: PersonalDetails
+  shippingDetails: ShippingDetails
   selectedColor: string
-  videoUrl: string
-  customerInfo: CustomerInfo
-  onSuccess: () => void
-  onError: (error: string) => void
+  shippingOption: string
+  videoFileName: string
 }
 
 const cardElementOptions = {
@@ -47,13 +48,11 @@ const cardElementOptions = {
 
 export default function PaymentForm({ 
   amount, 
-  currency,
-  shippingOption, 
+  personalDetails,
+  shippingDetails,
   selectedColor, 
-  videoUrl, 
-  customerInfo, 
-  onSuccess, 
-  onError 
+  shippingOption,
+  videoFileName
 }: PaymentFormProps) {
   const stripe = useStripe()
   const elements = useElements()
@@ -78,7 +77,7 @@ export default function PaymentForm({
         },
         body: JSON.stringify({
           amount: amount * 100, // Convert to cents
-          currency,
+          currency: 'usd',
           shippingOption,
         }),
       })
@@ -86,7 +85,7 @@ export default function PaymentForm({
       const { clientSecret, error } = await response.json()
 
       if (error) {
-        onError(error)
+        console.error('Payment intent error:', error)
         setIsProcessing(false)
         return
       }
@@ -99,10 +98,20 @@ export default function PaymentForm({
       })
 
       if (paymentError) {
-        onError(paymentError.message || 'Payment failed')
+        console.error('Payment error:', paymentError.message)
       } else {
         // Generate a random order ID with just numbers
         const orderId = Math.floor(Math.random() * 1000000000).toString().padStart(9, '0')
+        
+        // Combine personal and shipping details for customer info
+        const customerInfo = {
+          ...personalDetails,
+          streetAddress: shippingDetails.address,
+          city: shippingDetails.city,
+          state: shippingDetails.state,
+          zipCode: shippingDetails.zipCode,
+          country: shippingDetails.country
+        }
         
         // Save order data to Supabase
         try {
@@ -114,7 +123,7 @@ export default function PaymentForm({
             body: JSON.stringify({
               orderId,
               customerInfo,
-              videoUrl,
+              videoUrl: videoFileName, // Using filename instead of URL
               selectedColor,
               shippingOption,
               totalAmount: amount,
@@ -138,7 +147,7 @@ export default function PaymentForm({
         router.push(`/thank-you?orderId=${orderId}&totalAmount=${amount}`)
       }
     } catch (error) {
-      onError('Payment failed. Please try again.')
+      console.error('Payment failed:', error)
     }
 
     setIsProcessing(false)

@@ -1,13 +1,12 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
+import { MobileNav } from "@/components/mobile-nav"
 
-function ThankYouContent() {
+export default function ThankYouPage() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get("orderId")
   const totalAmount = searchParams.get("totalAmount")
@@ -43,106 +42,129 @@ function ThankYouContent() {
             <Link href="/contact" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               CONTACT
             </Link>
-          </nav>
-
-          {/* Mobile Navigation */}
-          <MobileNav />
-        </header>
-
-        {/* Main Content */}
-        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-8 md:py-16 space-y-8 md:space-y-12 pb-20 md:pb-0">
-          {/* Success Message */}
-          <div className="text-center space-y-6 md:space-y-8">
-            <div className="text-6xl md:text-8xl mb-6 md:mb-8">🎉</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black leading-tight">
-              Thank You!
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl font-bold text-black max-w-2xl mx-auto leading-relaxed">
-              Your order has been successfully placed and payment has been processed.
-            </p>
-            
-            {orderId && (
-              <div className="mobile-card bg-white rounded-2xl border-4 border-black p-4 md:p-6 shadow-lg">
-                <h2 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4">Order Details</h2>
-                <p className="text-base md:text-lg font-bold text-black">
-                  Order ID: <span className="text-blue-600">{orderId}</span>
-                </p>
-                {totalAmount && (
-                  <p className="text-base md:text-lg font-bold text-black mt-2">
-                    Total Amount: <span className="text-green-600">${totalAmount} USD</span>
-                  </p>
-                )}
-                <p className="text-xs md:text-sm text-gray-600 mt-2">
-                  Please save this order ID for your records.
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* What's Next */}
-          <div className="mobile-card bg-gray-100 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-4xl w-full">
-            <h2 className="text-2xl md:text-3xl font-black text-black text-center mb-4 md:mb-6">What's Next?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="text-center space-y-3 md:space-y-4">
-                <div className="text-3xl md:text-4xl">📧</div>
-                <h3 className="text-lg md:text-xl font-black text-black">Email Confirmation</h3>
-                <p className="text-xs md:text-sm font-bold text-gray-700">
-                  You'll receive an email confirmation with your order details within the next few minutes.
-                </p>
-              </div>
-              <div className="text-center space-y-3 md:space-y-4">
-                <div className="text-3xl md:text-4xl">🎨</div>
-                <h3 className="text-lg md:text-xl font-black text-black">Flipbook Creation</h3>
-                <p className="text-xs md:text-sm font-bold text-gray-700">
-                  Our team will start creating your custom flipbook right away.
-                </p>
-              </div>
-              <div className="text-center space-y-3 md:space-y-4">
-                <div className="text-3xl md:text-4xl">📦</div>
-                <h3 className="text-lg md:text-xl font-black text-black">Shipping</h3>
-                <p className="text-xs md:text-sm font-bold text-gray-700">
-                  Your flipbook will be shipped to your address once it's ready.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <Link href="/">
-              <Button
-                className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                style={{ backgroundColor: "#FF6B6B" }}
-              >
-                BACK TO HOME
-              </Button>
-            </Link>
             <Link href="/upload">
               <Button
-                className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                className="bg-orange-400 hover:bg-orange-500 text-black font-black text-xl px-8 py-3 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 style={{ backgroundColor: "#FF6B6B" }}
               >
                 🎁 Create Your Flipbook
               </Button>
             </Link>
+          </nav>
+          
+          {/* Mobile Navigation */}
+          <MobileNav />
+        </header>
+
+        {/* Main Content */}
+        <main className="px-4 md:px-8 py-8 md:py-12 flex-1">
+          <div className="max-w-4xl mx-auto">
+            {/* Success Message */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="text-6xl md:text-8xl mb-6">🎉</div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6">
+                Thank You!
+              </h1>
+              <p className="text-xl md:text-2xl text-black">
+                Your order has been placed successfully. We're excited to create your flipbook!
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+              {/* Order Details */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Order Details
+                </h2>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg md:text-xl text-gray-700">Order ID:</span>
+                    <span className="text-lg md:text-xl font-black text-black">{orderId || 'N/A'}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg md:text-xl text-gray-700">Total Amount:</span>
+                    <span className="text-lg md:text-xl font-black text-black">
+                      ${totalAmount ? parseFloat(totalAmount).toFixed(2) : '0.00'}
+                    </span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg md:text-xl text-gray-700">Status:</span>
+                    <span className="text-lg md:text-xl font-black text-green-600">Confirmed</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* What's Next */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  What's Next?
+                </h2>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-2xl md:text-3xl">📧</div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">Confirmation Email</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        You'll receive a confirmation email with your order details shortly.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="text-2xl md:text-3xl">🎨</div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">Processing</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        We'll start creating your flipbook within 24 hours of receiving your order.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="text-2xl md:text-3xl">📦</div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">Shipping</h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        Your flipbook will be shipped within 5-7 business days.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="text-center mt-12 md:mt-16 space-y-4 md:space-y-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
+                <Link href="/upload">
+                  <Button
+                    className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                    style={{ backgroundColor: "#FF6B6B" }}
+                  >
+                    🎁 Create Another Flipbook
+                  </Button>
+                </Link>
+                
+                <Link href="/">
+                  <Button
+                    className="mobile-button bg-gray-600 hover:bg-gray-700 text-white font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  >
+                    🏠 Back to Home
+                  </Button>
+                </Link>
+              </div>
+              
+              <p className="text-base md:text-lg text-gray-700">
+                Questions about your order? <Link href="/contact" className="font-black text-black hover:underline">Contact us</Link>
+              </p>
+            </div>
           </div>
         </main>
-
-        {/* Mobile Bottom Navigation */}
-        <MobileBottomNav />
       </div>
     </div>
-  )
-}
-
-export default function ThankYouPage() {
-  return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-yellow-400 flex items-center justify-center" style={{ backgroundColor: "#FECB23" }}>
-        <div className="text-2xl font-black text-black">Loading...</div>
-      </div>
-    }>
-      <ThankYouContent />
-    </Suspense>
   )
 } 

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
+import { MobileNav } from "@/components/mobile-nav"
 
 export default function HomePage() {
   return (
@@ -50,7 +50,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-8 md:py-12 space-y-6 md:space-y-0 md:space-x-12 flex-1 pb-20 md:pb-0">
+        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-8 md:py-12 space-y-6 md:space-y-0 md:space-x-12 flex-1">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container" style={{ backgroundColor: "#FECB23" }}>
             <video
@@ -96,7 +96,7 @@ export default function HomePage() {
          </main>
         
         {/* How It Works Section */}
-        <section className="px-4 md:px-8 py-12 md:py-16 pb-20 md:pb-16" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
               Create Your Flipbook
@@ -162,7 +162,7 @@ export default function HomePage() {
         </section>
          
         {/* Flipbook Stories Section */}
-        <section className="px-4 md:px-8 py-12 md:py-16 pb-20 md:pb-16" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-10 md:mb-14">
               A gift that brings memories back to life
@@ -224,7 +224,7 @@ export default function HomePage() {
         </section>
         
         {/* Flipbook Details Section */}
-        <section className="px-4 md:px-8 py-12 md:py-16 pb-20 md:pb-16" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             {/* Title above the white box */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
@@ -291,7 +291,7 @@ export default function HomePage() {
         </section>
         
         {/* Customer Testimonials Section */}
-        <section className="px-4 md:px-8 py-12 md:py-16 pb-20 md:pb-16" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
               What Our Customers Say
@@ -432,9 +432,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-         
-        {/* Mobile Bottom Navigation */}
-        <MobileBottomNav />
       </div>
     </div>
   )
