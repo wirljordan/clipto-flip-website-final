@@ -190,9 +190,8 @@ export default function HomePage() {
                 </div>
                 <div className="flex-1 flex items-center justify-center md:pl-8 md:-translate-y-10">
                   <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full">
-                    <div className="flex items-center mb-2 text-2xl">💛</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Say it with a flipbook</h3>
-                    <p className="text-base md:text-lg text-gray-700">Not just “I love you.” Say “Remember this?” Say “We were there.” Say it without saying it. Just flip.</p>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">💛 Say it with a flipbook</h3>
+                    <p className="text-base md:text-lg text-gray-700">Not just "I love you." Say "Remember this?" Say "We were there." Say it without saying it. Just flip.</p>
                   </div>
                 </div>
               </div>
