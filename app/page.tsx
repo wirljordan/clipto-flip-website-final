@@ -50,7 +50,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-6 md:px-8 py-12 md:py-16 space-y-8 md:space-y-0 md:space-x-12 flex-1 mobile-content">
+        <main className="flex flex-col md:flex-row items-center justify-center px-6 md:px-8 py-8 md:py-12 space-y-6 md:space-y-0 md:space-x-12 flex-1 mobile-content">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container mobile-video-spacing" style={{ backgroundColor: "#FECB23" }}>
             <video
@@ -68,18 +68,18 @@ export default function HomePage() {
           </div>
 
           {/* Main Heading */}
-          <div className="text-center md:text-left md:flex-1 space-y-6 md:space-y-8 mobile-text-spacing">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black leading-tight mobile-space-y-6">
+          <div className="text-center md:text-left md:flex-1 space-y-4 md:space-y-6 mobile-text-spacing">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black leading-tight mobile-space-y-4">
               Turn your video
               <br />
               into a flipbook
             </h1>
 
-            <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">Your favorite video, now a gift they'll never forget</h2>
-            <p className="text-base md:text-xl lg:text-2xl text-black max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6 mobile-space-y-4">
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black mb-3 md:mb-4 mobile-space-y-4">Your favorite video, now a gift they'll never forget</h2>
+            <p className="text-base md:text-xl lg:text-2xl text-black max-w-3xl mx-auto leading-relaxed mb-3 md:mb-4 mobile-space-y-4">
               We turn your clips into custom flipbooks — perfect for birthdays, weddings, or just because.
             </p>
-            <p className="italic text-sm md:text-lg lg:text-xl text-black max-w-2xl mx-auto mb-6 md:mb-8 mobile-space-y-6">Made to flip. Made to last.</p>
+            <p className="italic text-sm md:text-lg lg:text-xl text-black max-w-2xl mx-auto mb-4 md:mb-6 mobile-space-y-4">Made to flip. Made to last.</p>
              
              {/* CTA Button */}
              <div className="flex justify-center md:justify-start mobile-button-spacing">
@@ -96,18 +96,18 @@ export default function HomePage() {
          </main>
         
         {/* How It Works Section */}
-        <section className="px-6 md:px-8 py-16 md:py-20 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-12 md:py-16 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-12 md:mb-16 mobile-space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12 mobile-space-y-6">
               Create Your Flipbook
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mobile-grid-spacing">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mobile-grid-spacing">
               {/* Step 1: Upload Your Clip */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl mb-6 md:mb-8">📤</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">Upload Your Clip</h3>
+                  <div className="text-4xl md:text-5xl mb-4 md:mb-6">📤</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4 mobile-space-y-4">Upload Your Clip</h3>
                   <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                     Select a video file from your device. Horizontal videos work best.
                   </p>
@@ -115,10 +115,10 @@ export default function HomePage() {
               </div>
               
               {/* Step 2: See It in Action */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl mb-6 md:mb-8">👁️</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">See It in Action</h3>
+                  <div className="text-4xl md:text-5xl mb-4 md:mb-6">👁️</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4 mobile-space-y-4">See It in Action</h3>
                   <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                     See the exact frames that will be printed in your flipbook.
                   </p>
@@ -126,10 +126,10 @@ export default function HomePage() {
               </div>
               
               {/* Step 3: Customize Your Flipbook */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl mb-6 md:mb-8">🎨</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">Customize Your Flipbook</h3>
+                  <div className="text-4xl md:text-5xl mb-4 md:mb-6">🎨</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4 mobile-space-y-4">Customize Your Flipbook</h3>
                   <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                     Choose a premium cover colour to give it that perfect finishing touch.
                   </p>
@@ -137,18 +137,18 @@ export default function HomePage() {
               </div>
               
               {/* Step 4: Make It Real */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl mb-6 md:mb-8">📋</div>
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">Make It Real</h3>
-                  <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 mobile-space-y-6">
+                  <div className="text-4xl md:text-5xl mb-4 md:mb-6">📋</div>
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-3 md:mb-4 mobile-space-y-4">Make It Real</h3>
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 mobile-space-y-4">
                     Love your flipbook? Order a high-quality printed version to keep or gift to someone special.
                   </p>
                 </div>
               </div>
             </div>
             {/* Add button below the card grid */}
-            <div className="flex justify-center mt-12 md:mt-16 mobile-button-spacing">
+            <div className="flex justify-center mt-8 md:mt-12 mobile-button-spacing">
               <Link href="/upload">
                 <Button
                   className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
@@ -162,15 +162,15 @@ export default function HomePage() {
         </section>
          
         {/* Flipbook Stories Section */}
-        <section className="px-6 md:px-8 py-16 md:py-20 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-12 md:py-16 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-12 md:mb-16 mobile-space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12 mobile-space-y-6">
               A gift that brings memories back to life
             </h2>
             <div className="relative w-full">
               {/* Top row: image left, text right (centered) */}
               <div className="relative flex flex-col md:flex-row mobile-grid-spacing">
-                <div className="flex-1 flex items-center justify-center z-10 mb-8 md:mb-0 mobile-video-spacing">
+                <div className="flex-1 flex items-center justify-center z-10 mb-6 md:mb-0 mobile-video-spacing">
                   <video
                     src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
                     autoPlay
@@ -182,17 +182,17 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="flex-1 flex items-center justify-center md:pl-8 md:-translate-y-10 mobile-content">
-                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-4 mobile-space-y-4">💛 Say it with a flipbook</h3>
+                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">💛 Say it with a flipbook</h3>
                     <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">More than words—show the moment that says it all.</p>
                   </div>
                 </div>
               </div>
               {/* Bottom row: text left (offset up), image right (offset down) */}
-              <div className="relative flex flex-col md:flex-row mt-8 md:-mt-16 mobile-grid-spacing">
-                <div className="flex-1 flex items-center justify-center md:pr-8 md:translate-y-10 order-2 md:order-1 mb-8 md:mb-0 mobile-content">
-                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-4 mobile-space-y-4">💍 Favours worth flipping over</h3>
+              <div className="relative flex flex-col md:flex-row mt-6 md:-mt-16 mobile-grid-spacing">
+                <div className="flex-1 flex items-center justify-center md:pr-8 md:translate-y-10 order-2 md:order-1 mb-6 md:mb-0 mobile-content">
+                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">💍 Favours worth flipping over</h3>
                     <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">The playlist fades. The flipbook stays.</p>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export default function HomePage() {
               </div>
             </div>
             {/* Add button below the memory section */}
-            <div className="flex justify-center mt-16 md:mt-20 mobile-button-spacing">
+            <div className="flex justify-center mt-12 md:mt-16 mobile-button-spacing">
               <Link href="/upload">
                 <Button
                   className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
@@ -224,16 +224,16 @@ export default function HomePage() {
         </section>
         
         {/* Flipbook Details Section */}
-        <section className="px-6 md:px-8 py-16 md:py-20 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-12 md:py-16 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             {/* Title above the white box */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-12 md:mb-16 mobile-space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12 mobile-space-y-6">
               Flipbook Details
             </h2>
             
             <div className="flex justify-center">
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-6xl w-full mobile-card-spacing">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mobile-grid-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-6xl w-full mobile-card-spacing">
+                <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mobile-grid-spacing">
                   {/* Video on the left - centered */}
                   <div className="flex-1 flex items-center justify-center mobile-video-spacing">
                     <video
@@ -249,38 +249,38 @@ export default function HomePage() {
                   
                   {/* Details on the right */}
                   <div className="flex-1 mobile-content">
-                    <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12 mobile-text-spacing">
+                    <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 mobile-text-spacing">
                       Every ClipToFlip book is carefully crafted with premium materials and vibrant prints, built to last and designed to impress. Here's what makes ours special:
                     </p>
                     
-                    <div className="space-y-6 md:space-y-8 mobile-grid-spacing">
+                    <div className="space-y-4 md:space-y-6 mobile-grid-spacing">
                       <div>
-                        <h3 className="text-lg md:text-xl font-black text-black mb-3 mobile-space-y-4">📏 10.5cm x 5cm x 1cm (4.53" x 1.97" x 0.39")</h3>
+                        <h3 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">📏 10.5cm x 5cm x 1cm (4.53" x 1.97" x 0.39")</h3>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">Compact, portable, and perfectly pocket-sized.</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-lg md:text-xl font-black text-black mb-3 mobile-space-y-4">📄 Materials</h3>
+                        <h3 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">📄 Materials</h3>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">High-quality paper with a durable, hand-bound finish.</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-lg md:text-xl font-black text-black mb-3 mobile-space-y-4">📖 Pages</h3>
+                        <h3 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">📖 Pages</h3>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">72 pages — each page is one video frame brought to life.</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-lg md:text-xl font-black text-black mb-3 mobile-space-y-4">🎨 Customization</h3>
+                        <h3 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">🎨 Customization</h3>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">Choose from a range of cover colours to match your style or the occasion.</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-lg md:text-xl font-black text-black mb-3 mobile-space-y-4">✨ Print Quality</h3>
+                        <h3 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">✨ Print Quality</h3>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">Crisp and vibrant prints that bring your video to life.</p>
                       </div>
                     </div>
                     
-                    <p className="text-base md:text-lg text-gray-700 mt-8 md:mt-12 mobile-text-spacing">
+                    <p className="text-base md:text-lg text-gray-700 mt-6 md:mt-8 mobile-text-spacing">
                       Every flipbook is a one-of-a-kind reflection of your video, a playful way to bring your memories back to life.
                     </p>
                   </div>
@@ -291,21 +291,21 @@ export default function HomePage() {
         </section>
         
         {/* Customer Testimonials Section */}
-        <section className="px-6 md:px-8 py-16 md:py-20 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-12 md:py-16 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-12 md:mb-16 mobile-space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12 mobile-space-y-6">
               What Our Customers Say
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mobile-grid-spacing">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mobile-grid-spacing">
               {/* Review 1 - Ilona */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "Honestly, I'm obsessed with how these turned out! I made a flipbook from our family photoshoot and it's just so sweet. The quality's amazing and it makes me smile every time I flip through it. Such a fun way to keep those memories alive."
                 </p>
                 <div className="flex items-center">
@@ -321,13 +321,13 @@ export default function HomePage() {
               </div>
               
               {/* Review 2 - Kass */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "It was the perfect way to capture some incredible moments with our son during his first year! Seeing our precious memories immortalised forever was so touching and truly unique. The quality is amazing and it's become our favorite keepsake."
                 </p>
                 <div className="flex items-center">
@@ -343,13 +343,13 @@ export default function HomePage() {
               </div>
               
               {/* Review 3 - Carly */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "I turned one of my favourite videos into a flip book, and I couldn't be happier with how it turned out! It's such a fun and unique way to relive special memories. The quality is great, and it feels so special to have a little moment frozen in time that I can flip through whenever I want."
                 </p>
                 <div className="flex items-center">
@@ -365,13 +365,13 @@ export default function HomePage() {
               </div>
               
               {/* Review 4 - Jenna Abbasi */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "The flipbooks was such an easy process, they turned out so cute! This is the perfect addition to my childrens memory boxes and the perfect gift to loved ones. The team is lovely, helpful and provides great advice on any help you need in the process of creating!"
                 </p>
                 <div className="flex items-center">
@@ -387,13 +387,13 @@ export default function HomePage() {
               </div>
               
               {/* Review 5 - Samantha Callander */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "Absolutely beautiful and something I will be purchasing again and again. Truly is a special keepsake and captures your favourite memories forever. The quality is outstanding and it's become my go-to gift for special occasions."
                 </p>
                 <div className="flex items-center">
@@ -409,13 +409,13 @@ export default function HomePage() {
               </div>
               
               {/* Review 6 - Social Media Review */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex items-center mb-6 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex items-center mb-4 mobile-space-y-4">
                   <div className="flex text-yellow-400 text-xl md:text-2xl">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-gray-700 mb-6 mobile-text-spacing italic">
+                <p className="text-base md:text-lg text-gray-700 mb-4 mobile-text-spacing italic">
                   "I ordered one for my boyfriend with a video from our trip to Italy. When he flipped through it, he smiled the entire time. It's such a special, one-of-a-kind gift that perfectly captures our amazing memories together."
                 </p>
                 <div className="flex items-center">
