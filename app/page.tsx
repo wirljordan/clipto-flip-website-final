@@ -165,26 +165,32 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl text-black text-center mb-10 md:mb-14 max-w-2xl mx-auto font-semibold">
               Nothing says “I love you” like flipping through your favourite memories.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Card 1: Big image left */}
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black flex items-center justify-center overflow-hidden h-64 md:h-80">
-                <img src="/flipbookhero.mp4" alt="Flipbook hands" className="object-cover w-full h-full" style={{ objectPosition: 'center' }} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Row 1: Image left, text right */}
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                <div className="flex-1 flex items-center justify-center">
+                  <img src="/placeholder.jpg" alt="Flipbook hands" className="rounded-3xl border-8 border-black object-cover w-full h-64 md:h-80 shadow-xl" style={{ objectPosition: 'center' }} />
+                </div>
+                <div className="flex-1 flex items-center">
+                  <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full">
+                    <div className="flex items-center mb-2 text-2xl">💛</div>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Say it with a flipbook</h3>
+                    <p className="text-base md:text-lg text-gray-700">Not just “I love you.” Say “Remember this?” Say “We were there.” Say it without saying it. Just flip.</p>
+                  </div>
+                </div>
               </div>
-              {/* Card 2: Text right */}
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-center mb-2 text-2xl">💛</div>
-                <h3 className="text-xl md:text-2xl font-black text-black mb-2">Say it with a flipbook</h3>
-                <p className="text-base md:text-lg text-gray-700">Not just “I love you.” Say “Remember this?” Say “We were there.” Say it without saying it. Just flip.</p>
-              </div>
-              {/* Card 3: Text left */}
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-center mb-2 text-2xl">💍</div>
-                <h3 className="text-xl md:text-2xl font-black text-black mb-2">Wedding favors that don’t get left behind</h3>
-                <p className="text-base md:text-lg text-gray-700">They’ll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.</p>
-              </div>
-              {/* Card 4: Big image right */}
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black flex items-center justify-center overflow-hidden h-64 md:h-80">
-                <img src="/logo.png" alt="Flipbook wedding" className="object-cover w-full h-full" style={{ objectPosition: 'center' }} />
+              {/* Row 2: Text left, image right */}
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-8 md:mt-12">
+                <div className="flex-1 flex items-center order-2 md:order-1">
+                  <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full">
+                    <div className="flex items-center mb-2 text-2xl">💍</div>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Wedding favors that don’t get left behind</h3>
+                    <p className="text-base md:text-lg text-gray-700">They’ll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.</p>
+                  </div>
+                </div>
+                <div className="flex-1 flex items-center order-1 md:order-2">
+                  <img src="/placeholder-user.jpg" alt="Flipbook wedding" className="rounded-3xl border-8 border-black object-cover w-full h-64 md:h-80 shadow-xl" style={{ objectPosition: 'center' }} />
+                </div>
               </div>
             </div>
           </div>
