@@ -3,8 +3,8 @@ import './globals.css'
 import ClientLayout from '@/components/client-layout'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Turn Videos Into Flipbooks',
+  description: 'Transform your videos into custom flipbooks - perfect for gifts, weddings, and special moments',
   generator: 'v0.dev',
 }
 
