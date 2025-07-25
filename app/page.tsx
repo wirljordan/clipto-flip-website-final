@@ -232,10 +232,15 @@ export default function HomePage() {
         {/* Flipbook Details Section */}
         <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
+            {/* Title above the white box */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+              Flipbook Details
+            </h2>
+            
             <div className="flex justify-center">
               <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-6xl w-full">
-                <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
-                  {/* Video on the left - made bigger */}
+                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                  {/* Video on the left - centered */}
                   <div className="flex-1 flex items-center justify-center">
                     <video
                       src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20(Facebook%20Video).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCAoRmFjZWJvb2sgVmlkZW8pLm1wNCIsImlhdCI6MTc1MzQ3Mjk4NSwiZXhwIjoyMDY4ODMyOTg1fQ.GxDbKtUI0El4lIcSc3baItW5WubsOfUaOoMVdvXdqRA"
