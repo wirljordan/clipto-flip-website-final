@@ -160,12 +160,9 @@ export default function HomePage() {
         {/* Flipbook Stories Section */}
         <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-2 md:mb-4 flex items-center justify-center gap-2">
-              <span role="img" aria-label="gift">🎁</span> Say it with a flipbook
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-10 md:mb-14">
+              A memory they can hold onto
             </h2>
-            <p className="text-xl md:text-2xl text-black text-center mb-10 md:mb-14 max-w-2xl mx-auto font-semibold">
-              Nothing says “I love you” like flipping through your favourite memories.
-            </p>
             <div className="relative w-full">
               {/* Top row: image left, text right (centered) */}
               <div className="relative flex flex-col md:flex-row">
