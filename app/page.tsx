@@ -167,7 +167,15 @@ export default function HomePage() {
               {/* Top row: image left, text right (centered) */}
               <div className="relative flex flex-col md:flex-row">
                 <div className="flex-1 flex items-center justify-center z-10">
-                  <img src="/placeholder.jpg" alt="Flipbook hands" className="rounded-3xl border-8 border-black object-cover w-full h-72 md:h-96 shadow-xl" style={{ objectPosition: 'center' }} />
+                  <video
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="rounded-3xl border-8 border-black object-cover w-full h-72 md:h-96 shadow-xl"
+                    style={{ objectPosition: 'center', backgroundColor: '#FECB23' }}
+                  />
                 </div>
                 <div className="flex-1 flex items-center justify-center md:pl-8 md:-translate-y-10">
                   <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full">
@@ -187,7 +195,15 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex-1 flex items-center justify-center z-10 order-1 md:order-2">
-                  <img src="/placeholder-user.jpg" alt="Flipbook wedding" className="rounded-3xl border-8 border-black object-cover w-full h-72 md:h-96 shadow-xl" style={{ objectPosition: 'center' }} />
+                  <video
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/prev-3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9wcmV2LTMubXA0IiwiaWF0IjoxNzUzNDA2Mjk2LCJleHAiOjIwNjg3NjYyOTZ9.UNME72rdLpP2iHPA4Ab5QRoIDVIHEkl0rnrCbE0yRFU"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="rounded-3xl border-8 border-black object-cover w-full h-72 md:h-96 shadow-xl"
+                    style={{ objectPosition: 'center', backgroundColor: '#FECB23' }}
+                  />
                 </div>
               </div>
             </div>
