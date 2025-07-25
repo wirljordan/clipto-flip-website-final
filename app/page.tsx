@@ -229,6 +229,69 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        
+        {/* Flipbook Details Section */}
+        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-10 md:mb-14">
+              Flipbook Details
+            </h2>
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Video on the left */}
+              <div className="flex-1 flex items-center justify-center">
+                <video
+                  src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20(Facebook%20Video).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCAoRmFjZWJvb2sgVmlkZW8pLm1wNCIsImlhdCI6MTc1MzQ3Mjk4NSwiZXhwIjoyMDY4ODMyOTg1fQ.GxDbKtUI0El4lIcSc3baItW5WubsOfUaOoMVdvXdqRA"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="rounded-3xl border-8 border-black object-cover w-full h-72 md:h-96 shadow-xl"
+                  style={{ objectPosition: 'center', backgroundColor: '#FECB23' }}
+                />
+              </div>
+              
+              {/* Details on the right */}
+              <div className="flex-1">
+                <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <p className="text-base md:text-lg text-gray-700 mb-6">
+                    Every ClipToFlip book is carefully crafted with premium materials and vibrant prints, built to last and designed to impress. Here's what makes ours special:
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">📏 10.5cm x 5cm x 1cm (4.53" x 1.97" x 0.39")</h3>
+                      <p className="text-base md:text-lg text-gray-700">Compact, portable, and perfectly pocket-sized.</p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">📄 Materials</h3>
+                      <p className="text-base md:text-lg text-gray-700">High-quality paper with a durable, hand-bound finish.</p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">📖 Pages</h3>
+                      <p className="text-base md:text-lg text-gray-700">72 pages — each page is one video frame brought to life.</p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">🎨 Customization</h3>
+                      <p className="text-base md:text-lg text-gray-700">Choose from a range of cover colours to match your style or the occasion.</p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg md:text-xl font-black text-black mb-2">✨ Print Quality</h3>
+                      <p className="text-base md:text-lg text-gray-700">Crisp and vibrant prints that bring your video to life.</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-base md:text-lg text-gray-700 mt-6">
+                    Every flipbook is a one-of-a-kind reflection of your video, a playful way to bring your memories back to life.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
          
         {/* Mobile Footer Navigation */}
         <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
