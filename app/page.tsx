@@ -190,8 +190,8 @@ export default function HomePage() {
                 <div className="flex-1 flex items-center justify-center md:pr-8 md:translate-y-10 order-2 md:order-1">
                   <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full">
                     <div className="flex items-center mb-2 text-2xl">💍</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Wedding favors that don’t get left behind</h3>
-                    <p className="text-base md:text-lg text-gray-700">They’ll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.</p>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Favours worth flipping over</h3>
+                    <p className="text-base md:text-lg text-gray-700">The playlist fades. The flipbook stays.</p>
                   </div>
                 </div>
                 <div className="flex-1 flex items-center justify-center z-10 order-1 md:order-2">
