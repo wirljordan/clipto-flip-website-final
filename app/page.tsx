@@ -232,12 +232,14 @@ export default function HomePage() {
         {/* Flipbook Details Section */}
         <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-10 md:mb-14">
-              Flipbook Details
-            </h2>
             <div className="flex justify-center">
-              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-4xl">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              <div className="bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-5xl w-full">
+                {/* Title inside the white box */}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+                  Flipbook Details
+                </h2>
+                
+                <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
                   {/* Video on the left */}
                   <div className="flex-1 flex items-center justify-center">
                     <video
@@ -246,7 +248,7 @@ export default function HomePage() {
                       loop
                       muted
                       playsInline
-                      className="rounded-lg border-2 border-black object-cover w-full max-w-sm shadow-lg"
+                      className="rounded-lg border-2 border-black object-cover w-full max-w-md shadow-lg"
                       style={{ objectPosition: 'center' }}
                     />
                   </div>
