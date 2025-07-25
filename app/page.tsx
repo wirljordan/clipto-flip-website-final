@@ -57,12 +57,10 @@ export default function HomePage() {
 
         {/* Main Content - Flipbook Details */}
         <main className="max-w-6xl mx-auto">
-          {/* Centered Title */}
           <h1 className="text-4xl md:text-5xl font-black text-black text-center mb-12">
             Flipbook Details
           </h1>
           
-          {/* Content Layout: Image Left, Text Right */}
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Image on the left */}
             <div className="flex-1 flex items-center justify-center">
