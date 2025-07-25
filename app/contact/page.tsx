@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -68,7 +69,7 @@ export default function ContactPage() {
         {/* Header */}
         <header className="flex items-center justify-between p-2 md:p-3 border-b-2 md:border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="touch-target">
             <div className="flex items-center" style={{ backgroundColor: "#FECB23" }}>
               <Image
                 src="/logo.png"
@@ -81,7 +82,7 @@ export default function ContactPage() {
             </div>
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               HOME
@@ -93,10 +94,13 @@ export default function ContactPage() {
               CONTACT
             </Link>
           </nav>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-6 md:py-16">
+        <main className="flex flex-col items-center justify-center px-4 md:px-8 py-6 md:py-16 pb-20 md:pb-16">
           <div className="max-w-2xl w-full space-y-4 md:space-y-0">
             {/* Contact Header */}
             <div className="text-center mb-6 md:mb-12">
@@ -109,7 +113,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gray-100 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-4 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="mobile-card bg-gray-100 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-4 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               {/* Success Message */}
               {submitStatus === 'success' && (
                 <div className="mb-4 md:mb-6 p-3 md:p-4 bg-green-100 border-2 md:border-4 border-green-500 rounded-lg md:rounded-xl">
@@ -200,7 +204,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="mobile-button w-full bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ backgroundColor: "#FF6B6B" }}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -240,7 +244,7 @@ export default function ContactPage() {
             <div className="text-center mt-6 md:mt-8">
               <Link href="/">
                 <Button
-                  className="bg-gray-600 hover:bg-gray-700 text-white font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black transition-all"
+                  className="mobile-button bg-gray-600 hover:bg-gray-700 text-white font-black text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full border-2 md:border-4 border-black transition-all"
                 >
                   Back to Home
                 </Button>
@@ -249,20 +253,8 @@ export default function ContactPage() {
           </div>
         </main>
         
-        {/* Mobile Footer Navigation */}
-        <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
-          <nav className="flex justify-center items-center space-x-6">
-            <Link href="/" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
-              HOME
-            </Link>
-            <Link href="/about" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
-              ABOUT
-            </Link>
-            <Link href="/contact" className="text-lg font-black text-black hover:text-gray-700 transition-colors">
-              CONTACT
-            </Link>
-          </nav>
-        </footer>
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNav />
       </div>
     </div>
   )

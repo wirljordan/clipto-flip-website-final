@@ -1,21 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { MobileNav, MobileBottomNav } from "@/components/mobile-nav"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
-      <div className="min-h-screen border-8 border-black m-4 rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
+      <div className="min-h-screen border-4 md:border-8 border-black m-2 md:m-4 rounded-2xl md:rounded-3xl overflow-hidden" style={{ backgroundColor: "#FECB23" }}>
         {/* Header */}
-        <header className="flex items-center justify-between p-3 border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
-          <Link href="/">
+        <header className="flex items-center justify-between p-2 md:p-3 border-b-2 md:border-b-4 border-black" style={{ backgroundColor: "#FECB23" }}>
+          <Link href="/" className="touch-target">
             <div className="flex items-center" style={{ backgroundColor: "#FECB23" }}>
               <Image
                 src="/logo.png"
                 alt="CLIPTO FLIP Logo"
-                width={90}
-                height={60}
-                className="object-contain"
+                width={60}
+                height={40}
+                className="md:w-[90px] md:h-[60px] object-contain"
                 style={{ mixBlendMode: "darken" }}
               />
             </div>
@@ -39,37 +40,41 @@ export default function AboutPage() {
               </Button>
             </Link>
           </nav>
+          <MobileNav />
         </header>
 
         {/* About Hero Section: Side by side on desktop, stacked on mobile */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8 px-4 md:px-8 pt-8 md:pt-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8 px-4 md:px-8 pt-6 md:pt-8 pb-20 md:pb-8">
           <Image
-            src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTMzMDM3MjgsImV4cCI6MjA2ODY2MzcyOH0.MF50jjqw-yVZDakliyz5ipOfb6CE2xyiwsb0CQjXCIo"
+            src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%20004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTMzMDM3MjgsImV4cCI6MjA2ODY2MzcyOH0.MF50jjqw-yVZDakliyz5ipOfb6CE2xyiwsb0CQjXCIo"
             alt="Happy customer holding a flipbook"
             width={260}
             height={200}
-            className="rounded-3xl shadow-xl object-cover w-64 md:w-72 h-auto"
+            className="rounded-2xl md:rounded-3xl shadow-xl object-cover w-64 md:w-72 h-auto border-4 border-black"
             priority
           />
           <div className="flex-1 max-w-2xl text-center md:text-left px-4 md:px-0">
             {/* About Us Section (moved here for side-by-side) */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6">About Us</h2>
-            <p className="text-lg md:text-xl font-bold text-black mb-3 md:mb-4">
+            <p className="text-base md:text-lg lg:text-xl font-bold text-black mb-3 md:mb-4">
               At ClipToFlip, we take your short videos and turn them into flippin' awesome flipbooks — the kind you can hold, flip, and relive frame by frame.
             </p>
-            <p className="text-base md:text-lg text-gray-700 mb-3 md:mb-4">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-3 md:mb-4">
               Whether it's a goofy dance, a pet doing something ridiculous, or a tiny slice of a wedding day — we make those seconds last forever.
             </p>
-            <h3 className="text-xl md:text-2xl font-black text-black mt-6 md:mt-8 mb-2 md:mb-3">Why We Exist</h3>
-            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside mb-3 md:mb-4 space-y-1">
+            <h3 className="text-lg md:text-xl lg:text-2xl font-black text-black mt-6 md:mt-8 mb-2 md:mb-3">Why We Exist</h3>
+            <ul className="text-sm md:text-base lg:text-lg text-gray-700 list-disc list-inside mb-3 md:mb-4 space-y-1">
               <li>To turn digital moments into physical keepsakes.</li>
               <li>Some memories deserve more than just pixels.</li>
               <li>The best gifts aren't things — they're moments.</li>
             </ul>
-            <p className="text-lg md:text-xl font-bold text-black mt-6 md:mt-8 mb-2">Crafted with care. Delivered with joy.</p>
-            <p className="text-base md:text-lg text-gray-700">Let's make something worth flipping.</p>
+            <p className="text-base md:text-lg lg:text-xl font-bold text-black mt-6 md:mt-8 mb-2">Crafted with care. Delivered with joy.</p>
+            <p className="text-sm md:text-base lg:text-lg text-gray-700">Let's make something worth flipping.</p>
           </div>
         </div>
+
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNav />
       </div>
     </div>
   )
