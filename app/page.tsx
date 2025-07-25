@@ -156,45 +156,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        {/* Flipbook Stories Section */}
-        <section className="px-4 md:px-8 py-12 md:py-16" style={{ backgroundColor: "#FECB23" }}>
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-2 md:mb-4 flex items-center justify-center gap-2">
-              <span role="img" aria-label="gift">🎁</span> Say it with a flipbook
-            </h2>
-            <p className="text-xl md:text-2xl text-black text-center mb-10 md:mb-14 max-w-2xl mx-auto font-semibold">
-              Nothing says “I love you” like flipping through your favourite memories.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {/* Row 1: Image left, text right */}
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-                <div className="flex-1 flex items-center justify-center">
-                  <img src="/placeholder.jpg" alt="Flipbook hands" className="rounded-3xl border-8 border-black object-cover w-full h-64 md:h-80 shadow-xl" style={{ objectPosition: 'center' }} />
-                </div>
-                <div className="flex-1 flex items-center">
-                  <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full">
-                    <div className="flex items-center mb-2 text-2xl">💛</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Say it with a flipbook</h3>
-                    <p className="text-base md:text-lg text-gray-700">Not just “I love you.” Say “Remember this?” Say “We were there.” Say it without saying it. Just flip.</p>
-                  </div>
-                </div>
-              </div>
-              {/* Row 2: Text left, image right */}
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-8 md:mt-12">
-                <div className="flex-1 flex items-center order-2 md:order-1">
-                  <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full">
-                    <div className="flex items-center mb-2 text-2xl">💍</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-2">Wedding favors that don’t get left behind</h3>
-                    <p className="text-base md:text-lg text-gray-700">They’ll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.</p>
-                  </div>
-                </div>
-                <div className="flex-1 flex items-center order-1 md:order-2">
-                  <img src="/placeholder-user.jpg" alt="Flipbook wedding" className="rounded-3xl border-8 border-black object-cover w-full h-64 md:h-80 shadow-xl" style={{ objectPosition: 'center' }} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
          
         {/* Mobile Footer Navigation */}
         <footer className="md:hidden border-t-2 border-black py-4 px-4" style={{ backgroundColor: "#FECB23" }}>
