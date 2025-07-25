@@ -154,6 +154,17 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+            {/* Add button below the card grid */}
+            <div className="flex justify-center mt-8">
+              <Link href="/upload">
+                <Button
+                  className="bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-3 md:py-4 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  Start with Your Clip
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
          
