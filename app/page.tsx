@@ -315,7 +315,13 @@ export default function HomePage() {
                   "Honestly, I'm obsessed with how these turned out! I made a flipbook from our family photoshoot and it's just so sweet. The quality's amazing and it makes me smile every time I flip through it. Such a fun way to keep those memories alive."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0yLnBuZyIsImlhdCI6MTc1MzQ3NzU4NywiZXhwIjoyMDY4ODM3NTg3fQ.rAE0EGpgcJMXeewOXJhlHCx46BhYSyV9sVcmQCxyShs"
+                    alt="Ilona M."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Ilona M.</span>
                 </div>
               </div>
@@ -331,7 +337,13 @@ export default function HomePage() {
                   "It was the perfect way to capture some incredible moments with our son during his first year! Seeing our precious memories immortalised forever was so touching and truly unique. The quality is amazing and it's become our favorite keepsake."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0zLnBuZyIsImlhdCI6MTc1MzQ3Nzc1OCwiZXhwIjoxNzg1MDEzNzU4fQ.BKmSYjkZwIuz92gKSGpuauQeZw7lQILtbJ4WQM_Yec8"
+                    alt="Kass R."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Kass R.</span>
                 </div>
               </div>
@@ -347,7 +359,13 @@ export default function HomePage() {
                   "I turned one of my favourite videos into a flip book, and I couldn't be happier with how it turned out! It's such a fun and unique way to relive special memories. The quality is great, and it feels so special to have a little moment frozen in time that I can flip through whenever I want."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy00LnBuZyIsImlhdCI6MTc1MzQ3Nzg3NSwiZXhwIjoxNzg1MDEzODc1fQ.CBYXrXhzl2QjmJKA7qQXm27MOe1VApuj7o4tiwQREYg"
+                    alt="Carly T."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Carly T.</span>
                 </div>
               </div>
@@ -363,7 +381,13 @@ export default function HomePage() {
                   "The flipbooks was such an easy process, they turned out so cute! This is the perfect addition to my childrens memory boxes and the perfect gift to loved ones. The team is lovely, helpful and provides great advice on any help you need in the process of creating!"
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-5.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy01LnBuZyIsImlhdCI6MTc1MzQ3ODA0NiwiZXhwIjoxNzg1MDE0MDQ2fQ.jmenxVMVsrqXdvzNXH4ib6BkWpr0G1tbFcaCi-i6FgA"
+                    alt="Jenna A."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Jenna A.</span>
                 </div>
               </div>
@@ -379,7 +403,13 @@ export default function HomePage() {
                   "Absolutely beautiful and something I will be purchasing again and again. Truly is a special keepsake and captures your favourite memories forever. The quality is outstanding and it's become my go-to gift for special occasions."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy02LnBuZyIsImlhdCI6MTc1MzQ3ODE2MiwiZXhwIjoxNzg1MDE0MTYyfQ.M1y8W6kFdAZ6XH5e_lm8YPp-e1ElSHgwO0uP_Z7-fGg"
+                    alt="Samantha C."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Samantha C.</span>
                 </div>
               </div>
@@ -395,7 +425,13 @@ export default function HomePage() {
                   "I ordered one for my boyfriend with a video from our trip to Italy. When he flipped through it, he smiled the entire time. It's such a special, one-of-a-kind gift that perfectly captures our amazing memories together."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <Image
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-7.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy03LnBuZyIsImlhdCI6MTc1MzQ3ODIzNiwiZXhwIjoxNzg1MDE0MjM2fQ.QrM52pViaEFNCqMUUFNpmNWlR4UEnsUsRNtjqfmFMLk"
+                    alt="Sarah L."
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full mr-3 object-cover"
+                  />
                   <span className="font-bold text-black">Sarah L.</span>
                 </div>
               </div>
