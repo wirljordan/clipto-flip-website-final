@@ -63,27 +63,30 @@ export default function AboutPage() {
             </div>
 
             {/* Story Section */}
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-black text-black">
-                Our Story
-              </h2>
-              <p className="text-lg md:text-xl text-black leading-relaxed">
-                ClipToFlip was born from a simple idea: what if we could turn those fleeting video moments into something tangible, something you could hold in your hands and flip through whenever you wanted to relive a special memory?
-              </p>
-              <p className="text-lg md:text-xl text-black leading-relaxed">
-                We believe that memories are meant to be shared, touched, and experienced in a way that goes beyond a screen. That's why we've created a process that transforms your videos into beautiful, high-quality flipbooks that capture every frame of your most precious moments.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Image - above on mobile, left on desktop */}
+              <div className="flex justify-center order-1 lg:order-1">
+                <Image
+                  src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTM0OTQ1NTMsImV4cCI6MTc4NTAzMDU1M30.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q"
+                  alt="ClipToFlip Flipbook"
+                  width={400}
+                  height={300}
+                  className="rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                />
+              </div>
 
-            {/* Image Section */}
-            <div className="flex justify-center mt-8 md:mt-12">
-              <Image
-                src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTM0OTQ1NTMsImV4cCI6MTc4NTAzMDU1M30.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q"
-                alt="ClipToFlip Flipbook"
-                width={400}
-                height={300}
-                className="rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-              />
+              {/* Text - below on mobile, right on desktop */}
+              <div className="space-y-6 order-2 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-black text-black">
+                  Our Story
+                </h2>
+                <p className="text-lg md:text-xl text-black leading-relaxed">
+                  ClipToFlip was born from a simple idea: what if we could turn those fleeting video moments into something tangible, something you could hold in your hands and flip through whenever you wanted to relive a special memory?
+                </p>
+                <p className="text-lg md:text-xl text-black leading-relaxed">
+                  We believe that memories are meant to be shared, touched, and experienced in a way that goes beyond a screen. That's why we've created a process that transforms your videos into beautiful, high-quality flipbooks that capture every frame of your most precious moments.
+                </p>
+              </div>
             </div>
           </div>
         </main>
