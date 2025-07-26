@@ -50,7 +50,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-8 md:py-8 space-y-6 md:space-y-0 md:space-x-12 flex-1 mobile-content">
+        <main className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-4 md:py-8 space-y-4 md:space-y-0 md:space-x-12 flex-1 mobile-content">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container mobile-video-spacing" style={{ backgroundColor: "#FECB23" }}>
             <video
@@ -68,20 +68,20 @@ export default function HomePage() {
           </div>
 
           {/* Main Heading */}
-          <div className="text-center md:text-left md:flex-1 space-y-4 md:space-y-6 mobile-text-spacing">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black leading-tight mobile-space-y-4">
+          <div className="text-center md:text-left md:flex-1 space-y-2 md:space-y-6 mobile-text-spacing">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black leading-tight mobile-space-y-4">
               Turn your video
               <br />
               into a flipbook
             </h1>
 
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-black mb-4 md:mb-6 mobile-space-y-4">Your favorite video, now a gift they'll never forget</h2>
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-black mb-2 md:mb-6 mobile-space-y-4">Your favorite video, now a gift they'll never forget</h2>
             
-            <p className="text-lg md:text-xl lg:text-2xl text-black max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8 mobile-space-y-4 font-medium">
+            <p className="text-base md:text-xl lg:text-2xl text-black max-w-3xl mx-auto leading-relaxed mb-3 md:mb-8 mobile-space-y-4 font-medium">
               We turn your clips into custom flipbooks — perfect for birthdays, weddings, or just because.
             </p>
             
-            <p className="italic text-base md:text-lg lg:text-xl text-black max-w-2xl mx-auto mb-6 md:mb-8 mobile-space-y-4 font-medium">Made to flip. Made to last.</p>
+            <p className="italic text-sm md:text-lg lg:text-xl text-black max-w-2xl mx-auto mb-4 md:mb-8 mobile-space-y-4 font-medium">Made to flip. Made to last.</p>
              
              {/* CTA Button */}
              <div className="flex justify-center md:justify-start mobile-button-spacing">
