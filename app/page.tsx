@@ -50,7 +50,7 @@ export default function HomePage() {
         </header>
 
         {/* Main Content */}
-        <main className="flex flex-col md:flex-row items-center justify-center px-12 md:px-8 py-20 md:py-8 space-y-16 md:space-y-0 md:space-x-12 flex-1 mobile-content">
+        <main className="flex flex-col md:flex-row items-center justify-center px-6 md:px-8 py-12 md:py-8 space-y-8 md:space-y-0 md:space-x-12 flex-1 mobile-content">
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container mobile-video-spacing" style={{ backgroundColor: "#FECB23" }}>
             <video
@@ -96,7 +96,7 @@ export default function HomePage() {
          </main>
         
         {/* How It Works Section */}
-        <section className="px-12 md:px-8 py-24 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-16 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
               Create Your Flipbook
@@ -162,7 +162,7 @@ export default function HomePage() {
         </section>
          
         {/* Flipbook Stories Section - Horizontal Two Card Layout */}
-        <section className="px-12 md:px-8 py-24 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-16 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-16 md:mb-20 mobile-space-y-8">
               A gift that brings memories back to life
@@ -171,7 +171,7 @@ export default function HomePage() {
             {/* Two Cards in Separate Rows */}
             <div className="space-y-8 md:space-y-12">
               {/* First Card: Image Left, Text Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-12 md:p-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Image */}
                   <div className="flex-1 flex justify-center">
@@ -199,7 +199,7 @@ export default function HomePage() {
               </div>
               
               {/* Second Card: Text Left, Image Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-12 md:p-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-20 shadow-[4px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Text */}
                   <div className="flex-1 text-center md:text-left order-2 md:order-1">
@@ -230,7 +230,7 @@ export default function HomePage() {
         </section>
         
         {/* Flipbook Details Section */}
-        <section className="px-12 md:px-8 py-24 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-6 md:px-8 py-16 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             {/* Title above the white box */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
