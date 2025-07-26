@@ -162,15 +162,15 @@ export default function HomePage() {
         </section>
          
         {/* Flipbook Stories Section */}
-        <section className="px-4 md:px-8 py-6 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
+        <section className="px-4 md:px-8 py-4 md:py-8 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-6 md:mb-8 mobile-space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-4 md:mb-6 mobile-space-y-6">
               A gift that brings memories back to life
             </h2>
             <div className="relative w-full">
               {/* Top row: image left, text right (centered) */}
-              <div className="relative flex flex-col md:flex-row mobile-grid-spacing">
-                <div className="flex-1 flex items-center justify-center z-10 mb-4 md:mb-0 mobile-video-spacing">
+              <div className="relative flex flex-col md:flex-row gap-2 md:gap-4 mobile-grid-spacing">
+                <div className="flex-1 flex items-center justify-center z-10 mb-2 md:mb-0 mobile-video-spacing">
                   <video
                     src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
                     autoPlay
@@ -181,7 +181,7 @@ export default function HomePage() {
                     style={{ objectPosition: 'center', backgroundColor: '#FECB23' }}
                   />
                 </div>
-                <div className="flex-1 flex items-center justify-center md:pl-8 md:-translate-y-10 mobile-content">
+                <div className="flex-1 flex items-center justify-center md:pl-4 md:-translate-y-8 mobile-content">
                   <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-3 md:p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
                     <h3 className="text-xl md:text-2xl font-black text-black mb-1 mobile-space-y-4">💛 Say it with a flipbook</h3>
                     <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">More than words—show the moment that says it all.</p>
@@ -189,8 +189,8 @@ export default function HomePage() {
                 </div>
               </div>
               {/* Bottom row: text left (offset up), image right (offset down) */}
-              <div className="relative flex flex-col md:flex-row mt-4 md:-mt-16 mobile-grid-spacing">
-                <div className="flex-1 flex items-center justify-center md:pr-8 md:translate-y-10 order-2 md:order-1 mb-4 md:mb-0 mobile-content">
+              <div className="relative flex flex-col md:flex-row mt-2 md:-mt-12 gap-2 md:gap-4 mobile-grid-spacing">
+                <div className="flex-1 flex items-center justify-center md:pr-4 md:translate-y-8 order-2 md:order-1 mb-2 md:mb-0 mobile-content">
                   <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-3 md:p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full mobile-card-spacing">
                     <h3 className="text-xl md:text-2xl font-black text-black mb-1 mobile-space-y-4">💍 Favours worth flipping over</h3>
                     <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">The playlist fades. The flipbook stays.</p>
