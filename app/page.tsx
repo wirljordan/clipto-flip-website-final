@@ -438,6 +438,18 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+            
+            {/* CTA Button after reviews */}
+            <div className="flex justify-center mt-8 md:mt-12 mobile-button-spacing">
+              <Link href="/upload">
+                <Button
+                  className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-2 md:border-4 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  🎬 Turn My Video Into a Flip
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
