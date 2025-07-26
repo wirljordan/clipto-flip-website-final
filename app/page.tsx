@@ -168,10 +168,10 @@ export default function HomePage() {
               A gift that brings memories back to life
             </h2>
             
-            {/* Two Cards Side by Side - Wider */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {/* Left Card: Image Left, Text Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-10 md:p-16 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+            {/* Two Cards in Separate Rows */}
+            <div className="space-y-8 md:space-y-12">
+              {/* First Card: Image Left, Text Right */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-12 md:p-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Image */}
                   <div className="flex-1 flex justify-center">
@@ -199,8 +199,8 @@ export default function HomePage() {
                 </div>
               </div>
               
-              {/* Right Card: Text Left, Image Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-10 md:p-16 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+              {/* Second Card: Text Left, Image Right */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-12 md:p-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Text */}
                   <div className="flex-1 text-center md:text-left order-2 md:order-1">
