@@ -272,7 +272,7 @@ export default function UploadPage() {
                         <div className="flex-shrink-0 text-2xl md:text-3xl">1️⃣</div>
                         <h4 className="text-lg md:text-xl font-black text-black">Preview</h4>
                       </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-12 md:ml-16">
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
                         See exactly how your flipbook will look
                       </p>
                     </div>
@@ -281,7 +281,7 @@ export default function UploadPage() {
                         <div className="flex-shrink-0 text-2xl md:text-3xl">2️⃣</div>
                         <h4 className="text-lg md:text-xl font-black text-black">Customize</h4>
                       </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-12 md:ml-16">
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
                         Choose your cover color and shipping options
                       </p>
                     </div>
@@ -290,7 +290,7 @@ export default function UploadPage() {
                         <div className="flex-shrink-0 text-2xl md:text-3xl">3️⃣</div>
                         <h4 className="text-lg md:text-xl font-black text-black">Order</h4>
                       </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-12 md:ml-16">
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
                         Complete your purchase and we'll create your flipbook
                       </p>
                     </div>
