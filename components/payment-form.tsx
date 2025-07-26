@@ -155,7 +155,7 @@ export default function PaymentForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="p-3 md:p-4 border-2 border-gray-300 rounded-lg bg-gray-50">
+      <div className="p-3 md:p-4 border-4 border-black rounded-xl bg-white">
         <div className="flex items-center space-x-2 mb-2">
           <span className="text-lg md:text-xl font-bold">💳</span>
           <span className="text-base md:text-lg font-bold">Pay with debit/credit card</span>
@@ -163,7 +163,7 @@ export default function PaymentForm({
         <p className="text-xs md:text-sm text-gray-600">Secure payment powered by Stripe</p>
       </div>
       
-      <div className="p-3 md:p-4 border-2 border-black rounded-lg">
+      <div className="p-3 md:p-4 border-4 border-black rounded-xl bg-white">
         <CardElement options={cardElementOptions} />
       </div>
 
