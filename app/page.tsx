@@ -188,9 +188,8 @@ export default function HomePage() {
                   
                   {/* Right: Text */}
                   <div className="flex-1 text-center md:text-left">
-                    <div className="text-2xl md:text-3xl mb-4">🎁</div>
                     <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
-                      Say it with a flipbook
+                      🎁 Say it with a flipbook
                     </h3>
                     <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
                       Not just 'I love you.' Say 'Remember this?' Say 'We were there.' Say it without saying it. Just flip.
@@ -204,9 +203,8 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Text */}
                   <div className="flex-1 text-center md:text-left order-2 md:order-1">
-                    <div className="text-2xl md:text-3xl mb-4">🎂</div>
                     <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
-                      Wedding favors that don't get left behind
+                      🎂 Wedding favors that don't get left behind
                     </h3>
                     <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
                       They'll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.
