@@ -74,6 +74,17 @@ export default function AboutPage() {
                 We believe that memories are meant to be shared, touched, and experienced in a way that goes beyond a screen. That's why we've created a process that transforms your videos into beautiful, high-quality flipbooks that capture every frame of your most precious moments.
               </p>
             </div>
+
+            {/* Image Section */}
+            <div className="flex justify-center mt-8 md:mt-12">
+              <Image
+                src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/ChatGPT%20Image%20Jul%2023,%202025%20at%2004_37_59%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9DaGF0R1BUIEltYWdlIEp1bCAyMywgMjAyNSBhdCAwNF8zN181OSBQTS5wbmciLCJpYXQiOjE3NTM0OTQ1NTMsImV4cCI6MTc4NTAzMDU1M30.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q"
+                alt="ClipToFlip Flipbook"
+                width={400}
+                height={300}
+                className="rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+              />
+            </div>
           </div>
         </main>
       </div>
