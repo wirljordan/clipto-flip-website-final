@@ -161,67 +161,70 @@ export default function HomePage() {
           </div>
         </section>
          
-        {/* Flipbook Stories Section - Simple Two Card Layout */}
+        {/* Flipbook Stories Section - Horizontal Two Card Layout */}
         <section className="px-12 md:px-8 py-24 md:py-12 mobile-section-spacing" style={{ backgroundColor: "#FECB23" }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-16 md:mb-20 mobile-space-y-8">
               A gift that brings memories back to life
             </h2>
             
-            {/* Top Card: Image Left, Text Right */}
-            <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-16 mobile-card-spacing">
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* Left: Image */}
-                <div className="flex-1 flex justify-center">
-                  <video
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="rounded-2xl border-4 border-black object-cover w-full max-w-md h-64 md:h-80 shadow-lg"
-                    style={{ objectPosition: 'center' }}
-                  />
-                </div>
-                
-                {/* Right: Text */}
-                <div className="flex-1 text-center md:text-left">
-                  <div className="text-2xl md:text-3xl mb-4">🎁</div>
-                  <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
-                    Say it with a flipbook
-                  </h3>
-                  <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
-                    Not just 'I love you.' Say 'Remember this?' Say 'We were there.' Say it without saying it. Just flip.
-                  </p>
+            {/* Two Cards Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Left Card: Image Left, Text Right */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                  {/* Left: Image */}
+                  <div className="flex-1 flex justify-center">
+                    <video
+                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-2xl border-4 border-black object-cover w-full max-w-sm h-48 md:h-64 shadow-lg"
+                      style={{ objectPosition: 'center' }}
+                    />
+                  </div>
+                  
+                  {/* Right: Text */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="text-xl md:text-2xl mb-3">🎁</div>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">
+                      Say it with a flipbook
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                      Not just 'I love you.' Say 'Remember this?' Say 'We were there.' Say it without saying it. Just flip.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Bottom Card: Text Left, Image Right */}
-            <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* Left: Text */}
-                <div className="flex-1 text-center md:text-left order-2 md:order-1">
-                  <div className="text-2xl md:text-3xl mb-4">🎂</div>
-                  <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
-                    Wedding favors that don't get left behind
-                  </h3>
-                  <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
-                    They'll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.
-                  </p>
-                </div>
-                
-                {/* Right: Image */}
-                <div className="flex-1 flex justify-center order-1 md:order-2">
-                  <video
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/prev-3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9wcmV2LTMubXA0IiwiaWF0IjoxNzUzNDA2Mjk2LCJleHAiOjIwNjg3NjYyOTZ9.UNME72rdLpP2iHPA4Ab5QRoIDVIHEkl0rnrCbE0yRFU"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="rounded-2xl border-4 border-black object-cover w-full max-w-md h-64 md:h-80 shadow-lg"
-                    style={{ objectPosition: 'center' }}
-                  />
+              
+              {/* Right Card: Text Left, Image Right */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                  {/* Left: Text */}
+                  <div className="flex-1 text-center md:text-left order-2 md:order-1">
+                    <div className="text-xl md:text-2xl mb-3">🎂</div>
+                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">
+                      Wedding favors that don't get left behind
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                      They'll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.
+                    </p>
+                  </div>
+                  
+                  {/* Right: Image */}
+                  <div className="flex-1 flex justify-center order-1 md:order-2">
+                    <video
+                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/prev-3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9wcmV2LTMubXA0IiwiaWF0IjoxNzUzNDA2Mjk2LCJleHAiOjIwNjg3NjYyOTZ9.UNME72rdLpP2iHPA4Ab5QRoIDVIHEkl0rnrCbE0yRFU"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-2xl border-4 border-black object-cover w-full max-w-sm h-48 md:h-64 shadow-lg"
+                      style={{ objectPosition: 'center' }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
