@@ -31,56 +31,6 @@ function PreviewPageContent() {
   })
   const router = useRouter()
 
-  useEffect(() => {
-    // Retrieve video data from sessionStorage
-    const storedVideo = sessionStorage.getItem('uploadedVideo')
-    const storedFileName = sessionStorage.getItem('videoFileName')
-    
-    if (storedVideo && storedFileName) {
-      setVideoData(storedVideo)
-      setVideoFileName(storedFileName)
-    } else {
-      // Redirect to upload if no video data
-      router.push('/upload')
-    }
-
-    // Auto-detect country
-    const detectCountry = async () => {
-      try {
-        const response = await fetch('https://ipapi.co/json/')
-        const data = await response.json()
-        
-        // Check if the detected country is in our list
-        const detectedCountry = countries.find(country => country.code === data.country_code)
-        if (detectedCountry) {
-          setSelectedCountry(data.country_code)
-        } else {
-          // Default to US if country not found
-          setSelectedCountry('US')
-        }
-      } catch (error) {
-        console.log('Could not detect country, defaulting to US')
-        setSelectedCountry('US')
-      }
-    }
-
-    detectCountry()
-  }, [router])
-
-  const colorOptions = [
-    { name: "Coral", value: "#FF6B6B" },
-    { name: "Blue", value: "#4ECDC4" },
-    { name: "Purple", value: "#9B59B6" },
-    { name: "Green", value: "#2ECC71" },
-    { name: "Orange", value: "#F39C12" },
-    { name: "Pink", value: "#E91E63" }
-  ]
-
-  const shippingOptions = [
-    { value: "standard", label: "Standard Shipping (10-20 days)", price: 0 },
-    { value: "express", label: "Express Shipping (3-7 days)", price: 15 }
-  ]
-
   const countries = [
     // North America
     { code: "US", name: "United States", currency: "USD", symbol: "$", basePrice: 29.99 },
@@ -167,6 +117,59 @@ function PreviewPageContent() {
     { code: "OM", name: "Oman", currency: "USD", symbol: "$", basePrice: 29.99 },
     { code: "JO", name: "Jordan", currency: "USD", symbol: "$", basePrice: 29.99 },
     { code: "LB", name: "Lebanon", currency: "USD", symbol: "$", basePrice: 29.99 }
+  ]
+
+  useEffect(() => {
+    // Retrieve video data from sessionStorage
+    const storedVideo = sessionStorage.getItem('uploadedVideo')
+    const storedFileName = sessionStorage.getItem('videoFileName')
+    
+    if (storedVideo && storedFileName) {
+      setVideoData(storedVideo)
+      setVideoFileName(storedFileName)
+    } else {
+      // Redirect to upload if no video data
+      router.push('/upload')
+    }
+
+    // Auto-detect country
+    const detectCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/')
+        const data = await response.json()
+        console.log('Detected country:', data.country_code) // Debug log
+        
+        // Check if the detected country is in our list
+        const detectedCountry = countries.find(country => country.code === data.country_code)
+        if (detectedCountry) {
+          setSelectedCountry(data.country_code)
+          console.log('Set country to:', data.country_code) // Debug log
+        } else {
+          // Default to US if country not found
+          setSelectedCountry('US')
+          console.log('Country not found, defaulting to US') // Debug log
+        }
+      } catch (error) {
+        console.log('Could not detect country, defaulting to US:', error)
+        setSelectedCountry('US')
+      }
+    }
+
+    detectCountry()
+  }, [router, countries])
+
+  const colorOptions = [
+    { name: "Coral", value: "#FF6B6B" },
+    { name: "Blue", value: "#4ECDC4" },
+    { name: "Purple", value: "#9B59B6" },
+    { name: "Green", value: "#2ECC71" },
+    { name: "Orange", value: "#F39C12" },
+    { name: "Pink", value: "#E91E63" }
+  ]
+
+  const shippingOptions = [
+    { value: "standard", label: "Standard Shipping (10-20 days)", price: 0 },
+    { value: "express", label: "Express Shipping (3-7 days)", price: 15 }
   ]
 
   const selectedCountryData = countries.find(country => country.code === selectedCountry)
