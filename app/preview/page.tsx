@@ -43,6 +43,28 @@ function PreviewPageContent() {
       // Redirect to upload if no video data
       router.push('/upload')
     }
+
+    // Auto-detect country
+    const detectCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/')
+        const data = await response.json()
+        
+        // Check if the detected country is in our list
+        const detectedCountry = countries.find(country => country.code === data.country_code)
+        if (detectedCountry) {
+          setSelectedCountry(data.country_code)
+        } else {
+          // Default to US if country not found
+          setSelectedCountry('US')
+        }
+      } catch (error) {
+        console.log('Could not detect country, defaulting to US')
+        setSelectedCountry('US')
+      }
+    }
+
+    detectCountry()
   }, [router])
 
   const colorOptions = [
@@ -60,14 +82,96 @@ function PreviewPageContent() {
   ]
 
   const countries = [
-    { code: "US", name: "United States", currency: "USD", symbol: "$" },
-    { code: "CA", name: "Canada", currency: "CAD", symbol: "C$" },
-    { code: "EU", name: "European Union", currency: "EUR", symbol: "€" }
+    // North America
+    { code: "US", name: "United States", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "CA", name: "Canada", currency: "CAD", symbol: "C$", basePrice: 39.99 },
+    { code: "MX", name: "Mexico", currency: "USD", symbol: "$", basePrice: 29.99 },
+    
+    // Europe
+    { code: "GB", name: "United Kingdom", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "DE", name: "Germany", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "FR", name: "France", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "IT", name: "Italy", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "ES", name: "Spain", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "NL", name: "Netherlands", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "BE", name: "Belgium", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "AT", name: "Austria", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "CH", name: "Switzerland", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "SE", name: "Sweden", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "NO", name: "Norway", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "DK", name: "Denmark", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "FI", name: "Finland", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "PL", name: "Poland", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "CZ", name: "Czech Republic", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "HU", name: "Hungary", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "RO", name: "Romania", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "BG", name: "Bulgaria", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "HR", name: "Croatia", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "SI", name: "Slovenia", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "SK", name: "Slovakia", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "LT", name: "Lithuania", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "LV", name: "Latvia", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "EE", name: "Estonia", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "LU", name: "Luxembourg", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "MT", name: "Malta", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "CY", name: "Cyprus", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "IE", name: "Ireland", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "PT", name: "Portugal", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    { code: "GR", name: "Greece", currency: "EUR", symbol: "€", basePrice: 27.99 },
+    
+    // Asia Pacific
+    { code: "AU", name: "Australia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "NZ", name: "New Zealand", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "JP", name: "Japan", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "KR", name: "South Korea", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "SG", name: "Singapore", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "HK", name: "Hong Kong", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "TW", name: "Taiwan", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "IN", name: "India", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "TH", name: "Thailand", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "MY", name: "Malaysia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "PH", name: "Philippines", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "VN", name: "Vietnam", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "ID", name: "Indonesia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    
+    // South America
+    { code: "BR", name: "Brazil", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "AR", name: "Argentina", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "CL", name: "Chile", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "CO", name: "Colombia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "PE", name: "Peru", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "VE", name: "Venezuela", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "EC", name: "Ecuador", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "UY", name: "Uruguay", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "PY", name: "Paraguay", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "BO", name: "Bolivia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    
+    // Africa
+    { code: "ZA", name: "South Africa", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "EG", name: "Egypt", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "NG", name: "Nigeria", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "KE", name: "Kenya", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "GH", name: "Ghana", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "MA", name: "Morocco", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "TN", name: "Tunisia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "DZ", name: "Algeria", currency: "USD", symbol: "$", basePrice: 29.99 },
+    
+    // Middle East
+    { code: "IL", name: "Israel", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "AE", name: "United Arab Emirates", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "SA", name: "Saudi Arabia", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "TR", name: "Turkey", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "QA", name: "Qatar", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "KW", name: "Kuwait", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "BH", name: "Bahrain", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "OM", name: "Oman", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "JO", name: "Jordan", currency: "USD", symbol: "$", basePrice: 29.99 },
+    { code: "LB", name: "Lebanon", currency: "USD", symbol: "$", basePrice: 29.99 }
   ]
 
-  const basePrice = 29.99
-  const selectedShipping = shippingOptions.find(option => option.value === shippingOption)
   const selectedCountryData = countries.find(country => country.code === selectedCountry)
+  const basePrice = selectedCountryData?.basePrice || 29.99
+  const selectedShipping = shippingOptions.find(option => option.value === shippingOption)
   const totalPrice = basePrice + (selectedShipping?.price || 0)
 
   return (
