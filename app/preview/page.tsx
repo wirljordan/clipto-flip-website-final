@@ -15,6 +15,7 @@ function PreviewPageContent() {
   const [videoFileName, setVideoFileName] = useState<string>("")
   const [selectedColor, setSelectedColor] = useState("#FF6B6B")
   const [shippingOption, setShippingOption] = useState("standard")
+  const [selectedCountry, setSelectedCountry] = useState("US")
   const [personalDetails, setPersonalDetails] = useState({
     firstName: "",
     lastName: "",
@@ -44,12 +45,6 @@ function PreviewPageContent() {
     }
   }, [router])
 
-  const handlePreviewClick = () => {
-    if (videoData) {
-      window.open(videoData, '_blank')
-    }
-  }
-
   const colorOptions = [
     { name: "Coral", value: "#FF6B6B" },
     { name: "Blue", value: "#4ECDC4" },
@@ -60,12 +55,19 @@ function PreviewPageContent() {
   ]
 
   const shippingOptions = [
-    { value: "standard", label: "Standard Shipping (5-7 days)", price: 0 },
-    { value: "express", label: "Express Shipping (2-3 days)", price: 5 }
+    { value: "standard", label: "Standard Shipping (10-20 days)", price: 0 },
+    { value: "express", label: "Express Shipping (3-7 days)", price: 15 }
+  ]
+
+  const countries = [
+    { code: "US", name: "United States", currency: "USD", symbol: "$" },
+    { code: "CA", name: "Canada", currency: "CAD", symbol: "C$" },
+    { code: "EU", name: "European Union", currency: "EUR", symbol: "€" }
   ]
 
   const basePrice = 29.99
   const selectedShipping = shippingOptions.find(option => option.value === shippingOption)
+  const selectedCountryData = countries.find(country => country.code === selectedCountry)
   const totalPrice = basePrice + (selectedShipping?.price || 0)
 
   return (
@@ -139,16 +141,14 @@ function PreviewPageContent() {
                     <div className="space-y-4">
                       <video
                         src={videoData}
-                        controls
+                        controls={false}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full rounded-xl border-4 border-black shadow-lg"
                         style={{ backgroundColor: "#FECB23" }}
                       />
-                      <Button
-                        onClick={handlePreviewClick}
-                        className="mobile-button w-full bg-blue-500 hover:bg-blue-600 text-white font-black text-lg md:text-xl py-3 md:py-4 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                      >
-                        🔍 Open Full Preview
-                      </Button>
                     </div>
                   ) : (
                     <div className="text-center py-8">
@@ -168,7 +168,7 @@ function PreviewPageContent() {
                       <button
                         key={color.value}
                         onClick={() => setSelectedColor(color.value)}
-                        className={`touch-target p-4 rounded-2xl border-4 transition-all ${
+                        className={`touch-target p-4 rounded-full border-4 transition-all ${
                           selectedColor === color.value
                             ? 'border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                             : 'border-gray-300 hover:border-black'
@@ -176,7 +176,6 @@ function PreviewPageContent() {
                         style={{ backgroundColor: color.value }}
                       >
                         <div className="text-center">
-                          <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border-4 border-white mx-auto mb-2"></div>
                           <span className="text-sm md:text-base font-black text-black">{color.name}</span>
                         </div>
                       </button>
@@ -231,18 +230,18 @@ function PreviewPageContent() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-lg md:text-xl text-gray-700">Flipbook</span>
-                      <span className="text-lg md:text-xl font-black text-black">${basePrice.toFixed(2)}</span>
+                      <span className="text-lg md:text-xl font-black text-black">{selectedCountryData?.symbol}{basePrice.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-lg md:text-xl text-gray-700">Shipping</span>
                       <span className="text-lg md:text-xl font-black text-black">
-                        {selectedShipping?.price === 0 ? 'Free' : `$${selectedShipping?.price.toFixed(2)}`}
+                        {selectedShipping?.price === 0 ? 'Free' : `${selectedCountryData?.symbol}${selectedShipping?.price.toFixed(2)}`}
                       </span>
                     </div>
                     <div className="border-t-4 border-black pt-4">
                       <div className="flex justify-between items-center">
                         <span className="text-xl md:text-2xl font-black text-black">Total</span>
-                        <span className="text-xl md:text-2xl font-black text-black">${totalPrice.toFixed(2)}</span>
+                        <span className="text-xl md:text-2xl font-black text-black">{selectedCountryData?.symbol}{totalPrice.toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
@@ -350,13 +349,18 @@ function PreviewPageContent() {
                       </div>
                       <div>
                         <label className="block text-sm md:text-base font-black text-black mb-2">Country</label>
-                        <input
-                          type="text"
-                          value={shippingDetails.country}
-                          onChange={(e) => setShippingDetails({...shippingDetails, country: e.target.value})}
+                        <select
+                          value={selectedCountry}
+                          onChange={(e) => setSelectedCountry(e.target.value)}
                           className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
                           style={{ fontSize: '16px' }}
-                        />
+                        >
+                          {countries.map((country) => (
+                            <option key={country.code} value={country.code}>
+                              {country.name}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </div>
                   </div>
