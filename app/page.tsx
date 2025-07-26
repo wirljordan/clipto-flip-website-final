@@ -168,11 +168,11 @@ export default function HomePage() {
               A gift that brings memories back to life
             </h2>
             
-            {/* Two Cards Side by Side */}
+            {/* Two Cards Side by Side - Wider */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* Left Card: Image Left, Text Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-10 md:p-16 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Image */}
                   <div className="flex-1 flex justify-center">
                     <video
@@ -181,18 +181,18 @@ export default function HomePage() {
                       loop
                       muted
                       playsInline
-                      className="rounded-2xl border-4 border-black object-cover w-full max-w-sm h-48 md:h-64 shadow-lg"
+                      className="rounded-2xl border-4 border-black object-cover w-full max-w-md h-56 md:h-72 shadow-lg"
                       style={{ objectPosition: 'center' }}
                     />
                   </div>
                   
                   {/* Right: Text */}
                   <div className="flex-1 text-center md:text-left">
-                    <div className="text-xl md:text-2xl mb-3">🎁</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">
+                    <div className="text-2xl md:text-3xl mb-4">🎁</div>
+                    <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
                       Say it with a flipbook
                     </h3>
-                    <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                    <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
                       Not just 'I love you.' Say 'Remember this?' Say 'We were there.' Say it without saying it. Just flip.
                     </p>
                   </div>
@@ -200,15 +200,15 @@ export default function HomePage() {
               </div>
               
               {/* Right Card: Text Left, Image Right */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-10 md:p-16 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                   {/* Left: Text */}
                   <div className="flex-1 text-center md:text-left order-2 md:order-1">
-                    <div className="text-xl md:text-2xl mb-3">🎂</div>
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-3 mobile-space-y-4">
+                    <div className="text-2xl md:text-3xl mb-4">🎂</div>
+                    <h3 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
                       Wedding favors that don't get left behind
                     </h3>
-                    <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                    <p className="text-lg md:text-xl text-gray-700 mobile-text-spacing">
                       They'll eat the cake, lose the napkin, forget the playlist. But a tiny book with that moment? That goes home in their bag.
                     </p>
                   </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
                       loop
                       muted
                       playsInline
-                      className="rounded-2xl border-4 border-black object-cover w-full max-w-sm h-48 md:h-64 shadow-lg"
+                      className="rounded-2xl border-4 border-black object-cover w-full max-w-md h-56 md:h-72 shadow-lg"
                       style={{ objectPosition: 'center' }}
                     />
                   </div>
