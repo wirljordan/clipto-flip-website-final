@@ -187,15 +187,17 @@ export default function UploadPage() {
                   </p>
                   
                   <div className="space-y-4 md:space-y-6 mobile-grid-spacing">
-                    <Button
-                      onClick={handleBrowseClick}
-                      className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                      style={{ backgroundColor: "#FF6B6B" }}
-                    >
-                      📁 Choose File
-                    </Button>
+                    <div className="flex justify-center">
+                      <Button
+                        onClick={handleBrowseClick}
+                        className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                        style={{ backgroundColor: "#FF6B6B" }}
+                      >
+                        📁 Choose File
+                      </Button>
+                    </div>
                     
-                    <div className="text-sm md:text-base text-gray-500 mobile-text-spacing">
+                    <div className="text-sm md:text-base text-gray-500 mobile-text-spacing text-center">
                       <p>Supported formats: MP4, MOV, AVI, WebM</p>
                       <p>Maximum file size: 50MB</p>
                     </div>
