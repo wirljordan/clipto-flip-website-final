@@ -63,84 +63,16 @@ export default function AboutPage() {
             </div>
 
             {/* Story Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-16 md:mb-20">
-              <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-black text-black">
-                  Our Story
-                </h2>
-                <p className="text-lg md:text-xl text-black leading-relaxed">
-                  ClipToFlip was born from a simple idea: what if we could turn those fleeting video moments into something tangible, something you could hold in your hands and flip through whenever you wanted to relive a special memory?
-                </p>
-                <p className="text-lg md:text-xl text-black leading-relaxed">
-                  We believe that memories are meant to be shared, touched, and experienced in a way that goes beyond a screen. That's why we've created a process that transforms your videos into beautiful, high-quality flipbooks that capture every frame of your most precious moments.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-9.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOS5tcDQiLCJpYXQiOjE3NTMyMjUwMDYsImV4cCI6MjA2ODU4NTAwNn0.lnunTceuXcFT7MO2IUFd_9qVIK8HC2JjY7o3oWOAsiI"
-                  alt="Flipbook Preview"
-                  width={400}
-                  height={300}
-                  className="rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-                />
-              </div>
-            </div>
-
-            {/* Mission Section */}
-            <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-16 md:mb-20">
-              <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-black text-black mb-6">
-                  Our Mission
-                </h2>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                  To help people preserve and share their most meaningful moments in a unique, tangible format that brings joy and nostalgia every time it's flipped through. We want to make it easy for anyone to transform their digital memories into something physical and lasting.
-                </p>
-              </div>
-            </div>
-
-            {/* Values Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center">
-                <div className="text-4xl md:text-5xl mb-4">✨</div>
-                <h3 className="text-xl md:text-2xl font-black text-black mb-4">Quality</h3>
-                <p className="text-base md:text-lg text-gray-700">
-                  We use premium materials and careful craftsmanship to ensure every flipbook is built to last and look beautiful.
-                </p>
-              </div>
-              
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center">
-                <div className="text-4xl md:text-5xl mb-4">💝</div>
-                <h3 className="text-xl md:text-2xl font-black text-black mb-4">Personal Touch</h3>
-                <p className="text-base md:text-lg text-gray-700">
-                  Every flipbook is unique, just like your memories. We treat each order with the care and attention it deserves.
-                </p>
-              </div>
-              
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center">
-                <div className="text-4xl md:text-5xl mb-4">🚀</div>
-                <h3 className="text-xl md:text-2xl font-black text-black mb-4">Innovation</h3>
-                <p className="text-base md:text-lg text-gray-700">
-                  We're constantly improving our process to make it easier and more enjoyable to create your perfect flipbook.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-black text-black mb-6">
-                Ready to Create Your Flipbook?
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-black text-black">
+                Our Story
               </h2>
-              <p className="text-lg md:text-xl text-black mb-8">
-                Turn your favorite video into a beautiful, lasting memory today.
+              <p className="text-lg md:text-xl text-black leading-relaxed">
+                ClipToFlip was born from a simple idea: what if we could turn those fleeting video moments into something tangible, something you could hold in your hands and flip through whenever you wanted to relive a special memory?
               </p>
-              <Link href="/upload">
-                <Button
-                  className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-xl md:text-2xl px-8 md:px-12 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                  style={{ backgroundColor: "#FF6B6B" }}
-                >
-                  🎁 Start Creating Now
-                </Button>
-              </Link>
+              <p className="text-lg md:text-xl text-black leading-relaxed">
+                We believe that memories are meant to be shared, touched, and experienced in a way that goes beyond a screen. That's why we've created a process that transforms your videos into beautiful, high-quality flipbooks that capture every frame of your most precious moments.
+              </p>
             </div>
           </div>
         </main>
