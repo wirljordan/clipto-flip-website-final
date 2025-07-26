@@ -67,7 +67,7 @@ export function MobileNav() {
             <div className="p-6 space-y-6">
               {/* Header */}
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-black text-black">Menu</h2>
+                <div></div>
                 <Button
                   variant="ghost"
                   size="icon"
