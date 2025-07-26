@@ -267,30 +267,27 @@ export default function UploadPage() {
                     🚀 What Happens Next
                   </h3>
                   <div className="space-y-6 md:space-y-8 mobile-grid-spacing">
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0 text-2xl md:text-3xl">1️⃣</div>
-                        <h4 className="text-lg md:text-xl font-black text-black">Preview</h4>
-                      </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
+                    <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+                      <div className="text-2xl md:text-3xl">1️⃣</div>
+                      <h4 className="text-lg md:text-xl font-black text-black">Preview</h4>
+                      <div></div>
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                         See exactly how your flipbook will look
                       </p>
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0 text-2xl md:text-3xl">2️⃣</div>
-                        <h4 className="text-lg md:text-xl font-black text-black">Customize</h4>
-                      </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
+                    <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+                      <div className="text-2xl md:text-3xl">2️⃣</div>
+                      <h4 className="text-lg md:text-xl font-black text-black">Customize</h4>
+                      <div></div>
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                         Choose your cover color and shipping options
                       </p>
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0 text-2xl md:text-3xl">3️⃣</div>
-                        <h4 className="text-lg md:text-xl font-black text-black">Order</h4>
-                      </div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing ml-16 md:ml-20">
+                    <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+                      <div className="text-2xl md:text-3xl">3️⃣</div>
+                      <h4 className="text-lg md:text-xl font-black text-black">Order</h4>
+                      <div></div>
+                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                         Complete your purchase and we'll create your flipbook
                       </p>
                     </div>
