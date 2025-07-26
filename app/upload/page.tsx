@@ -268,8 +268,8 @@ export default function UploadPage() {
                   </h3>
                   <div className="space-y-6 md:space-y-8 mobile-grid-spacing">
                     <div className="flex items-start space-x-4">
-                      <div className="text-2xl md:text-3xl">1️⃣</div>
-                      <div>
+                      <div className="flex-shrink-0 text-2xl md:text-3xl">1️⃣</div>
+                      <div className="flex-1">
                         <h4 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">Preview</h4>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                           See exactly how your flipbook will look
@@ -277,8 +277,8 @@ export default function UploadPage() {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="text-2xl md:text-3xl">2️⃣</div>
-                      <div>
+                      <div className="flex-shrink-0 text-2xl md:text-3xl">2️⃣</div>
+                      <div className="flex-1">
                         <h4 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">Customize</h4>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                           Choose your cover color and shipping options
@@ -286,8 +286,8 @@ export default function UploadPage() {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="text-2xl md:text-3xl">3️⃣</div>
-                      <div>
+                      <div className="flex-shrink-0 text-2xl md:text-3xl">3️⃣</div>
+                      <div className="flex-1">
                         <h4 className="text-lg md:text-xl font-black text-black mb-2 mobile-space-y-4">Order</h4>
                         <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
                           Complete your purchase and we'll create your flipbook
