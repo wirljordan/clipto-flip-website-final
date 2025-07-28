@@ -602,9 +602,6 @@ function PreviewPageContent() {
                             </option>
                           ))}
                         </select>
-                        <p className="text-xs text-gray-500 mt-1">
-                          💡 Auto-detected your location • Change if needed for gifts
-                        </p>
                       </div>
                     </div>
                   </div>
