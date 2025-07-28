@@ -208,7 +208,7 @@ function PreviewPageContent() {
     { name: "Navy", value: "#34495E" },
     { name: "Mint", value: "#A8E6CF" },
     { name: "Red", value: "#E74C3C" },
-    { name: "Yellow", value: "#F1C40F" }
+    { name: "White", value: "#FFFFFF" }
   ]
 
   const shippingOptions = [
