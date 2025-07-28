@@ -276,374 +276,365 @@ function PreviewPageContent() {
               </p>
             </div>
 
-            {/* Main content grid: Restructured Layout */}
-            <div className="space-y-8">
-              {/* Top Row: Video Preview and Choose Your FlipBook */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Video Preview */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Your Video Preview
-                  </h2>
-                  <video
-                    src={videoData}
-                    controls={false}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full rounded-xl border-4 border-black"
-                    style={{ backgroundColor: "#FECB23" }}
-                  />
-                </div>
+            {/* Main content grid: Flexible Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Video Preview */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Your Video Preview
+                </h2>
+                <video
+                  src={videoData}
+                  controls={false}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full rounded-xl border-4 border-black"
+                  style={{ backgroundColor: "#FECB23" }}
+                />
+              </div>
 
-                {/* Product Selection */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Choose Your FlipBook
-                  </h2>
-                  <div className="space-y-4">
-                    {productOptions.map((product) => (
-                      <label
-                        key={product.id}
-                        className={`touch-target flex flex-col p-4 rounded-2xl border-4 cursor-pointer transition-all relative ${
-                          selectedProduct === product.id
-                            ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
-                            : 'border-gray-300 hover:border-black'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="product"
-                          value={product.id}
-                          checked={selectedProduct === product.id}
-                          onChange={(e) => setSelectedProduct(e.target.value)}
-                          className="sr-only"
-                        />
+              {/* Product Selection */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Choose Your FlipBook
+                </h2>
+                <div className="space-y-4">
+                  {productOptions.map((product) => (
+                    <label
+                      key={product.id}
+                      className={`touch-target flex flex-col p-4 rounded-2xl border-4 cursor-pointer transition-all relative ${
+                        selectedProduct === product.id
+                          ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                          : 'border-gray-300 hover:border-black'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="product"
+                        value={product.id}
+                        checked={selectedProduct === product.id}
+                        onChange={(e) => setSelectedProduct(e.target.value)}
+                        className="sr-only"
+                      />
+                      
+                      {/* Best Seller Badge */}
+                      {product.id === 'signature' && (
+                        <div className="absolute -bottom-2 -right-2 bg-yellow-400 border-2 border-black px-2 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10">
+                          <span className="text-xs font-black text-black">⭐ Best Seller</span>
+                        </div>
+                      )}
+                      
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start mb-3">
+                          <div className="flex-1">
+                            <div className="font-black text-black text-lg md:text-xl">{product.name}</div>
+                            <div className="text-gray-600 text-sm md:text-base">{product.subtitle}</div>
+                          </div>
+                          <div className="text-right ml-4">
+                            <div className="font-black text-black text-xl md:text-2xl">
+                              {selectedCountryData?.symbol}{product.prices[currency as keyof typeof product.prices].toFixed(2)}
+                            </div>
+                          </div>
+                        </div>
                         
-                        {/* Best Seller Badge */}
-                        {product.id === 'signature' && (
-                          <div className="absolute -bottom-2 -right-2 bg-yellow-400 border-2 border-black px-2 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10">
-                            <span className="text-xs font-black text-black">⭐ Best Seller</span>
+                        <div className="text-sm md:text-base text-gray-700 whitespace-pre-line mb-3">
+                          {product.description}
+                        </div>
+                        
+                        {/* Additional descriptive text */}
+                        {product.id === 'classic' && (
+                          <div className="text-xs md:text-sm text-gray-500 italic">
+                            Perfect for everyday memories and casual gifts
                           </div>
                         )}
-                        
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start mb-3">
-                            <div className="flex-1">
-                              <div className="font-black text-black text-lg md:text-xl">{product.name}</div>
-                              <div className="text-gray-600 text-sm md:text-base">{product.subtitle}</div>
-                            </div>
-                            <div className="text-right ml-4">
-                              <div className="font-black text-black text-xl md:text-2xl">
-                                {selectedCountryData?.symbol}{product.prices[currency as keyof typeof product.prices].toFixed(2)}
-                              </div>
-                            </div>
+                        {product.id === 'signature' && (
+                          <div className="text-xs md:text-sm text-gray-500 italic">
+                            Most popular choice - loved for its premium feel
                           </div>
-                          
-                          <div className="text-sm md:text-base text-gray-700 whitespace-pre-line mb-3">
-                            {product.description}
+                        )}
+                        {product.id === 'deluxe' && (
+                          <div className="text-xs md:text-sm text-gray-500 italic">
+                            Great for gifting - creates unforgettable moments
                           </div>
-                          
-                          {/* Additional descriptive text */}
-                          {product.id === 'classic' && (
-                            <div className="text-xs md:text-sm text-gray-500 italic">
-                              Perfect for everyday memories and casual gifts
-                            </div>
-                          )}
-                          {product.id === 'signature' && (
-                            <div className="text-xs md:text-sm text-gray-500 italic">
-                              Most popular choice - loved for its premium feel
-                            </div>
-                          )}
-                          {product.id === 'deluxe' && (
-                            <div className="text-xs md:text-sm text-gray-500 italic">
-                              Great for gifting - creates unforgettable moments
-                            </div>
-                          )}
-                        </div>
-                      </label>
-                    ))}
+                        )}
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Color Selection */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Choose Cover Color
+                </h2>
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {colorOptions.map((color) => (
+                    <button
+                      key={color.name}
+                      onClick={() => setSelectedColor(color.name)}
+                      className={`touch-target p-4 rounded-full border-4 transition-all ${
+                        selectedColor === color.name
+                          ? 'border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                          : 'border-gray-300 hover:border-black'
+                      }`}
+                      style={{ backgroundColor: color.value }}
+                      aria-label={`Select ${color.name} color`}
+                    >
+                      <span className="sr-only">{color.name}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Shipping Options */}
+                <div className="border-t-2 border-black pt-6">
+                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 text-center">
+                    Shipping Options
+                  </h3>
+                  <div className="space-y-3">
+                    <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
+                      <input
+                        type="radio"
+                        name="shipping"
+                        value="standard"
+                        checked={shippingOption === 'standard'}
+                        onChange={(e) => setShippingOption(e.target.value)}
+                        className="sr-only"
+                      />
+                      <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
+                        shippingOption === 'standard' 
+                          ? 'border-black bg-black' 
+                          : 'border-gray-300'
+                      }`}>
+                        {shippingOption === 'standard' && (
+                          <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-black text-base md:text-lg">Standard Shipping (10-20 days)</div>
+                        <div className="text-gray-600 text-sm md:text-base">Free</div>
+                      </div>
+                    </label>
+                    
+                    <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
+                      <input
+                        type="radio"
+                        name="shipping"
+                        value="express"
+                        checked={shippingOption === 'express'}
+                        onChange={(e) => setShippingOption(e.target.value)}
+                        className="sr-only"
+                      />
+                      <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
+                        shippingOption === 'express' 
+                          ? 'border-black bg-black' 
+                          : 'border-gray-300'
+                      }`}>
+                        {shippingOption === 'express' && (
+                          <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-black text-base md:text-lg">Express Shipping (3-7 days)</div>
+                        <div className="text-gray-600 text-sm md:text-base">+{selectedCountryData?.symbol}15.00</div>
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
 
-              {/* Second Row: Choose Cover Color and Order Summary */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Color Selection */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Choose Cover Color
-                  </h2>
-                  <div className="grid grid-cols-3 gap-4 mb-8">
-                    {colorOptions.map((color) => (
-                      <button
-                        key={color.name}
-                        onClick={() => setSelectedColor(color.name)}
-                        className={`touch-target p-4 rounded-full border-4 transition-all ${
-                          selectedColor === color.name
-                            ? 'border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
-                            : 'border-gray-300 hover:border-black'
-                        }`}
-                        style={{ backgroundColor: color.value }}
-                        aria-label={`Select ${color.name} color`}
-                      >
-                        <span className="sr-only">{color.name}</span>
-                      </button>
-                    ))}
+              {/* Order Summary */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Order Summary
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg md:text-xl text-black font-bold">
+                      {selectedProductData?.name}
+                    </span>
+                    <span className="text-lg md:text-xl text-black font-black">
+                      {selectedCountryData?.symbol}{productPrice.toFixed(2)}
+                    </span>
                   </div>
-
-                  {/* Shipping Options */}
-                  <div className="border-t-2 border-black pt-6">
-                    <h3 className="text-xl md:text-2xl font-black text-black mb-4 text-center">
-                      Shipping Options
-                    </h3>
-                    <div className="space-y-3">
-                      <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
-                        <input
-                          type="radio"
-                          name="shipping"
-                          value="standard"
-                          checked={shippingOption === 'standard'}
-                          onChange={(e) => setShippingOption(e.target.value)}
-                          className="sr-only"
-                        />
-                        <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
-                          shippingOption === 'standard' 
-                            ? 'border-black bg-black' 
-                            : 'border-gray-300'
-                        }`}>
-                          {shippingOption === 'standard' && (
-                            <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
-                          )}
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-black text-base md:text-lg">Standard Shipping (10-20 days)</div>
-                          <div className="text-gray-600 text-sm md:text-base">Free</div>
-                        </div>
-                      </label>
-                      
-                      <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
-                        <input
-                          type="radio"
-                          name="shipping"
-                          value="express"
-                          checked={shippingOption === 'express'}
-                          onChange={(e) => setShippingOption(e.target.value)}
-                          className="sr-only"
-                        />
-                        <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
-                          shippingOption === 'express' 
-                            ? 'border-black bg-black' 
-                            : 'border-gray-300'
-                        }`}>
-                          {shippingOption === 'express' && (
-                            <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
-                          )}
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-black text-base md:text-lg">Express Shipping (3-7 days)</div>
-                          <div className="text-gray-600 text-sm md:text-base">+{selectedCountryData?.symbol}15.00</div>
-                        </div>
-                      </label>
+                  <div className="flex justify-between items-center">
+                    <span className="text-base md:text-lg text-black">
+                      {shippingOption === 'express' ? 'Express Shipping' : 'Standard Shipping'}
+                    </span>
+                    <span className="text-base md:text-lg text-black font-bold">
+                      {shippingOption === 'express' ? `+${selectedCountryData?.symbol}15.00` : 'Free'}
+                    </span>
+                  </div>
+                  {socialMediaPermission && (
+                    <div className="flex justify-between items-center text-green-600">
+                      <span className="text-base md:text-lg font-bold">
+                        Social Media Discount
+                      </span>
+                      <span className="text-base md:text-lg font-black">
+                        -{selectedCountryData?.symbol}5.00
+                      </span>
+                    </div>
+                  )}
+                  <div className="border-t-2 border-black pt-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xl md:text-2xl text-black font-black">
+                        Total
+                      </span>
+                      <span className="text-xl md:text-2xl text-black font-black">
+                        {selectedCountryData?.symbol}{totalPrice.toFixed(2)}
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Order Summary */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Order Summary
-                  </h2>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg md:text-xl text-black font-bold">
-                        {selectedProductData?.name}
-                      </span>
-                      <span className="text-lg md:text-xl text-black font-black">
-                        {selectedCountryData?.symbol}{productPrice.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-base md:text-lg text-black">
-                        {shippingOption === 'express' ? 'Express Shipping' : 'Standard Shipping'}
-                      </span>
-                      <span className="text-base md:text-lg text-black font-bold">
-                        {shippingOption === 'express' ? `+${selectedCountryData?.symbol}15.00` : 'Free'}
-                      </span>
-                    </div>
-                    {socialMediaPermission && (
-                      <div className="flex justify-between items-center text-green-600">
-                        <span className="text-base md:text-lg font-bold">
-                          Social Media Discount
-                        </span>
-                        <span className="text-base md:text-lg font-black">
-                          -{selectedCountryData?.symbol}5.00
-                        </span>
-                      </div>
-                    )}
-                    <div className="border-t-2 border-black pt-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-xl md:text-2xl text-black font-black">
-                          Total
-                        </span>
-                        <span className="text-xl md:text-2xl text-black font-black">
-                          {selectedCountryData?.symbol}{totalPrice.toFixed(2)}
-                        </span>
-                      </div>
-                    </div>
+                {/* Social Media Permission Checkbox */}
+                <div className="mt-6 flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
+                  <input
+                    type="checkbox"
+                    id="socialMediaPermission"
+                    checked={socialMediaPermission}
+                    onChange={(e) => setSocialMediaPermission(e.target.checked)}
+                    className="w-5 h-5 border-2 border-black rounded mt-1"
+                  />
+                  <div>
+                    <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
+                      🎉 Yes, you can feature my flipbook — give me $5 off!
+                    </label>
+                    <p className="text-xs text-gray-600 mt-1">
+                      We may showcase your flipbook in a short social video.
+                    </p>
                   </div>
+                </div>
+              </div>
 
-                  {/* Social Media Permission Checkbox */}
-                  <div className="mt-6 flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
+              {/* Personal Details */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Personal Details
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm md:text-base font-bold text-black mb-2">
+                      First Name *
+                    </label>
                     <input
-                      type="checkbox"
-                      id="socialMediaPermission"
-                      checked={socialMediaPermission}
-                      onChange={(e) => setSocialMediaPermission(e.target.checked)}
-                      className="w-5 h-5 border-2 border-black rounded mt-1"
+                      type="text"
+                      id="firstName"
+                      value={personalDetails.firstName}
+                      onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your first name"
+                      required
                     />
-                    <div>
-                      <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
-                        🎉 Yes, you can feature my flipbook — give me $5 off!
-                      </label>
-                      <p className="text-xs text-gray-600 mt-1">
-                        We may showcase your flipbook in a short social video.
-                      </p>
-                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm md:text-base font-bold text-black mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={personalDetails.lastName}
+                      onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm md:text-base font-bold text-black mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={personalDetails.email}
+                      onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm md:text-base font-bold text-black mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={personalDetails.phone}
+                      onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your phone number"
+                      required
+                    />
                   </div>
                 </div>
               </div>
 
-              {/* Third Row: Personal Details and Shipping Address */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Personal Details */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Personal Details
-                  </h2>
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm md:text-base font-bold text-black mb-2">
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        value={personalDetails.firstName}
-                        onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your first name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm md:text-base font-bold text-black mb-2">
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        value={personalDetails.lastName}
-                        onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your last name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm md:text-base font-bold text-black mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        value={personalDetails.email}
-                        onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm md:text-base font-bold text-black mb-2">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        value={personalDetails.phone}
-                        onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your phone number"
-                        required
-                      />
-                    </div>
+              {/* Shipping Details */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Shipping Address
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="address" className="block text-sm md:text-base font-bold text-black mb-2">
+                      Address *
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      value={shippingDetails.address}
+                      onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your address"
+                      required
+                    />
                   </div>
-                </div>
-
-                {/* Shipping Details */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Shipping Address
-                  </h2>
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="address" className="block text-sm md:text-base font-bold text-black mb-2">
-                        Address *
-                      </label>
-                      <input
-                        type="text"
-                        id="address"
-                        value={shippingDetails.address}
-                        onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your address"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="city" className="block text-sm md:text-base font-bold text-black mb-2">
-                        City *
-                      </label>
-                      <input
-                        type="text"
-                        id="city"
-                        value={shippingDetails.city}
-                        onChange={(e) => setShippingDetails({...shippingDetails, city: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your city"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="state" className="block text-sm md:text-base font-bold text-black mb-2">
-                        State/Province *
-                      </label>
-                      <input
-                        type="text"
-                        id="state"
-                        value={shippingDetails.state}
-                        onChange={(e) => setShippingDetails({...shippingDetails, state: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your state/province"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="zipCode" className="block text-sm md:text-base font-bold text-black mb-2">
-                        ZIP/Postal Code *
-                      </label>
-                      <input
-                        type="text"
-                        id="zipCode"
-                        value={shippingDetails.zipCode}
-                        onChange={(e) => setShippingDetails({...shippingDetails, zipCode: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Enter your ZIP/postal code"
-                        required
-                      />
-                    </div>
+                  <div>
+                    <label htmlFor="city" className="block text-sm md:text-base font-bold text-black mb-2">
+                      City *
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      value={shippingDetails.city}
+                      onChange={(e) => setShippingDetails({...shippingDetails, city: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your city"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="state" className="block text-sm md:text-base font-bold text-black mb-2">
+                      State/Province *
+                    </label>
+                    <input
+                      type="text"
+                      id="state"
+                      value={shippingDetails.state}
+                      onChange={(e) => setShippingDetails({...shippingDetails, state: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your state/province"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="zipCode" className="block text-sm md:text-base font-bold text-black mb-2">
+                      ZIP/Postal Code *
+                    </label>
+                    <input
+                      type="text"
+                      id="zipCode"
+                      value={shippingDetails.zipCode}
+                      onChange={(e) => setShippingDetails({...shippingDetails, zipCode: e.target.value})}
+                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your ZIP/postal code"
+                      required
+                    />
                   </div>
                 </div>
               </div>
