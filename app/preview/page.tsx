@@ -206,7 +206,9 @@ function PreviewPageContent() {
     { name: "Black", value: "#2C3E50" },
     { name: "Brown", value: "#8B4513" },
     { name: "Navy", value: "#34495E" },
-    { name: "Mint", value: "#A8E6CF" }
+    { name: "Mint", value: "#A8E6CF" },
+    { name: "Red", value: "#E74C3C" },
+    { name: "Yellow", value: "#F1C40F" }
   ]
 
   const shippingOptions = [
@@ -374,7 +376,7 @@ function PreviewPageContent() {
                 <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                   Choose Cover Color
                 </h2>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-4 gap-4">
                   {colorOptions.map((color) => (
                     <button
                       key={color.name}
