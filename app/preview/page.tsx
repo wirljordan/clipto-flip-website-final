@@ -194,7 +194,7 @@ function PreviewPageContent() {
     }
 
     detectCountry()
-  }, [router, countries])
+  }, [router])
 
   const colorOptions = [
     { name: "Coral", value: "#FF6B6B" },
@@ -602,6 +602,9 @@ function PreviewPageContent() {
                             </option>
                           ))}
                         </select>
+                        <p className="text-xs text-gray-500 mt-1">
+                          💡 Auto-detected your location • Change if needed for gifts
+                        </p>
                       </div>
                     </div>
                   </div>
