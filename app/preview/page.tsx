@@ -202,7 +202,11 @@ function PreviewPageContent() {
     { name: "Purple", value: "#9B59B6" },
     { name: "Green", value: "#2ECC71" },
     { name: "Orange", value: "#F39C12" },
-    { name: "Pink", value: "#E91E63" }
+    { name: "Pink", value: "#E91E63" },
+    { name: "Black", value: "#2C3E50" },
+    { name: "Brown", value: "#8B4513" },
+    { name: "Navy", value: "#34495E" },
+    { name: "Mint", value: "#A8E6CF" }
   ]
 
   const shippingOptions = [
