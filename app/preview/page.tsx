@@ -203,7 +203,7 @@ function PreviewPageContent() {
     { name: "Green", value: "#2ECC71" },
     { name: "Orange", value: "#F39C12" },
     { name: "Pink", value: "#E91E63" },
-    { name: "Black", value: "#2C3E50" },
+    { name: "Black", value: "#000000" },
     { name: "Brown", value: "#8B4513" },
     { name: "Navy", value: "#34495E" },
     { name: "Mint", value: "#A8E6CF" },
