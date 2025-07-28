@@ -606,19 +606,21 @@ function PreviewPageContent() {
                     </div>
                   </div>
                 </div>
-
-                {/* Payment Form */}
-                <PaymentForm 
-                  amount={totalPrice}
-                  personalDetails={personalDetails}
-                  shippingDetails={shippingDetails}
-                  selectedColor={selectedColor}
-                  shippingOption={shippingOption}
-                  videoFileName={videoFileName}
-                  socialMediaPermission={socialMediaPermission}
-                  selectedProduct={selectedProduct}
-                />
               </div>
+            </div>
+
+            {/* Payment Form - Full Width at Bottom */}
+            <div className="mt-8 md:mt-12">
+              <PaymentForm 
+                amount={totalPrice}
+                personalDetails={personalDetails}
+                shippingDetails={shippingDetails}
+                selectedColor={selectedColor}
+                shippingOption={shippingOption}
+                videoFileName={videoFileName}
+                socialMediaPermission={socialMediaPermission}
+                selectedProduct={selectedProduct}
+              />
             </div>
           </div>
         </main>
