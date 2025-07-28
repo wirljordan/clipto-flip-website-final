@@ -493,74 +493,75 @@ function PreviewPageContent() {
                   </div>
                 </div>
 
-                {/* Personal Details */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Personal Details
-                  </h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">First Name</label>
-                      <input
-                        type="text"
-                        value={personalDetails.firstName}
-                        onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        value={personalDetails.lastName}
-                        onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">Email</label>
-                      <input
-                        type="email"
-                        value={personalDetails.email}
-                        onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">Phone</label>
-                      <input
-                        type="tel"
-                        value={personalDetails.phone}
-                        onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
-                      />
+                {/* Personal Details and Shipping Address - Side by Side on Desktop */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Personal Details */}
+                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                      Personal Details
+                    </h2>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm md:text-base font-black text-black mb-2">First Name</label>
+                        <input
+                          type="text"
+                          value={personalDetails.firstName}
+                          onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
+                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                          style={{ fontSize: '16px' }}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm md:text-base font-black text-black mb-2">Last Name</label>
+                        <input
+                          type="text"
+                          value={personalDetails.lastName}
+                          onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
+                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                          style={{ fontSize: '16px' }}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm md:text-base font-black text-black mb-2">Email</label>
+                        <input
+                          type="email"
+                          value={personalDetails.email}
+                          onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
+                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                          style={{ fontSize: '16px' }}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm md:text-base font-black text-black mb-2">Phone</label>
+                        <input
+                          type="tel"
+                          value={personalDetails.phone}
+                          onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
+                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                          style={{ fontSize: '16px' }}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Shipping Details */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Shipping Address
-                  </h2>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">Address</label>
-                      <input
-                        type="text"
-                        value={shippingDetails.address}
-                        onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
-                      />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Shipping Details */}
+                  <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                      Shipping Address
+                    </h2>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm md:text-base font-black text-black mb-2">Address</label>
+                        <input
+                          type="text"
+                          value={shippingDetails.address}
+                          onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
+                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                          style={{ fontSize: '16px' }}
+                        />
+                      </div>
                       <div>
                         <label className="block text-sm md:text-base font-black text-black mb-2">City</label>
                         <input
@@ -571,27 +572,27 @@ function PreviewPageContent() {
                           style={{ fontSize: '16px' }}
                         />
                       </div>
-                      <div>
-                        <label className="block text-sm md:text-base font-black text-black mb-2">State</label>
-                        <input
-                          type="text"
-                          value={shippingDetails.state}
-                          onChange={(e) => setShippingDetails({...shippingDetails, state: e.target.value})}
-                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                          style={{ fontSize: '16px' }}
-                        />
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm md:text-base font-black text-black mb-2">ZIP Code</label>
-                        <input
-                          type="text"
-                          value={shippingDetails.zipCode}
-                          onChange={(e) => setShippingDetails({...shippingDetails, zipCode: e.target.value})}
-                          className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                          style={{ fontSize: '16px' }}
-                        />
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm md:text-base font-black text-black mb-2">State</label>
+                          <input
+                            type="text"
+                            value={shippingDetails.state}
+                            onChange={(e) => setShippingDetails({...shippingDetails, state: e.target.value})}
+                            className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                            style={{ fontSize: '16px' }}
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm md:text-base font-black text-black mb-2">ZIP Code</label>
+                          <input
+                            type="text"
+                            value={shippingDetails.zipCode}
+                            onChange={(e) => setShippingDetails({...shippingDetails, zipCode: e.target.value})}
+                            className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
+                            style={{ fontSize: '16px' }}
+                          />
+                        </div>
                       </div>
                       <div>
                         <label className="block text-sm md:text-base font-black text-black mb-2">Country</label>
