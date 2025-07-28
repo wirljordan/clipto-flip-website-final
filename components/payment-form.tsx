@@ -29,6 +29,7 @@ interface PaymentFormProps {
   shippingOption: string
   videoFileName: string
   socialMediaPermission: boolean
+  selectedProduct: string
 }
 
 const cardElementOptions = {
@@ -54,7 +55,8 @@ export default function PaymentForm({
   selectedColor, 
   shippingOption,
   videoFileName,
-  socialMediaPermission
+  socialMediaPermission,
+  selectedProduct
 }: PaymentFormProps) {
   const stripe = useStripe()
   const elements = useElements()
@@ -130,7 +132,8 @@ export default function PaymentForm({
               shippingOption,
               totalAmount: amount,
               paymentStatus: 'completed',
-              socialMediaPermission
+              socialMediaPermission,
+              selectedProduct
             }),
           })
 

@@ -30,6 +30,7 @@ function PreviewPageContent() {
     country: ""
   })
   const [socialMediaPermission, setSocialMediaPermission] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState("classic")
   const router = useRouter()
 
   const countries = [
@@ -120,6 +121,42 @@ function PreviewPageContent() {
     { code: "LB", name: "Lebanon", currency: "USD", symbol: "$", basePrice: 39.99 }
   ]
 
+  const productOptions = [
+    {
+      id: "classic",
+      name: "🎞 Classic FlipBook",
+      subtitle: "Simple & Stunning",
+      description: "Premium photo prints\nSturdy cardstock cover\nA simple, thoughtful keepsake",
+      prices: {
+        USD: 39.99,
+        CAD: 44.99,
+        EUR: 29.99
+      }
+    },
+    {
+      id: "signature",
+      name: "✨ Signature FlipBook",
+      subtitle: "Our Best Seller",
+      description: "Premium photo prints\nWrapped in soft-touch faux leather\nA refined, gift-ready favorite",
+      prices: {
+        USD: 44.99,
+        CAD: 49.99,
+        EUR: 34.99
+      }
+    },
+    {
+      id: "deluxe",
+      name: "🎁 Deluxe FlipBook",
+      subtitle: "Gift-Boxed & Gorgeous",
+      description: "Premium photo prints\nSoft-touch faux leather cover\nSleek black gift box with black shredded tissue\nThe ultimate \"wow\" moment",
+      prices: {
+        USD: 59.99,
+        CAD: 64.99,
+        EUR: 49.99
+      }
+    }
+  ]
+
   useEffect(() => {
     // Retrieve video data from sessionStorage
     const storedVideo = sessionStorage.getItem('uploadedVideo')
@@ -174,10 +211,12 @@ function PreviewPageContent() {
   ]
 
   const selectedCountryData = countries.find(country => country.code === selectedCountry)
-  const basePrice = selectedCountryData?.basePrice || 39.99
+  const selectedProductData = productOptions.find(product => product.id === selectedProduct)
+  const currency = selectedCountryData?.currency || "USD"
+  const productPrice = selectedProductData?.prices[currency as keyof typeof selectedProductData.prices] || 39.99
   const selectedShipping = shippingOptions.find(option => option.value === shippingOption)
   const socialMediaDiscount = socialMediaPermission ? 5 : 0
-  const totalPrice = basePrice + (selectedShipping?.price || 0) - socialMediaDiscount
+  const totalPrice = productPrice + (selectedShipping?.price || 0) - socialMediaDiscount
 
   return (
     <div className="min-h-screen bg-yellow-400" style={{ backgroundColor: "#FECB23" }}>
@@ -266,6 +305,51 @@ function PreviewPageContent() {
                   )}
                 </div>
 
+                {/* Product Selection */}
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Choose Your FlipBook
+                  </h2>
+                  
+                  <div className="space-y-4">
+                    {productOptions.map((product) => (
+                      <label
+                        key={product.id}
+                        className={`touch-target flex flex-col p-4 rounded-2xl border-4 cursor-pointer transition-all ${
+                          selectedProduct === product.id
+                            ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                            : 'border-gray-300 hover:border-black'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="product"
+                          value={product.id}
+                          checked={selectedProduct === product.id}
+                          onChange={(e) => setSelectedProduct(e.target.value)}
+                          className="sr-only"
+                        />
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start mb-2">
+                            <div>
+                              <div className="font-black text-black text-lg md:text-xl">{product.name}</div>
+                              <div className="text-gray-600 text-sm md:text-base">{product.subtitle}</div>
+                            </div>
+                            <div className="text-right">
+                              <div className="font-black text-black text-sm md:text-base">
+                                {selectedCountryData?.symbol}{product.prices[currency as keyof typeof product.prices].toFixed(2)}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-sm md:text-base text-gray-700 whitespace-pre-line">
+                            {product.description}
+                          </div>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Color Selection */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
@@ -339,7 +423,7 @@ function PreviewPageContent() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-lg md:text-xl text-gray-700">Flipbook</span>
-                      <span className="text-lg md:text-xl font-black text-black">{selectedCountryData?.symbol}{basePrice.toFixed(2)}</span>
+                      <span className="text-lg md:text-xl font-black text-black">{selectedCountryData?.symbol}{productPrice.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-lg md:text-xl text-gray-700">Shipping</span>
@@ -506,6 +590,7 @@ function PreviewPageContent() {
                   shippingOption={shippingOption}
                   videoFileName={videoFileName}
                   socialMediaPermission={socialMediaPermission}
+                  selectedProduct={selectedProduct}
                 />
               </div>
             </div>
