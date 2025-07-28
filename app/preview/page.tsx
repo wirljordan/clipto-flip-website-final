@@ -276,33 +276,27 @@ function PreviewPageContent() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-              {/* Left Column - Video Preview and Customization */}
-              <div className="space-y-8">
+            {/* Main content grid: Restructured Layout */}
+            <div className="space-y-8">
+              {/* Top Row: Video Preview and Choose Your FlipBook */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Video Preview */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                     Your Video Preview
                   </h2>
-                  
-                  {videoData ? (
-                    <div className="space-y-4">
-                      <video
-                        src={videoData}
-                        controls={false}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full rounded-xl border-4 border-black shadow-lg"
-                        style={{ backgroundColor: "#FECB23" }}
-                      />
-                    </div>
-                  ) : (
-                    <div className="text-center py-8">
-                      <p className="text-lg md:text-xl text-gray-600">No video selected</p>
-                    </div>
-                  )}
+                  <div className="relative">
+                    <video
+                      src={videoData}
+                      controls={false}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full rounded-xl border-4 border-black"
+                      style={{ backgroundColor: "#FECB23" }}
+                    />
+                  </div>
                 </div>
 
                 {/* Product Selection */}
@@ -310,7 +304,6 @@ function PreviewPageContent() {
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                     Choose Your FlipBook
                   </h2>
-                  
                   <div className="space-y-4">
                     {productOptions.map((product) => (
                       <label
@@ -375,14 +368,16 @@ function PreviewPageContent() {
                     ))}
                   </div>
                 </div>
+              </div>
 
+              {/* Second Row: Choose Cover Color and Order Summary */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Color Selection */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                     Choose Cover Color
                   </h2>
-                  
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-4">
                     {colorOptions.map((color) => (
                       <button
                         key={color.value}
@@ -402,63 +397,6 @@ function PreviewPageContent() {
                   </div>
                 </div>
 
-                {/* Shipping Options */}
-                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                    Shipping Options
-                  </h2>
-                  
-                  <div className="space-y-4">
-                    {shippingOptions.map((option) => (
-                      <label
-                        key={option.value}
-                        className={`touch-target flex items-center p-4 rounded-2xl border-4 cursor-pointer transition-all ${
-                          shippingOption === option.value
-                            ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
-                            : 'border-gray-300 hover:border-black'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="shipping"
-                          value={option.value}
-                          checked={shippingOption === option.value}
-                          onChange={(e) => setShippingOption(e.target.value)}
-                          className="mr-4 w-5 h-5"
-                        />
-                        <div className="flex-1">
-                          <div className="font-black text-black">{option.label}</div>
-                          <div className="text-gray-600">
-                            {option.price === 0 ? 'Free' : `+$${option.price.toFixed(2)}`}
-                          </div>
-                        </div>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Social Media Permission Checkbox */}
-                <div className="flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
-                  <input
-                    type="checkbox"
-                    id="socialMediaPermission"
-                    checked={socialMediaPermission}
-                    onChange={(e) => setSocialMediaPermission(e.target.checked)}
-                    className="w-5 h-5 border-2 border-black rounded mt-1"
-                  />
-                  <div>
-                    <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
-                      🎉 Yes, you can feature my flipbook — give me $5 off!
-                    </label>
-                    <p className="text-xs text-gray-600 mt-1">
-                      We may showcase your flipbook in a short social video.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - Order Summary */}
-              <div className="space-y-8">
                 {/* Order Summary */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
@@ -503,7 +441,10 @@ function PreviewPageContent() {
                     </div>
                   </div>
                 </div>
+              </div>
 
+              {/* Third Row: Personal Details and Shipping Address */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Personal Details */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
@@ -631,6 +572,84 @@ function PreviewPageContent() {
                         required
                       />
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Shipping Options and Social Media Permission */}
+              <div className="space-y-8">
+                {/* Shipping Options */}
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Shipping Options
+                  </h2>
+                  <div className="space-y-4">
+                    <label className="touch-target flex items-center p-4 rounded-2xl border-4 cursor-pointer transition-all">
+                      <input
+                        type="radio"
+                        name="shipping"
+                        value="standard"
+                        checked={shippingOption === 'standard'}
+                        onChange={(e) => setShippingOption(e.target.value)}
+                        className="sr-only"
+                      />
+                      <div className={`w-6 h-6 rounded-full border-4 mr-4 flex-shrink-0 ${
+                        shippingOption === 'standard' 
+                          ? 'border-black bg-black' 
+                          : 'border-gray-300'
+                      }`}>
+                        {shippingOption === 'standard' && (
+                          <div className="w-2 h-2 bg-white rounded-full m-auto"></div>
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-black text-black text-lg md:text-xl">Standard Shipping (10-20 days)</div>
+                        <div className="text-gray-600 text-base md:text-lg">Free</div>
+                      </div>
+                    </label>
+                    
+                    <label className="touch-target flex items-center p-4 rounded-2xl border-4 cursor-pointer transition-all">
+                      <input
+                        type="radio"
+                        name="shipping"
+                        value="express"
+                        checked={shippingOption === 'express'}
+                        onChange={(e) => setShippingOption(e.target.value)}
+                        className="sr-only"
+                      />
+                      <div className={`w-6 h-6 rounded-full border-4 mr-4 flex-shrink-0 ${
+                        shippingOption === 'express' 
+                          ? 'border-black bg-black' 
+                          : 'border-gray-300'
+                      }`}>
+                        {shippingOption === 'express' && (
+                          <div className="w-2 h-2 bg-white rounded-full m-auto"></div>
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-black text-black text-lg md:text-xl">Express Shipping (3-7 days)</div>
+                        <div className="text-gray-600 text-base md:text-lg">+{selectedCountryData?.symbol}15.00</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Social Media Permission Checkbox */}
+                <div className="flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
+                  <input
+                    type="checkbox"
+                    id="socialMediaPermission"
+                    checked={socialMediaPermission}
+                    onChange={(e) => setSocialMediaPermission(e.target.checked)}
+                    className="w-5 h-5 border-2 border-black rounded mt-1"
+                  />
+                  <div>
+                    <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
+                      🎉 Yes, you can feature my flipbook — give me $5 off!
+                    </label>
+                    <p className="text-xs text-gray-600 mt-1">
+                      We may showcase your flipbook in a short social video.
+                    </p>
                   </div>
                 </div>
               </div>
