@@ -188,13 +188,13 @@ export default function UploadPage() {
                   
                   <div className="space-y-4 md:space-y-6 mobile-grid-spacing">
                     <div className="flex justify-center">
-                      <Button
-                        onClick={handleBrowseClick}
-                        className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
-                        style={{ backgroundColor: "#FF6B6B" }}
-                      >
-                        📁 Choose File
-                      </Button>
+                    <Button
+                      onClick={handleBrowseClick}
+                      className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    >
+                      📁 Choose File
+                    </Button>
                     </div>
                     
                     <div className="text-sm md:text-base text-gray-500 mobile-text-spacing text-center">
@@ -271,25 +271,25 @@ export default function UploadPage() {
                       <div className="text-2xl md:text-3xl">1️⃣</div>
                       <h4 className="text-lg md:text-xl font-black text-black">Preview</h4>
                       <div></div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
-                        See exactly how your flipbook will look
-                      </p>
+                        <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                          See exactly how your flipbook will look
+                        </p>
                     </div>
                     <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
                       <div className="text-2xl md:text-3xl">2️⃣</div>
                       <h4 className="text-lg md:text-xl font-black text-black">Customize</h4>
                       <div></div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
-                        Choose your cover color and shipping options
-                      </p>
+                        <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                          Choose your cover color and shipping options
+                        </p>
                     </div>
                     <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
                       <div className="text-2xl md:text-3xl">3️⃣</div>
                       <h4 className="text-lg md:text-xl font-black text-black">Order</h4>
                       <div></div>
-                      <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
-                        Complete your purchase and we'll create your flipbook
-                      </p>
+                        <p className="text-base md:text-lg text-gray-700 mobile-text-spacing">
+                          Complete your purchase and we'll create your flipbook
+                        </p>
                     </div>
                   </div>
                 </div>

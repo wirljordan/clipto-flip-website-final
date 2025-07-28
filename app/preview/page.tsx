@@ -436,180 +436,201 @@ function PreviewPageContent() {
                     ))}
                   </div>
                 </div>
+
+                {/* Social Media Permission Checkbox */}
+                <div className="flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
+                  <input
+                    type="checkbox"
+                    id="socialMediaPermission"
+                    checked={socialMediaPermission}
+                    onChange={(e) => setSocialMediaPermission(e.target.checked)}
+                    className="w-5 h-5 border-2 border-black rounded mt-1"
+                  />
+                  <div>
+                    <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
+                      🎉 Yes, you can feature my flipbook — give me $5 off!
+                    </label>
+                    <p className="text-xs text-gray-600 mt-1">
+                      We may showcase your flipbook in a short social video.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Right Column - Pricing and Forms */}
+              {/* Right Column - Order Summary */}
               <div className="space-y-8">
-                {/* Pricing */}
+                {/* Order Summary */}
                 <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                   <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                     Order Summary
                   </h2>
-                  
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-lg md:text-xl text-gray-700">Flipbook</span>
-                      <span className="text-lg md:text-xl font-black text-black">{selectedCountryData?.symbol}{productPrice.toFixed(2)}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg md:text-xl text-gray-700">Shipping</span>
-                      <span className="text-lg md:text-xl font-black text-black">
-                        {selectedShipping?.price === 0 ? 'Free' : `${selectedCountryData?.symbol}${selectedShipping?.price.toFixed(2)}`}
+                      <span className="text-lg md:text-xl text-black font-bold">
+                        {selectedProductData?.name}
+                      </span>
+                      <span className="text-lg md:text-xl text-black font-black">
+                        {selectedCountryData?.symbol}{productPrice.toFixed(2)}
                       </span>
                     </div>
-                    
-                    {/* Social Media Permission Checkbox */}
-                    <div className="flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
-                      <input
-                        type="checkbox"
-                        id="socialMediaPermission"
-                        checked={socialMediaPermission}
-                        onChange={(e) => setSocialMediaPermission(e.target.checked)}
-                        className="w-5 h-5 border-2 border-black rounded mt-1"
-                      />
-                      <div>
-                        <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
-                          🎉 Yes, you can feature my flipbook — give me $5 off!
-                        </label>
-                        <p className="text-xs text-gray-600 mt-1">
-                          We may showcase your flipbook in a short social video.
-                        </p>
-                      </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-base md:text-lg text-black">
+                        {shippingOption === 'express' ? 'Express Shipping' : 'Standard Shipping'}
+                      </span>
+                      <span className="text-base md:text-lg text-black font-bold">
+                        {shippingOption === 'express' ? `+${selectedCountryData?.symbol}15.00` : 'Free'}
+                      </span>
                     </div>
-                    
                     {socialMediaPermission && (
                       <div className="flex justify-between items-center text-green-600">
-                        <span className="text-lg md:text-xl">Social Media Discount</span>
-                        <span className="text-lg md:text-xl font-black">-{selectedCountryData?.symbol}5.00</span>
+                        <span className="text-base md:text-lg font-bold">
+                          Social Media Discount
+                        </span>
+                        <span className="text-base md:text-lg font-black">
+                          -{selectedCountryData?.symbol}5.00
+                        </span>
                       </div>
                     )}
-                    
-                    <div className="border-t-4 border-black pt-4">
+                    <div className="border-t-2 border-black pt-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-xl md:text-2xl font-black text-black">Total</span>
-                        <span className="text-xl md:text-2xl font-black text-black">{selectedCountryData?.symbol}{totalPrice.toFixed(2)}</span>
+                        <span className="text-xl md:text-2xl text-black font-black">
+                          Total
+                        </span>
+                        <span className="text-xl md:text-2xl text-black font-black">
+                          {selectedCountryData?.symbol}{totalPrice.toFixed(2)}
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Personal Details and Shipping Address - Side by Side Row */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-              {/* Personal Details */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                  Personal Details
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">First Name</label>
-                    <input
-                      type="text"
-                      value={personalDetails.firstName}
-                      onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">Last Name</label>
-                    <input
-                      type="text"
-                      value={personalDetails.lastName}
-                      onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">Email</label>
-                    <input
-                      type="email"
-                      value={personalDetails.email}
-                      onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">Phone</label>
-                    <input
-                      type="tel"
-                      value={personalDetails.phone}
-                      onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
+                {/* Personal Details */}
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Personal Details
+                  </h2>
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm md:text-base font-bold text-black mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        value={personalDetails.firstName}
+                        onChange={(e) => setPersonalDetails({...personalDetails, firstName: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your first name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm md:text-base font-bold text-black mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        value={personalDetails.lastName}
+                        onChange={(e) => setPersonalDetails({...personalDetails, lastName: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your last name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm md:text-base font-bold text-black mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={personalDetails.email}
+                        onChange={(e) => setPersonalDetails({...personalDetails, email: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm md:text-base font-bold text-black mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        value={personalDetails.phone}
+                        onChange={(e) => setPersonalDetails({...personalDetails, phone: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your phone number"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Shipping Details */}
-              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
-                  Shipping Address
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">Address</label>
-                    <input
-                      type="text"
-                      value={shippingDetails.address}
-                      onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">City</label>
-                    <input
-                      type="text"
-                      value={shippingDetails.city}
-                      onChange={(e) => setShippingDetails({...shippingDetails, city: e.target.value})}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
+                {/* Shipping Details */}
+                <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                  <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                    Shipping Address
+                  </h2>
+                  <div className="space-y-4">
                     <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">State</label>
+                      <label htmlFor="address" className="block text-sm md:text-base font-bold text-black mb-2">
+                        Address *
+                      </label>
                       <input
                         type="text"
+                        id="address"
+                        value={shippingDetails.address}
+                        onChange={(e) => setShippingDetails({...shippingDetails, address: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your address"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="city" className="block text-sm md:text-base font-bold text-black mb-2">
+                        City *
+                      </label>
+                      <input
+                        type="text"
+                        id="city"
+                        value={shippingDetails.city}
+                        onChange={(e) => setShippingDetails({...shippingDetails, city: e.target.value})}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your city"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="state" className="block text-sm md:text-base font-bold text-black mb-2">
+                        State/Province *
+                      </label>
+                      <input
+                        type="text"
+                        id="state"
                         value={shippingDetails.state}
                         onChange={(e) => setShippingDetails({...shippingDetails, state: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your state/province"
+                        required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm md:text-base font-black text-black mb-2">ZIP Code</label>
+                      <label htmlFor="zipCode" className="block text-sm md:text-base font-bold text-black mb-2">
+                        ZIP/Postal Code *
+                      </label>
                       <input
                         type="text"
+                        id="zipCode"
                         value={shippingDetails.zipCode}
                         onChange={(e) => setShippingDetails({...shippingDetails, zipCode: e.target.value})}
-                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                        style={{ fontSize: '16px' }}
+                        className="w-full p-3 md:p-4 border-4 border-black rounded-xl bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your ZIP/postal code"
+                        required
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm md:text-base font-black text-black mb-2">Country</label>
-                    <select
-                      value={selectedCountry}
-                      onChange={(e) => setSelectedCountry(e.target.value)}
-                      className="w-full p-3 md:p-4 border-4 border-black rounded-xl text-base md:text-lg"
-                      style={{ fontSize: '16px' }}
-                    >
-                      {countries.map((country) => (
-                        <option key={country.code} value={country.code}>
-                          {country.name}
-                        </option>
-                      ))}
-                    </select>
                   </div>
                 </div>
               </div>
