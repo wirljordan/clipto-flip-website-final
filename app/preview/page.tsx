@@ -148,7 +148,7 @@ function PreviewPageContent() {
       id: "deluxe",
       name: "🎁 Deluxe FlipBook",
       subtitle: "Gift-Boxed & Gorgeous",
-      description: "Premium photo prints\nSoft-touch faux leather cover\nSleek black gift box with black shredded tissue\nThe ultimate \"wow\" moment",
+      description: "Everything in Signature\nSleek black gift box with black shredded tissue\nThe ultimate \"wow\" moment",
       prices: {
         USD: 59.99,
         CAD: 64.99,
@@ -459,17 +459,22 @@ function PreviewPageContent() {
                     </div>
                     
                     {/* Social Media Permission Checkbox */}
-                    <div className="flex items-center space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
+                    <div className="flex items-start space-x-3 p-3 border-2 border-black rounded-xl bg-yellow-100">
                       <input
                         type="checkbox"
                         id="socialMediaPermission"
                         checked={socialMediaPermission}
                         onChange={(e) => setSocialMediaPermission(e.target.checked)}
-                        className="w-5 h-5 border-2 border-black rounded"
+                        className="w-5 h-5 border-2 border-black rounded mt-1"
                       />
-                      <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold">
-                        Get $5 off! Allow us to use your flipbook in TikTok/Instagram reels
-                      </label>
+                      <div>
+                        <label htmlFor="socialMediaPermission" className="text-sm md:text-base text-black font-bold block">
+                          🎉 Yes, you can feature my flipbook — give me $5 off!
+                        </label>
+                        <p className="text-xs text-gray-600 mt-1">
+                          We may showcase your flipbook in a short social video.
+                        </p>
+                      </div>
                     </div>
                     
                     {socialMediaPermission && (
