@@ -319,7 +319,7 @@ function PreviewPageContent() {
                           selectedProduct === product.id
                             ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                             : 'border-gray-300 hover:border-black'
-                        }`}
+                        } ${product.id === 'signature' ? 'relative bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-400' : ''}`}
                       >
                         <input
                           type="radio"
@@ -329,21 +329,47 @@ function PreviewPageContent() {
                           onChange={(e) => setSelectedProduct(e.target.value)}
                           className="sr-only"
                         />
+                        
+                        {/* Best Seller Badge */}
+                        {product.id === 'signature' && (
+                          <div className="absolute -top-2 -right-2 bg-yellow-400 border-2 border-black px-2 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                            <span className="text-xs font-black text-black">⭐ Best Seller</span>
+                          </div>
+                        )}
+                        
                         <div className="flex-1">
-                          <div className="flex justify-between items-start mb-2">
-                            <div>
+                          <div className="flex justify-between items-start mb-3">
+                            <div className="flex-1">
                               <div className="font-black text-black text-lg md:text-xl">{product.name}</div>
                               <div className="text-gray-600 text-sm md:text-base">{product.subtitle}</div>
                             </div>
-                            <div className="text-right">
-                              <div className="font-black text-black text-sm md:text-base">
+                            <div className="text-right ml-4">
+                              <div className="font-black text-black text-xl md:text-2xl">
                                 {selectedCountryData?.symbol}{product.prices[currency as keyof typeof product.prices].toFixed(2)}
                               </div>
                             </div>
                           </div>
-                          <div className="text-sm md:text-base text-gray-700 whitespace-pre-line">
+                          
+                          <div className="text-sm md:text-base text-gray-700 whitespace-pre-line mb-3">
                             {product.description}
                           </div>
+                          
+                          {/* Additional descriptive text */}
+                          {product.id === 'classic' && (
+                            <div className="text-xs md:text-sm text-gray-500 italic">
+                              Perfect for everyday memories and casual gifts
+                            </div>
+                          )}
+                          {product.id === 'signature' && (
+                            <div className="text-xs md:text-sm text-gray-500 italic">
+                              Most popular choice - loved for its premium feel
+                            </div>
+                          )}
+                          {product.id === 'deluxe' && (
+                            <div className="text-xs md:text-sm text-gray-500 italic">
+                              Great for gifting - creates unforgettable moments
+                            </div>
+                          )}
                         </div>
                       </label>
                     ))}
