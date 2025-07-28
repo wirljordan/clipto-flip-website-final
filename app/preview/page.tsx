@@ -30,7 +30,7 @@ function PreviewPageContent() {
     country: ""
   })
   const [socialMediaPermission, setSocialMediaPermission] = useState(false)
-  const [selectedProduct, setSelectedProduct] = useState("classic")
+  const [selectedProduct, setSelectedProduct] = useState("signature")
   const router = useRouter()
 
   const countries = [
@@ -319,7 +319,7 @@ function PreviewPageContent() {
                           selectedProduct === product.id
                             ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                             : 'border-gray-300 hover:border-black'
-                        } ${product.id === 'signature' ? 'relative bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-400' : ''}`}
+                        }`}
                       >
                         <input
                           type="radio"
