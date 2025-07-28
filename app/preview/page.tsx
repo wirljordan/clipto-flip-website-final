@@ -277,7 +277,7 @@ function PreviewPageContent() {
             </div>
 
             {/* Main content grid: Flexible Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-8">
               {/* Video Preview */}
               <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
@@ -370,7 +370,7 @@ function PreviewPageContent() {
                 <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
                   Choose Cover Color
                 </h2>
-                <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-3 gap-4">
                   {colorOptions.map((color) => (
                     <button
                       key={color.name}
@@ -386,62 +386,6 @@ function PreviewPageContent() {
                       <span className="sr-only">{color.name}</span>
                     </button>
                   ))}
-                </div>
-
-                {/* Shipping Options */}
-                <div className="border-t-2 border-black pt-6">
-                  <h3 className="text-xl md:text-2xl font-black text-black mb-4 text-center">
-                    Shipping Options
-                  </h3>
-                  <div className="space-y-3">
-                    <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
-                      <input
-                        type="radio"
-                        name="shipping"
-                        value="standard"
-                        checked={shippingOption === 'standard'}
-                        onChange={(e) => setShippingOption(e.target.value)}
-                        className="sr-only"
-                      />
-                      <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
-                        shippingOption === 'standard' 
-                          ? 'border-black bg-black' 
-                          : 'border-gray-300'
-                      }`}>
-                        {shippingOption === 'standard' && (
-                          <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-black text-base md:text-lg">Standard Shipping (10-20 days)</div>
-                        <div className="text-gray-600 text-sm md:text-base">Free</div>
-                      </div>
-                    </label>
-                    
-                    <label className="touch-target flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all">
-                      <input
-                        type="radio"
-                        name="shipping"
-                        value="express"
-                        checked={shippingOption === 'express'}
-                        onChange={(e) => setShippingOption(e.target.value)}
-                        className="sr-only"
-                      />
-                      <div className={`w-5 h-5 rounded-full border-2 mr-3 flex-shrink-0 ${
-                        shippingOption === 'express' 
-                          ? 'border-black bg-black' 
-                          : 'border-gray-300'
-                      }`}>
-                        {shippingOption === 'express' && (
-                          <div className="w-1.5 h-1.5 bg-white rounded-full m-auto"></div>
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-black text-base md:text-lg">Express Shipping (3-7 days)</div>
-                        <div className="text-gray-600 text-sm md:text-base">+{selectedCountryData?.symbol}15.00</div>
-                      </div>
-                    </label>
-                  </div>
                 </div>
               </div>
 
@@ -506,6 +450,62 @@ function PreviewPageContent() {
                       We may showcase your flipbook in a short social video.
                     </p>
                   </div>
+                </div>
+              </div>
+
+              {/* Shipping Options */}
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-6 text-center">
+                  Shipping Options
+                </h2>
+                <div className="space-y-4">
+                  <label className="touch-target flex items-center p-4 rounded-2xl border-4 cursor-pointer transition-all">
+                    <input
+                      type="radio"
+                      name="shipping"
+                      value="standard"
+                      checked={shippingOption === 'standard'}
+                      onChange={(e) => setShippingOption(e.target.value)}
+                      className="sr-only"
+                    />
+                    <div className={`w-6 h-6 rounded-full border-4 mr-4 flex-shrink-0 ${
+                      shippingOption === 'standard' 
+                        ? 'border-black bg-black' 
+                        : 'border-gray-300'
+                    }`}>
+                      {shippingOption === 'standard' && (
+                        <div className="w-2 h-2 bg-white rounded-full m-auto"></div>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-black text-black text-lg md:text-xl">Standard Shipping (10-20 days)</div>
+                      <div className="text-gray-600 text-base md:text-lg">Free</div>
+                    </div>
+                  </label>
+                  
+                  <label className="touch-target flex items-center p-4 rounded-2xl border-4 cursor-pointer transition-all">
+                    <input
+                      type="radio"
+                      name="shipping"
+                      value="express"
+                      checked={shippingOption === 'express'}
+                      onChange={(e) => setShippingOption(e.target.value)}
+                      className="sr-only"
+                    />
+                    <div className={`w-6 h-6 rounded-full border-4 mr-4 flex-shrink-0 ${
+                      shippingOption === 'express' 
+                        ? 'border-black bg-black' 
+                        : 'border-gray-300'
+                    }`}>
+                      {shippingOption === 'express' && (
+                        <div className="w-2 h-2 bg-white rounded-full m-auto"></div>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-black text-black text-lg md:text-xl">Express Shipping (3-7 days)</div>
+                      <div className="text-gray-600 text-base md:text-lg">+{selectedCountryData?.symbol}15.00</div>
+                    </div>
+                  </label>
                 </div>
               </div>
 
