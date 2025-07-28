@@ -315,7 +315,7 @@ function PreviewPageContent() {
                     {productOptions.map((product) => (
                       <label
                         key={product.id}
-                        className={`touch-target flex flex-col p-4 rounded-2xl border-4 cursor-pointer transition-all ${
+                        className={`touch-target flex flex-col p-4 rounded-2xl border-4 cursor-pointer transition-all relative ${
                           selectedProduct === product.id
                             ? 'border-black bg-yellow-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
                             : 'border-gray-300 hover:border-black'
