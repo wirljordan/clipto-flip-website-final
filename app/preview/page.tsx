@@ -610,7 +610,7 @@ function PreviewPageContent() {
             </div>
 
             {/* Payment Form - Full Width at Bottom */}
-            <div className="mt-8 md:mt-12">
+            <div className="mt-4 md:mt-6">
               <PaymentForm 
                 amount={totalPrice}
                 personalDetails={personalDetails}
