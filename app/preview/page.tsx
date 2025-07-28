@@ -332,7 +332,7 @@ function PreviewPageContent() {
                         
                         {/* Best Seller Badge */}
                         {product.id === 'signature' && (
-                          <div className="absolute top-2 right-2 bg-yellow-400 border-2 border-black px-2 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10">
+                          <div className="absolute -bottom-2 -right-2 bg-yellow-400 border-2 border-black px-2 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10">
                             <span className="text-xs font-black text-black">⭐ Best Seller</span>
                           </div>
                         )}
