@@ -26,8 +26,8 @@ export default function HomePage() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
-              HOME
+            <Link href="/examples" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
+              EXAMPLES
             </Link>
             <Link href="/about" className="text-2xl font-black text-black hover:text-gray-700 transition-colors">
               ABOUT

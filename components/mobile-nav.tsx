@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Home, Info, Mail, Upload } from "lucide-react"
+import { Menu, X, Home, Info, Mail, Upload, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -82,12 +82,12 @@ export function MobileNav() {
               {/* Navigation Links */}
               <nav className="space-y-4">
                 <Link 
-                  href="/" 
+                  href="/examples" 
                   onClick={closeMenu}
                   className="flex items-center space-x-4 p-4 bg-white rounded-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all touch-target"
                 >
-                  <Home className="h-6 w-6 text-black" />
-                  <span className="text-xl font-black text-black">HOME</span>
+                  <BookOpen className="h-6 w-6 text-black" />
+                  <span className="text-xl font-black text-black">EXAMPLES</span>
                 </Link>
                 
                 <Link 
@@ -137,13 +137,13 @@ export function MobileBottomNav() {
     <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-yellow-400 border-t-4 border-black z-50 mobile-nav">
       <div className="flex justify-around items-center px-4 py-2">
         <Link 
-          href="/" 
+          href="/examples" 
           className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all touch-target ${
-            pathname === '/' ? 'bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'hover:bg-yellow-300'
+            pathname === '/examples' ? 'bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'hover:bg-yellow-300'
           }`}
         >
-          <Home className="h-5 w-5 text-black" />
-          <span className="text-xs font-black text-black">HOME</span>
+          <BookOpen className="h-5 w-5 text-black" />
+          <span className="text-xs font-black text-black">EXAMPLES</span>
         </Link>
         
         <Link 
