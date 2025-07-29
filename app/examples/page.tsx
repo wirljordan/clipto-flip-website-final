@@ -195,7 +195,7 @@ export default function ExamplesPage() {
               <div className="flex flex-col lg:flex-row">
                 {/* Left Section - Visual Content */}
                 <div className="lg:w-1/2 p-4 md:p-6">
-                  <div className={`w-full h-64 md:h-80 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden`}>
+                                       <div className={`w-full h-80 md:h-96 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden`}>
                     {selectedExample.video ? (
                       <video
                         src={selectedExample.video}
