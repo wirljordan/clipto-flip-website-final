@@ -54,7 +54,7 @@ export default function HomePage() {
           {/* Flipbook Illustration */}
           <div className="flex items-center justify-center md:flex-1 video-container mobile-video-spacing" style={{ backgroundColor: "#FECB23" }}>
             <video
-              src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-9.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOS5tcDQiLCJpYXQiOjE3NTMyMjUwMDYsImV4cCI6MjA2ODU4NTAwNn0.lnunTceuXcFT7MO2IUFd_9qVIK8HC2JjY7o3oWOAsiI"
+              src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20design-9-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCBkZXNpZ24tOS0yLm1wNCIsImlhdCI6MTc1Mzc0NjYzNywiZXhwIjoxNzg1MjgyNjM3fQ.pnl_9eEBHKisC1tBnkkkdpZb6NZHP6Av6X_a3xNnuhI"
               width={300}
               height={240}
               className="md:w-[400px] md:h-[320px] object-contain bg-yellow-400 rounded-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
@@ -178,7 +178,7 @@ export default function HomePage() {
                   {/* Left: Image */}
                   <div className="flex-1 flex justify-center">
                     <video
-                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91Lm1wNCIsImlhdCI6MTc1MzQwNjEzOCwiZXhwIjoyMDY4NzY2MTM4fQ.83HZx1xayehZ-JHg9fbfKLP09bR99jEWzwvcyeKtNKY"
+                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/i-love-you-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9pLWxvdmUteW91LTIubXA0IiwiaWF0IjoxNzUzNzQ2MDk5LCJleHAiOjE3ODUyODIwOTl9.dpOqWbQv2M6RhKgHmgxd-1oeDX2xcldDiMyk_wze3QI"
                       autoPlay
                       loop
                       muted
@@ -216,7 +216,7 @@ export default function HomePage() {
                   {/* Right: Image */}
                   <div className="flex-1 flex justify-center order-1 md:order-2">
                     <video
-                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/prev-3.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9wcmV2LTMubXA0IiwiaWF0IjoxNzUzNDA2Mjk2LCJleHAiOjIwNjg3NjYyOTZ9.UNME72rdLpP2iHPA4Ab5QRoIDVIHEkl0rnrCbE0yRFU"
+                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/prev-3-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9wcmV2LTMtMi5tcDQiLCJpYXQiOjE3NTM3NDYzMTUsImV4cCI6MTc4NTI4MjMxNX0.45Y6IPHqND-Ax8NR8--gBdPg5_4Mz4v9BsuRjBGTXf8"
                       autoPlay
                       loop
                       muted
@@ -245,7 +245,7 @@ export default function HomePage() {
                   {/* Video on the left - centered */}
                   <div className="flex-1 flex items-center justify-center mobile-video-spacing">
                     <video
-                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20(Facebook%20Video).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCAoRmFjZWJvb2sgVmlkZW8pLm1wNCIsImlhdCI6MTc1MzQ3Mjk4NSwiZXhwIjoyMDY4ODMyOTg1fQ.GxDbKtUI0El4lIcSc3baItW5WubsOfUaOoMVdvXdqRA"
+                      src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Untitled%20(Facebook%20Video)-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9VbnRpdGxlZCAoRmFjZWJvb2sgVmlkZW8pLTIubXA0IiwiaWF0IjoxNzUzNzQ2NDc2LCJleHAiOjE3ODUyODI0NzZ9.l8YdJV6cLQkqNRN_pIIiRjdEF1T7JUAZmfjggbMBS24"
                       autoPlay
                       loop
                       muted
@@ -318,7 +318,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0yLnBuZyIsImlhdCI6MTc1MzQ3NzU4NywiZXhwIjoyMDY4ODM3NTg3fQ.rAE0EGpgcJMXeewOXJhlHCx46BhYSyV9sVcmQCxyShs"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-2-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0yLTIucG5nIiwiaWF0IjoxNzUzNzQ2OTU4LCJleHAiOjE3ODUyODI5NTh9.A_9HM39wKcQCDrGzNxELIJlEQ2Spa63gUgtLkhyipyQ"
                     alt="Ilona M."
                     width={40}
                     height={40}
@@ -340,7 +340,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0zLnBuZyIsImlhdCI6MTc1MzQ3Nzc1OCwiZXhwIjoxNzg1MDEzNzU4fQ.BKmSYjkZwIuz92gKSGpuauQeZw7lQILtbJ4WQM_Yec8"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-3-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy0zLTIucG5nIiwiaWF0IjoxNzUzNzQ3MDQxLCJleHAiOjE3ODUyODMwNDF9.Kj0eivBoWh7-Jz694JVDCviSMuAcePOmUy1nXzSwRF0"
                     alt="Kass R."
                     width={40}
                     height={40}
@@ -362,7 +362,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy00LnBuZyIsImlhdCI6MTc1MzQ3Nzg3NSwiZXhwIjoxNzg1MDEzODc1fQ.CBYXrXhzl2QjmJKA7qQXm27MOe1VApuj7o4tiwQREYg"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-4-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy00LTIucG5nIiwiaWF0IjoxNzUzNzQ3MTU0LCJleHAiOjE3ODUyODMxNTR9.msvDTIY9xYvDhITIp4LErtCRQr6WUy1Cqgfp3gh3XM4"
                     alt="Carly T."
                     width={40}
                     height={40}
@@ -384,7 +384,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-5.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy01LnBuZyIsImlhdCI6MTc1MzQ3ODA0NiwiZXhwIjoxNzg1MDE0MDQ2fQ.jmenxVMVsrqXdvzNXH4ib6BkWpr0G1tbFcaCi-i6FgA"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-5-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy01LTIucG5nIiwiaWF0IjoxNzUzNzQ3MjMyLCJleHAiOjE3ODUyODMyMzJ9.cojLPUs9zLBLE8cEiGGqjN1O6is00wYkgDfXG5K5Rio"
                     alt="Jenna A."
                     width={40}
                     height={40}
@@ -406,7 +406,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy02LnBuZyIsImlhdCI6MTc1MzQ3ODE2MiwiZXhwIjoxNzg1MDE0MTYyfQ.M1y8W6kFdAZ6XH5e_lm8YPp-e1ElSHgwO0uP_Z7-fGg"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-6-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy02LTIucG5nIiwiaWF0IjoxNzUzNzQ3MjgzLCJleHAiOjE3ODUyODMyODN9.Q8sZ3SM2hKxvHG0lNHJnpsk6bQVONNDrVtvTuUDEbBE"
                     alt="Samantha C."
                     width={40}
                     height={40}
@@ -428,7 +428,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-7.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy03LnBuZyIsImlhdCI6MTc1MzQ3ODIzNiwiZXhwIjoxNzg1MDE0MjM2fQ.QrM52pViaEFNCqMUUFNpmNWlR4UEnsUsRNtjqfmFMLk"
+                    src="https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Copy%20of%20Inc-7-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9Db3B5IG9mIEluYy03LTIucG5nIiwiaWF0IjoxNzUzNzQ3NDA0LCJleHAiOjE3ODUyODM0MDR9.gta3rr9mx6bEGigsAGqe-C7VhExi_AnhmT4tGDVSX_o"
                     alt="Sarah L."
                     width={40}
                     height={40}
