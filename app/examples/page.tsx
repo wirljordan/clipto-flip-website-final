@@ -29,6 +29,7 @@ export default function ExamplesPage() {
       title: "Gift for best friend",
       description: "Remember that one night out - the bad karaoke, the street dancing, the almost-too-loud laugh? Turn that video into a flipbook your best friend will never stop flipping through. A weird, wonderful gift that says 'we really did that.'",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-best-friend.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWJlc3QtZnJpZW5kLmpwZyIsImlhdCI6MTc1MzQ5NDU1MywiZXhwIjoxNzg1MDMwNTUzfQ.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-8-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby04LTIubXA0IiwiaWF0IjoxNzUzNzQ4MDg5LCJleHAiOjE3ODUyODQwODl9.iKSbG8RrcQ_en_GJrplc8W42zNVW_b1Ha_DrvV4ZZzw",
       bgColor: "bg-green-100"
     },
     {
