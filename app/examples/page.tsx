@@ -124,11 +124,14 @@ export default function ExamplesPage() {
                   {/* Image or Video */}
                   <div className={`w-full h-64 md:h-80 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
                                            {example.image ? (
-                         <img
-                           src={example.image}
-                           alt={`${example.title} preview`}
-                           className="w-full h-full object-cover rounded-xl"
-                         />
+                         <div className="relative w-full h-full rounded-xl overflow-hidden">
+                           <img
+                             src={example.image}
+                             alt={`${example.title} preview`}
+                             className="w-full h-full object-cover rounded-xl filter brightness-75 contrast-110"
+                           />
+                           <div className="absolute inset-0 bg-black bg-opacity-10 rounded-xl"></div>
+                         </div>
                        ) : (
                       <div className="relative w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
                         <div className="text-4xl md:text-5xl">📖</div>
