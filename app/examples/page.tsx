@@ -36,18 +36,21 @@ export default function ExamplesPage() {
       title: "Personalized gift for 10 year old",
       description: "Looking for a personalized gift for a 10-year-old that actually means something? Turn a fun video - a birthday dance, a silly moment, a big smile - into a custom flipbook they can hold, flip, and show off forever.",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-10-year-old.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLTEwLXllYXItb2xkLmpwZyIsImlhdCI6MTc1MzQ5NDU1MywiZXhwIjoxNzg1MDMwNTUzfQ.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-22-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0yMi0yLm1wNCIsImlhdCI6MTc1Mzc0ODM5MCwiZXhwIjoxNzg1Mjg0MzkwfQ.o3WwknIsNizEBaQHKF_-99OXsI6BGgxC8BO9lJzi98o",
       bgColor: "bg-green-100"
     },
     {
-      title: "Wedding anniversary surprise",
-      description: "Celebrate your love story with a flipbook that captures your most precious moments together. From first dates to wedding day, every frame tells your unique story of love and commitment.",
+      title: "Travel memory gift",
+      description: "Turn your favorite travel video into a flipbook you can hold - a real souvenir made from motion, not magnets. The perfect travel memory gift for your best friend, your partner, or yourself.",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-wedding.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLXdlZGRpbmcuanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-28-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0yOC0yLm1wNCIsImlhdCI6MTc1Mzc0ODUyNiwiZXhwIjoxNzg1Mjg0NTI2fQ.e9L-kDQuOgs99RA5y6iPhO7KU7gHfa1lyeS2O__adho",
       bgColor: "bg-pink-100"
     },
     {
-      title: "Graduation celebration",
-      description: "Mark this milestone with a flipbook that captures the journey - late night study sessions, graduation day excitement, and all the moments that led to this achievement. A keepsake that will inspire for years to come.",
+      title: "A sentimental gift for dad",
+      description: "A sentimental gift for dad that flips through real memories - not just photos, but full moments caught in motion. This custom flipbook turns your favorite video into something he can hold, replay, and never forget.",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-graduation.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWdyYWR1YXRpb24uanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-13-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0xMy0yLm1wNCIsImlhdCI6MTc1Mzc0ODY1MCwiZXhwIjoxNzg1Mjg0NjUwfQ.aKeXsNIrtOU5NL8duPLWfk_NhmCm1YrMFq3QYFS9Nxk",
       bgColor: "bg-purple-100"
     }
   ]
