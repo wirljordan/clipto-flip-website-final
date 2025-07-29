@@ -197,10 +197,10 @@ export default function ExamplesPage() {
                     {selectedExample.video ? (
                       <video
                         src={selectedExample.video}
-                        autoPlay
                         loop
                         muted
                         playsInline
+                        controls
                         className="w-full h-full object-cover rounded-xl"
                         style={{ backgroundColor: "#FECB23" }}
                       />
