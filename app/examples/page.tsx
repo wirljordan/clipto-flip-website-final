@@ -2,13 +2,18 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
+import { useState } from "react"
+import { X } from "lucide-react"
 
 export default function ExamplesPage() {
+  const [selectedExample, setSelectedExample] = useState<any>(null)
+
   const examples = [
     {
       title: "Sentimental flipbook gift for first time dad",
       description: "This custom flipbook captures a quiet moment between dad and daughter - a first-time fatherhood memory, printed and in motion. A meaningful keepsake he'll flip through long after the moment has passed.",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-dad-daughter.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWRhZC1kYXVnaHRlci5qcGciLCJpYXQiOjE3NTM0OTQ1NTMsImV4cCI6MTc4NTAzMDU1M30.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-14-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0xNC0yLm1wNCIsImlhdCI6MTc1Mzc0NzY0NiwiZXhwIjoxNzg1MjgzNjQ2fQ.97jnntoFd_0Pg3YB3r6gVMCJ0JdRfwFuRJqGfRS7rAw",
       bgColor: "bg-blue-100"
     },
     {
@@ -104,12 +109,28 @@ export default function ExamplesPage() {
             {/* Examples Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mobile-grid-spacing">
               {examples.map((example, index) => (
-                <div key={index} className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                  {/* Image */}
-                  <div className={`w-full h-48 md:h-56 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6`}>
-                    <div className="relative w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
-                      <div className="text-4xl md:text-5xl">📖</div>
-                    </div>
+                <div 
+                  key={index} 
+                  className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing cursor-pointer hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  onClick={() => setSelectedExample(example)}
+                >
+                  {/* Image or Video */}
+                  <div className={`w-full h-48 md:h-56 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
+                    {example.video ? (
+                      <video
+                        src={example.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover rounded-xl"
+                        style={{ backgroundColor: "#FECB23" }}
+                      />
+                    ) : (
+                      <div className="relative w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
+                        <div className="text-4xl md:text-5xl">📖</div>
+                      </div>
+                    )}
                   </div>
                   
                   {/* Content */}
@@ -145,6 +166,101 @@ export default function ExamplesPage() {
             </div>
           </div>
         </main>
+
+        {/* Modal */}
+        {selectedExample && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-2xl md:rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+              {/* Modal Header */}
+              <div className="flex justify-between items-center p-4 md:p-6 border-b-2 border-black">
+                <h2 className="text-xl md:text-2xl font-black text-black">
+                  {selectedExample.title}
+                </h2>
+                <button
+                  onClick={() => setSelectedExample(null)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X className="h-6 w-6 text-black" />
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="flex flex-col lg:flex-row">
+                {/* Left Section - Visual Content */}
+                <div className="lg:w-1/2 p-4 md:p-6">
+                  <div className={`w-full h-64 md:h-80 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden`}>
+                    {selectedExample.video ? (
+                      <video
+                        src={selectedExample.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover rounded-xl"
+                        style={{ backgroundColor: "#FECB23" }}
+                      />
+                    ) : (
+                      <div className="relative w-48 h-36 md:w-56 md:h-40 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
+                        <div className="text-6xl md:text-7xl">📖</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right Section - Text and CTA */}
+                <div className="lg:w-1/2 p-4 md:p-6 flex flex-col justify-between">
+                  <div className="space-y-4 md:space-y-6">
+                    <h3 className="text-2xl md:text-3xl font-black text-black">
+                      {selectedExample.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                      {selectedExample.description}
+                    </p>
+                    
+                    {/* Features List */}
+                    <div className="space-y-2 md:space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-sm md:text-base text-black">High-quality print on premium paper</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-sm md:text-base text-black">Customizable cover colors</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-sm md:text-base text-black">Fast shipping worldwide</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-sm md:text-base text-black">Bulk discounts available</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-6 md:mt-8">
+                    <Link href="/upload">
+                      <Button
+                        className="w-full bg-black hover:bg-gray-800 text-white font-black text-lg md:text-xl px-8 py-4 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                      >
+                        Make your flipbook
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
