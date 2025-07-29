@@ -155,16 +155,17 @@ export default function ExamplesPage() {
 
             {/* CTA Section */}
             <div className="mt-12 md:mt-16 text-center">
-              <div className="mobile-card bg-green-500 rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
-                <h2 className="text-2xl md:text-3xl font-black text-white mb-4 mobile-space-y-4">
+              <div className="mobile-card bg-white rounded-2xl md:rounded-3xl border-4 md:border-8 border-black p-8 md:p-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mobile-card-spacing">
+                <h2 className="text-2xl md:text-3xl font-black text-black mb-4 mobile-space-y-4">
                   Give the gift of motion
                 </h2>
-                <p className="text-lg md:text-xl text-white mb-6 md:mb-8 mobile-text-spacing">
+                <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 mobile-text-spacing">
                   Surprise someone special with a flipbook made from your video. A unique gift that captures memories in motion.
                 </p>
                 <Link href="/upload">
                   <Button
-                    className="mobile-button bg-black hover:bg-gray-800 text-white font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] transition-all"
+                    className="mobile-button bg-orange-400 hover:bg-orange-500 text-black font-black text-lg md:text-xl px-8 md:px-10 py-4 md:py-6 rounded-full border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                    style={{ backgroundColor: "#FF6B6B" }}
                   >
                     Start your order
                   </Button>
