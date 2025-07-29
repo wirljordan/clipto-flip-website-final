@@ -177,22 +177,17 @@ export default function ExamplesPage() {
         {/* Modal */}
         {selectedExample && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-2xl md:rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              {/* Modal Header */}
-              <div className="flex justify-between items-center p-4 md:p-6 border-b-2 border-black">
-                <h2 className="text-xl md:text-2xl font-black text-black">
-                  {selectedExample.title}
-                </h2>
-                <button
-                  onClick={() => setSelectedExample(null)}
-                  className="w-8 h-8 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
-                >
-                  <X className="h-4 w-4 text-white" />
-                </button>
-              </div>
+            <div className="bg-white rounded-2xl md:rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedExample(null)}
+                className="absolute top-4 right-4 w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors z-10"
+              >
+                <X className="h-4 w-4 text-black" />
+              </button>
 
               {/* Modal Content */}
-              <div className="flex flex-col lg:flex-row h-full">
+              <div className="flex flex-col lg:flex-row p-4 md:p-6">
                 {/* Left Section - Visual Content */}
                 <div className="lg:w-1/2 p-4 md:p-6 flex items-center">
                   <div className={`w-full h-72 md:h-96 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden shadow-lg`}>
