@@ -177,7 +177,7 @@ export default function ExamplesPage() {
         {/* Modal */}
         {selectedExample && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-2xl md:rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="bg-white rounded-2xl md:rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               {/* Modal Header */}
               <div className="flex justify-between items-center p-4 md:p-6 border-b-2 border-black">
                 <h2 className="text-xl md:text-2xl font-black text-black">
@@ -185,17 +185,17 @@ export default function ExamplesPage() {
                 </h2>
                 <button
                   onClick={() => setSelectedExample(null)}
-                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                  className="w-8 h-8 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
                 >
-                  <X className="h-6 w-6 text-black" />
+                  <X className="h-4 w-4 text-white" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="flex flex-col lg:flex-row">
+              <div className="flex flex-col lg:flex-row h-full">
                 {/* Left Section - Visual Content */}
-                <div className="lg:w-1/2 p-4 md:p-6">
-                                       <div className={`w-full h-80 md:h-96 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden`}>
+                <div className="lg:w-1/2 p-4 md:p-6 flex items-center">
+                  <div className={`w-full h-72 md:h-96 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden shadow-lg`}>
                     {selectedExample.video ? (
                       <video
                         src={selectedExample.video}
@@ -215,7 +215,7 @@ export default function ExamplesPage() {
                 </div>
 
                 {/* Right Section - Text and CTA */}
-                <div className="lg:w-1/2 p-4 md:p-6 flex flex-col justify-between">
+                <div className="lg:w-1/2 p-4 md:p-6 flex flex-col justify-center">
                   <div className="space-y-4 md:space-y-6">
                     <h3 className="text-2xl md:text-3xl font-black text-black">
                       {selectedExample.title}
@@ -225,36 +225,28 @@ export default function ExamplesPage() {
                     </p>
                     
                     {/* Features List */}
-                    <div className="space-y-2 md:space-y-3">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
+                    <div className="space-y-3 md:space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
                         <span className="text-sm md:text-base text-black">High-quality print on premium paper</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
                         <span className="text-sm md:text-base text-black">Customizable cover colors</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
                         <span className="text-sm md:text-base text-black">Fast shipping worldwide</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                          <div className="w-2 h-2 bg-white rounded-full"></div>
-                        </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-black rounded-full"></div>
                         <span className="text-sm md:text-base text-black">Bulk discounts available</span>
                       </div>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <div className="mt-6 md:mt-8">
+                  <div className="mt-8 md:mt-10">
                     <Link href="/upload">
                       <Button
                         className="w-full bg-black hover:bg-gray-800 text-white font-black text-lg md:text-xl px-8 py-4 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
