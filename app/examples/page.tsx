@@ -181,16 +181,16 @@ export default function ExamplesPage() {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedExample(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors z-10"
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-colors z-10"
               >
-                <X className="h-4 w-4 text-black" />
+                <X className="h-6 w-6 text-black" />
               </button>
 
               {/* Modal Content */}
               <div className="flex flex-col lg:flex-row p-4 md:p-6">
                 {/* Left Section - Visual Content */}
-                <div className="lg:w-1/2 p-4 md:p-6 flex items-center">
-                  <div className={`w-full h-72 md:h-96 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden shadow-lg`}>
+                <div className="lg:w-1/3 p-4 md:p-6 flex items-center">
+                  <div className={`w-full h-64 md:h-80 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden shadow-lg`}>
                     {selectedExample.video ? (
                       <video
                         src={selectedExample.video}
@@ -210,7 +210,7 @@ export default function ExamplesPage() {
                 </div>
 
                 {/* Right Section - Text and CTA */}
-                <div className="lg:w-1/2 p-4 md:p-6 flex flex-col justify-center">
+                <div className="lg:w-2/3 p-4 md:p-6 flex flex-col justify-center">
                   <div className="space-y-4 md:space-y-6">
                     <h3 className="text-2xl md:text-3xl font-black text-black">
                       {selectedExample.title}
@@ -222,19 +222,27 @@ export default function ExamplesPage() {
                     {/* Features List */}
                     <div className="space-y-3 md:space-y-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
                         <span className="text-sm md:text-base text-black">High-quality print on premium paper</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
                         <span className="text-sm md:text-base text-black">Customizable cover colors</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
                         <span className="text-sm md:text-base text-black">Fast shipping worldwide</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-black rounded-full"></div>
+                        <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
                         <span className="text-sm md:text-base text-black">Bulk discounts available</span>
                       </div>
                     </div>
