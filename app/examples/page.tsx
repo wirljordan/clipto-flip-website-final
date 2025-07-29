@@ -124,11 +124,14 @@ export default function ExamplesPage() {
                   {/* Image or Video */}
                   <div className={`w-full h-64 md:h-80 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
                                            {example.video ? (
-                         <img
-                           src={`${example.video}#t=3`}
-                           className="w-full h-full object-cover rounded-xl"
-                           style={{ backgroundColor: "#FECB23" }}
-                           alt="Flipbook preview"
+                         <div 
+                           className="w-full h-full rounded-xl flex items-center justify-center"
+                           style={{ 
+                             backgroundColor: "#FECB23",
+                             backgroundImage: `url(${example.video}#t=3)`,
+                             backgroundSize: 'cover',
+                             backgroundPosition: 'center'
+                           }}
                          />
                        ) : (
                       <div className="relative w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
