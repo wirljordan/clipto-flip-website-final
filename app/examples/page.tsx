@@ -129,6 +129,7 @@ export default function ExamplesPage() {
                            loop
                            muted
                            playsInline
+                           preload="none"
                            poster={`${example.video}#t=3`}
                            className="w-full h-full object-cover rounded-xl"
                            style={{ backgroundColor: "#FECB23" }}
