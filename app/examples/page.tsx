@@ -195,31 +195,15 @@ export default function ExamplesPage() {
                 <div className="lg:w-1/2 p-4 md:p-6">
                   <div className={`w-full h-64 md:h-80 rounded-xl ${selectedExample.bgColor} flex items-center justify-center overflow-hidden`}>
                     {selectedExample.video ? (
-                      <div className="relative w-full h-full">
-                        <video
-                          src={selectedExample.video}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-cover rounded-xl"
-                          style={{ backgroundColor: "#FECB23" }}
-                        />
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            const video = e.currentTarget.previousElementSibling as HTMLVideoElement;
-                            if (video.paused) {
-                              video.play();
-                            } else {
-                              video.pause();
-                            }
-                          }}
-                          className="absolute top-2 right-2 bg-black bg-opacity-75 text-white p-2 rounded-full hover:bg-opacity-100 transition-all"
-                        >
-                          ⏸️
-                        </button>
-                      </div>
+                      <video
+                        src={selectedExample.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover rounded-xl"
+                        style={{ backgroundColor: "#FECB23" }}
+                      />
                     ) : (
                       <div className="relative w-48 h-36 md:w-56 md:h-40 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
                         <div className="text-6xl md:text-7xl">📖</div>
