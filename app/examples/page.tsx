@@ -119,7 +119,7 @@ export default function ExamplesPage() {
                   onClick={() => setSelectedExample(example)}
                 >
                   {/* Image or Video */}
-                  <div className={`w-full h-48 md:h-56 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
+                  <div className={`w-full h-64 md:h-80 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
                     {example.video ? (
                       <video
                         src={example.video}
