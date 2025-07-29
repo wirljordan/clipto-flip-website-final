@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -20,6 +22,7 @@ export default function ExamplesPage() {
       title: "Gift for mom from son",
       description: "Take one video - maybe a small moment she didn't know you caught - and turn it into a flipbook she'll never forget. It's a personal gift from son to mom, full of motion, memory, and meaning.",
       image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-mom-son.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLW1vbS1zb24uanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-49-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby00OS0yLm1wNCIsImlhdCI6MTc1Mzc0Nzg4NCwiZXhwIjoxNzg1MjgzODg0fQ.BEJ6KEAmA1xxSl9uUHKO7JSRc2JPRmjbuW5c0nSFEto",
       bgColor: "bg-amber-100"
     },
     {
