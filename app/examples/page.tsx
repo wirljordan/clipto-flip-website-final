@@ -14,42 +14,42 @@ export default function ExamplesPage() {
     {
       title: "Sentimental flipbook gift for first time dad",
       description: "This custom flipbook captures a quiet moment between dad and daughter - a first-time fatherhood memory, printed and in motion. A meaningful keepsake he'll flip through long after the moment has passed.",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-dad-daughter.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWRhZC1kYXVnaHRlci5qcGciLCJpYXQiOjE3NTM0OTQ1NTMsImV4cCI6MTc4NTAzMDU1M30.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%208.59.08%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOC41OS4wOCBQTS5wbmciLCJpYXQiOjE3NTM3NTA3NjEsImV4cCI6MTc4NTI4Njc2MX0.QRF7KrxvXx66G-Fg6Q-xW8lN3X8manP4EUy3FPQR5mI",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-14-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0xNC0yLm1wNCIsImlhdCI6MTc1Mzc0NzY0NiwiZXhwIjoxNzg1MjgzNjQ2fQ.97jnntoFd_0Pg3YB3r6gVMCJ0JdRfwFuRJqGfRS7rAw",
       bgColor: "bg-blue-100"
     },
     {
       title: "Gift for mom from son",
       description: "Take one video - maybe a small moment she didn't know you caught - and turn it into a flipbook she'll never forget. It's a personal gift from son to mom, full of motion, memory, and meaning.",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-mom-son.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLW1vbS1zb24uanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%209.01.42%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOS4wMS40MiBQTS5wbmciLCJpYXQiOjE3NTM3NTA5MTQsImV4cCI6MTc4NTI4NjkxNH0.ovcH-INMVj2DFlXw7p2IxeSHu1Nrttvqp3G3uLYVA-4",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-49-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby00OS0yLm1wNCIsImlhdCI6MTc1Mzc0Nzg4NCwiZXhwIjoxNzg1MjgzODg0fQ.BEJ6KEAmA1xxSl9uUHKO7JSRc2JPRmjbuW5c0nSFEto",
       bgColor: "bg-amber-100"
     },
     {
       title: "Gift for best friend",
       description: "Remember that one night out - the bad karaoke, the street dancing, the almost-too-loud laugh? Turn that video into a flipbook your best friend will never stop flipping through. A weird, wonderful gift that says 'we really did that.'",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-best-friend.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWJlc3QtZnJpZW5kLmpwZyIsImlhdCI6MTc1MzQ5NDU1MywiZXhwIjoxNzg1MDMwNTUzfQ.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%209.02.31%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOS4wMi4zMSBQTS5wbmciLCJpYXQiOjE3NTM3NTA5NjMsImV4cCI6MTc4NTI4Njk2M30.lpZzV5wxmIds04uHx2tS09HkNKEXxieFcp5J8AdwCnA",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-8-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby04LTIubXA0IiwiaWF0IjoxNzUzNzQ4MDg5LCJleHAiOjE3ODUyODQwODl9.iKSbG8RrcQ_en_GJrplc8W42zNVW_b1Ha_DrvV4ZZzw",
       bgColor: "bg-green-100"
     },
     {
       title: "Personalized gift for 10 year old",
       description: "Looking for a personalized gift for a 10-year-old that actually means something? Turn a fun video - a birthday dance, a silly moment, a big smile - into a custom flipbook they can hold, flip, and show off forever.",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-10-year-old.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLTEwLXllYXItb2xkLmpwZyIsImlhdCI6MTc1MzQ5NDU1MywiZXhwIjoxNzg1MDMwNTUzfQ.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%209.03.55%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOS4wMy41NSBQTS5wbmciLCJpYXQiOjE3NTM3NTEwNDcsImV4cCI6MTc4NTI4NzA0N30.vp_pA8lvoCx4bC5t_Ecc7LrfnrUfwRdPEHWh6qLhWe4",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-22-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0yMi0yLm1wNCIsImlhdCI6MTc1Mzc0ODM5MCwiZXhwIjoxNzg1Mjg0MzkwfQ.o3WwknIsNizEBaQHKF_-99OXsI6BGgxC8BO9lJzi98o",
       bgColor: "bg-green-100"
     },
     {
       title: "Travel memory gift",
       description: "Turn your favorite travel video into a flipbook you can hold - a real souvenir made from motion, not magnets. The perfect travel memory gift for your best friend, your partner, or yourself.",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-wedding.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLXdlZGRpbmcuanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%209.04.38%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOS4wNC4zOCBQTS5wbmciLCJpYXQiOjE3NTM3NTEwOTYsImV4cCI6MTc4NTI4NzA5Nn0.idMvjy9Y3XAQb0x0Qv0cVCmLjHwZVK7QI1F0RLZ9TrQ",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-28-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0yOC0yLm1wNCIsImlhdCI6MTc1Mzc0ODUyNiwiZXhwIjoxNzg1Mjg0NTI2fQ.e9L-kDQuOgs99RA5y6iPhO7KU7gHfa1lyeS2O__adho",
       bgColor: "bg-pink-100"
     },
     {
       title: "A sentimental gift for dad",
       description: "A sentimental gift for dad that flips through real memories - not just photos, but full moments caught in motion. This custom flipbook turns your favorite video into something he can hold, replay, and never forget.",
-      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/example-graduation.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9leGFtcGxlLWdyYWR1YXRpb24uanBnIiwiaWF0IjoxNzUzNDk0NTUzLCJleHAiOjE3ODUwMzA1NTN9.wAk97tpfkwa6jete0yt1YSVzE21GlASe2vuoCcsdW1Q",
+      image: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/Screenshot%202025-07-28%20at%209.05.29%20PM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay9TY3JlZW5zaG90IDIwMjUtMDctMjggYXQgOS4wNS4yOSBQTS5wbmciLCJpYXQiOjE3NTM3NTExNDMsImV4cCI6MTc4NTI4NzE0M30.kW4ntZen2XCZ_tNAL7bQA87gWG5N7hjytDGxc8XnnV0",
       video: "https://lfvokdiatflpxnohmofo.supabase.co/storage/v1/object/sign/flipbook/video-13-2.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85OGNkMmM5Zi1jNDJlLTQ2NTgtYTMxNi1hM2ZkNTU2MjFhMjUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmbGlwYm9vay92aWRlby0xMy0yLm1wNCIsImlhdCI6MTc1Mzc0ODY1MCwiZXhwIjoxNzg1Mjg0NjUwfQ.aKeXsNIrtOU5NL8duPLWfk_NhmCm1YrMFq3QYFS9Nxk",
       bgColor: "bg-purple-100"
     }
@@ -123,15 +123,11 @@ export default function ExamplesPage() {
                 >
                   {/* Image or Video */}
                   <div className={`w-full h-64 md:h-80 rounded-xl ${example.bgColor} flex items-center justify-center mb-4 md:mb-6 overflow-hidden`}>
-                                           {example.video ? (
-                         <div 
-                           className="w-full h-full rounded-xl flex items-center justify-center"
-                           style={{ 
-                             backgroundColor: "#FECB23",
-                             backgroundImage: `url(${example.video}#t=3)`,
-                             backgroundSize: 'cover',
-                             backgroundPosition: 'center'
-                           }}
+                                           {example.image ? (
+                         <img
+                           src={example.image}
+                           alt={`${example.title} preview`}
+                           className="w-full h-full object-cover rounded-xl"
                          />
                        ) : (
                       <div className="relative w-32 h-24 md:w-40 md:h-32 bg-white rounded-lg border-2 border-black shadow-lg flex items-center justify-center">
