@@ -10,9 +10,16 @@ export async function POST(request: NextRequest) {
     const { amount, currency, shippingOption } = await request.json()
 
     // Calculate total amount based on shipping option
-    let totalAmount = amount // Base price $29.99
+    let totalAmount = amount // Amount is already in smallest currency unit (cents/pence)
     if (shippingOption === "express") {
-      totalAmount += 1500 // Add $15.00 for express shipping (in cents)
+      // Add express shipping cost in the appropriate currency
+      if (currency === "cad") {
+        totalAmount += 2000 // Add $20.00 CAD for express shipping (in cents)
+      } else if (currency === "eur") {
+        totalAmount += 1500 // Add €15.00 for express shipping (in cents)
+      } else {
+        totalAmount += 1500 // Add $15.00 USD for express shipping (in cents)
+      }
     }
 
     const paymentIntent = await stripe.paymentIntents.create({

@@ -13,7 +13,8 @@ export async function POST(request: NextRequest) {
       totalAmount,
       paymentStatus,
       socialMediaPermission,
-      selectedProduct
+      selectedProduct,
+      currency
     } = body
 
     // Convert amount to cents (Stripe format) if it's a decimal
@@ -34,6 +35,7 @@ export async function POST(request: NextRequest) {
         payment_status: paymentStatus,
         social_media_permission: socialMediaPermission,
         selected_product: selectedProduct,
+        currency: currency,
         created_at: new Date().toISOString()
       }])
 

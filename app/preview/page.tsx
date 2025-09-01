@@ -650,6 +650,7 @@ function PreviewPageContent() {
             <div className="mt-4 md:mt-6">
               <PaymentForm 
                 amount={totalPrice}
+                currency={currency}
                 personalDetails={personalDetails}
                 shippingDetails={shippingDetails}
                 selectedColor={selectedColor}

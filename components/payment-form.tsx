@@ -23,6 +23,7 @@ interface ShippingDetails {
 
 interface PaymentFormProps {
   amount: number
+  currency: string
   personalDetails: PersonalDetails
   shippingDetails: ShippingDetails
   selectedColor: string
@@ -50,6 +51,7 @@ const cardElementOptions = {
 
 export default function PaymentForm({ 
   amount, 
+  currency,
   personalDetails,
   shippingDetails,
   selectedColor, 
@@ -80,8 +82,8 @@ export default function PaymentForm({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: amount * 100, // Convert to cents
-          currency: 'usd',
+          amount: Math.round(amount * 100), // Convert to smallest currency unit (cents/pence)
+          currency: currency.toLowerCase(),
           shippingOption,
         }),
       })
@@ -133,7 +135,8 @@ export default function PaymentForm({
               totalAmount: amount,
               paymentStatus: 'completed',
               socialMediaPermission,
-              selectedProduct
+              selectedProduct,
+              currency: currency
             }),
           })
 
