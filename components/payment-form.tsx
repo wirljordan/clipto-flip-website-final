@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
-import mixpanel from '@/lib/mixpanel';
+import mixpanel from '@/lib/mixpanel'
+import { uploadVideo } from '@/lib/supabase-storage'
 
 interface PersonalDetails {
   firstName: string
@@ -119,6 +120,31 @@ export default function PaymentForm({
           country: shippingDetails.country
         }
         
+        // Upload video to Supabase Storage
+        let videoStorageUrl = ''
+        try {
+          // Get the video file from sessionStorage
+          const videoData = sessionStorage.getItem('uploadedVideo')
+          if (videoData && videoData.startsWith('blob:')) {
+            // Convert blob URL back to File object for upload
+            const response = await fetch(videoData)
+            const videoBlob = await response.blob()
+            const videoFile = new File([videoBlob], videoFileName, { type: 'video/mp4' })
+            
+            // Upload to Supabase Storage
+            const uploadResult = await uploadVideo(videoFile, orderId)
+            if (uploadResult.error) {
+              console.error('Video upload failed:', uploadResult.error)
+            } else {
+              videoStorageUrl = uploadResult.url
+              console.log('Video uploaded successfully:', videoStorageUrl)
+            }
+          }
+        } catch (uploadError) {
+          console.error('Error uploading video:', uploadError)
+          // Continue anyway since payment was successful
+        }
+        
         // Save order data to Supabase
         try {
           const saveResponse = await fetch('/api/save-order', {
@@ -129,7 +155,7 @@ export default function PaymentForm({
             body: JSON.stringify({
               orderId,
               customerInfo,
-              videoUrl: videoFileName, // Using filename instead of URL
+              videoUrl: videoStorageUrl || videoFileName, // Use storage URL if available, fallback to filename
               selectedColor,
               shippingOption,
               totalAmount: amount,

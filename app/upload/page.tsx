@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
+import { uploadVideo } from "@/lib/supabase-storage"
 
 export default function UploadPage() {
   const [isDragOver, setIsDragOver] = useState(false)
@@ -13,6 +14,7 @@ export default function UploadPage() {
   const [uploadProgress, setUploadProgress] = useState(0)
   const [uploadedVideo, setUploadedVideo] = useState<string>("")
   const [videoFileName, setVideoFileName] = useState<string>("")
+  const [videoFile, setVideoFile] = useState<File | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
 
@@ -46,26 +48,21 @@ export default function UploadPage() {
         })
       }, 200)
 
+      // Store the actual file for later upload
+      setVideoFile(file)
+      
       // Create object URL for preview
       const videoUrl = URL.createObjectURL(file)
       
-      // Simulate upload delay
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      clearInterval(progressInterval)
-      setUploadProgress(100)
-      
-      // Store video data in sessionStorage
+      // Store video data in sessionStorage for preview
       sessionStorage.setItem('uploadedVideo', videoUrl)
       sessionStorage.setItem('videoFileName', file.name)
       
       setUploadedVideo(videoUrl)
       setVideoFileName(file.name)
       
-      // Navigate to preview page after a short delay
-      setTimeout(() => {
-        router.push('/preview')
-      }, 500)
+      // Navigate to preview page immediately
+      router.push('/preview')
       
     } catch (error) {
       console.error('Upload error:', error)
