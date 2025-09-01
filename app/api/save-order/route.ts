@@ -11,8 +11,15 @@ export async function POST(request: NextRequest) {
       selectedColor,
       shippingOption,
       totalAmount,
-      paymentStatus
+      paymentStatus,
+      socialMediaPermission,
+      selectedProduct
     } = body
+
+    // Convert amount to cents (Stripe format) if it's a decimal
+    const totalAmountInCents = typeof totalAmount === 'number' && totalAmount % 1 !== 0 
+      ? Math.round(totalAmount * 100) 
+      : totalAmount
 
     // Save order data to Supabase
     const { data, error } = await supabase
@@ -23,8 +30,10 @@ export async function POST(request: NextRequest) {
         video_url: videoUrl,
         selected_color: selectedColor,
         shipping_option: shippingOption,
-        total_amount: totalAmount,
+        total_amount: totalAmountInCents,
         payment_status: paymentStatus,
+        social_media_permission: socialMediaPermission,
+        selected_product: selectedProduct,
         created_at: new Date().toISOString()
       }])
 
